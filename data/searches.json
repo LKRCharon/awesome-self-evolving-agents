@@ -1,0 +1,6 @@
+[
+  "all:\"self-evolving agent\"",
+  "all:\"self-improving agent\"",
+  "all:\"agent harness\" AND all:evolution",
+  "all:\"continual agent\" AND all:experience"
+]
