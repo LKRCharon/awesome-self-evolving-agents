@@ -26,30 +26,23 @@ def render(records: list[dict]) -> str:
     lines = [
         "## Reviewed Papers",
         "",
-        "Each row exposes the claims that matter for comparing evolution systems. `arXiv` means the venue was not independently confirmed as a peer-reviewed publication.",
+        "Each entry exposes the claims that matter for comparing evolution systems. `arXiv` means the venue was not independently confirmed as a peer-reviewed publication.",
         "",
-        "| Paper | Venue | Mutable object | Scope | Evolution loop | Evidence | Validation | Code |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for paper in records:
         title = link(paper["title"], paper["source"])
         objects = ", ".join(inline(item) for item in paper["mutable_object"])
         code = link("repo", paper.get("code"))
-        lines.append(
-            "| "
-            + " | ".join(
-                [
-                    title,
-                    f"{inline(paper['venue_status'])} {inline(paper['year'])}",
-                    objects,
-                    inline(paper["evolution_scope"]),
-                    inline(paper["loop"]),
-                    inline(paper["evidence"]),
-                    inline(paper["validation"]),
-                    code,
-                ]
-            )
-            + " |"
+        lines.extend(
+            [
+                f"- **{title}** — `{inline(paper['venue_status'])} {inline(paper['year'])}`<br>",
+                f"  Mutable object: `{objects}` · Scope: `{inline(paper['evolution_scope'])}`<br>",
+                f"  Evolution loop: {inline(paper['loop'])}<br>",
+                f"  Evidence: {inline(paper['evidence'])}<br>",
+                f"  Validation: {inline(paper['validation'])}<br>",
+                f"  Code: {code}",
+                "",
+            ]
         )
     lines.extend(
         [
