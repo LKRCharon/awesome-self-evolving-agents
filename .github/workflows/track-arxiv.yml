@@ -18,10 +18,12 @@ jobs:
           python-version: "3.x"
       - name: Discover candidates
         run: python scripts/discover_arxiv.py
+      - name: Render reviewed paper catalog
+        run: python scripts/render_readme.py
       - name: Commit review queue
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/discovered.json
+          git add README.md data/discovered.json
           git diff --cached --quiet || git commit -m "chore: refresh arXiv discovery queue"
           git push

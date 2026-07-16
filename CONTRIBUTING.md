@@ -14,6 +14,9 @@ Add one object to `data/papers.json`. Keep these fields explicit:
 - `code`: a URL, or `null` when no public code was confirmed;
 - `last_verified`: ISO date.
 
+After changing reviewed records, run `python scripts/render_readme.py` so the
+README table stays synchronized.
+
 Do not infer code availability, acceptance, or deployment status from an arXiv page. Link the repository, proceedings page, or artifact directly when available.
 
 ## Review discovered candidates
