@@ -1,5 +1,21 @@
 [
   {
+    "id": "2607.14408v1",
+    "title": "Reward-Free Evolving Agents via Pairwise Validator",
+    "summary": "A self-evolving agentic loop repeatedly proposes a tweaked version of an agent (its prompt template or program) and accepts or rejects the change based on a per-iteration quality signal. Designing that signal is often the costly part of the project: a reliable scalar reward requires domain expertise and labeled examples that are themselves as expensive to assemble as the agent's underlying task. We propose replacing the scalar at the accept/reject gate with a pairwise validator: a frozen LLM that, given the parent and child candidate, returns a binary verdict on which is better. Pairwise judgment is generally easier and more stable than absolute scoring, due to its contrastive nature, which mitigates the need for strict scale calibration. The validator also requires no training of its own. We integrate the validator into three published self-evolving engines (GEPA, ADRS, ShinkaEvolve) and report two flavors: Adaptive Focus, which retains the engine's existing val-set parent selection, and Soft Elo, which lets the validator's verdicts drive parent selection so that val-set rewards drop as well. Across multiple agents and two artifact substrates (prompt and code), our method matches or exceeds the full-reward baseline on the majority of settings we evaluate, and the pattern survives a cross-family validator swap. The pairwise gate is thus a drop-in replacement for per-step reward design at competitive task accuracy without the labeling cost.",
+    "published": "2026-07-15T22:50:32Z",
+    "updated": "2026-07-15T22:50:32Z",
+    "authors": [
+      "Minghao Liu",
+      "Yu Wang",
+      "Jiayun Wang",
+      "Wei Wei"
+    ],
+    "source": "https://arxiv.org/abs/2607.14408v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-07-20"
+  },
+  {
     "id": "2607.13940v1",
     "title": "A Self-Evolving Agent for Longitudinal Personal Health Management",
     "summary": "Personal health management unfolds over repeated encounters, yet most health AI systems treat each request in isolation. We developed HealthClaw, an open-source agent architecture that updates support as a person's routines, preferences, measurements and risks change. It separates shared safety rules and medical knowledge from private longitudinal memory containing profile facts, reusable procedures and episodic traces. After each episode, induction determines what should update the profile, revise a procedure, remain episodic or be excluded. We evaluated HealthClaw with a synthetic year-long benchmark and nine 200-case biomedical tasks. Across 900 longitudinal support probes, answer accuracy increased from 0.2% with current-query prompting to 45.7% with HealthClaw, while prompt-side context exposure was 71.7% lower than with full-history prompting. In 100 privacy probes, HealthClaw produced higher privacy-aware answer quality and fewer unsafe disclosures than both baselines. Across the biomedical tasks, the mean absolute gain in the task-specific primary metric was 27.0 percentage points, and seven gains remained significant after false-discovery-rate correction. These offline benchmarks support governed, self-evolving memory for longitudinal personal health agents, although clinical effectiveness requires prospective evaluation. HealthClaw is publicly available at https://github.com/HC-Guo/HealthClaw.",
@@ -22,7 +38,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13940v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.13683v1",
@@ -39,7 +55,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13683v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.13285v1",
@@ -61,7 +77,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13285v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.12790v1",
@@ -80,7 +96,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.12790v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.13104v1",
@@ -104,7 +120,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13104v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.12254v1",
@@ -118,6 +134,19 @@
     "source": "https://arxiv.org/abs/2607.12254v1",
     "review_status": "unreviewed",
     "discovered_on": "2026-07-16"
+  },
+  {
+    "id": "2607.12254v2",
+    "title": "Self-Aware Recursively Self-Improving Agents for Personal Singularity: A Goal-, Scope-, Tool-, and Benchmark-Driven Multi-Agent Architecture",
+    "summary": "Large language model (LLM) agents can plan, use tools, maintain memory, and execute long-horizon tasks. This paper proposes Self-Aware Recursively Self-Improving (SARSI) agents: governed agents that maintain a persistent self-model of identity, goals, capabilities, limitations, uncertainty, relationships, history, and developmental change, and use that model to guide and evaluate recursive improvement. Self-awareness is defined functionally and does not imply subjective experience or phenomenal consciousness. We pair SARSI agents with personal singularity, a bounded human-AI co-development objective in which an agent ecosystem helps a user approach an expanding, user-defined feasible capability frontier. Each agent has a goal contract, bounded scope, validated tool registry, tool tests, end-to-end benchmarks, owner-controlled autonomy, routing, memory, self-model, and improvement policy. A scope router assigns every accepted task to one accountable primary agent and transfers out-of-scope work through structured handoffs. A user-facing Auto-Index selects interactive, hybrid, autonomous, or scheduled behavior without overriding external permissions. The architecture combines a planner-executor-verifier loop, an evidence-gated improvement loop, an external governance plane, decentralized lineages, an owner-directed agent foundry, and a Personal Singularity OS coordinating working, computational-imaging, work-process-learning, and personal-learning agents. We formalize functional self-awareness, scope, routing, improvement acceptance, bounded goal evolution, tool-first execution, and human capability transfer, and provide safety invariants, benchmark design, and a staged implementation roadmap. This is a position and systems-design paper, not evidence that consciousness, unrestricted recursive self-improvement, or personal singularity has been achieved.",
+    "published": "2026-07-14T01:44:53Z",
+    "updated": "2026-07-16T16:36:02Z",
+    "authors": [
+      "Chengshuai Yang"
+    ],
+    "source": "https://arxiv.org/abs/2607.12254v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.13083v1",
@@ -137,7 +166,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13083v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.11288v1",
@@ -151,7 +180,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.11288v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.11175v1",
@@ -181,7 +210,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.11175v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.13070v1",
@@ -194,7 +223,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13070v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.09521v1",
@@ -217,7 +246,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09521v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.09195v1",
@@ -231,7 +260,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09195v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.09175v1",
@@ -245,7 +274,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09175v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.08010v1",
@@ -264,7 +293,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.08010v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.07436v1",
@@ -283,7 +312,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.07436v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.07321v1",
@@ -300,7 +329,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.07321v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.05297v1",
@@ -318,7 +347,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05297v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.05155v1",
@@ -377,7 +406,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05155v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.11913v1",
@@ -393,7 +422,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.11913v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.01120v2",
@@ -429,7 +458,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.01120v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2607.00871v1",
@@ -442,7 +471,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.00871v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.31763v2",
@@ -468,7 +497,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.31763v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.30949v1",
@@ -484,7 +513,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.30949v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.29823v1",
@@ -521,7 +550,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.29823v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.28971v1",
@@ -540,7 +569,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.28971v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.28279v1",
@@ -556,7 +585,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.28279v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.27243v2",
@@ -587,7 +616,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.27243v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.26294v2",
@@ -612,7 +641,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.26294v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.24151v1",
@@ -636,7 +665,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.24151v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.22955v1",
@@ -654,7 +683,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.22955v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.20318v3",
@@ -671,7 +700,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.20318v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.28374v1",
@@ -686,7 +715,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.28374v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.17628v1",
@@ -705,7 +734,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.17628v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.17546v1",
@@ -722,7 +751,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.17546v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.17220v1",
@@ -742,7 +771,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.17220v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.16682v3",
@@ -755,7 +784,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.16682v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.16420v1",
@@ -773,7 +802,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.16420v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.28368v1",
@@ -791,7 +820,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.28368v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.15363v1",
@@ -806,7 +835,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.15363v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.14249v2",
@@ -832,7 +861,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.14249v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.12780v1",
@@ -852,7 +881,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.12780v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.11182v1",
@@ -867,7 +896,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.11182v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.10316v1",
@@ -909,7 +938,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.08348v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.08091v1",
@@ -930,7 +959,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.08091v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.07462v1",
@@ -953,7 +982,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07462v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.06324v2",
@@ -971,7 +1000,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.06324v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.05404v1",
@@ -994,7 +1023,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.05404v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.03544v1",
@@ -1011,7 +1040,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.03544v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.01314v1",
@@ -1030,7 +1059,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.01314v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2606.07603v1",
@@ -1046,7 +1075,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07603v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.29341v2",
@@ -1075,7 +1104,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.29341v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.27328v1",
@@ -1088,7 +1117,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.27328v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.26112v1",
@@ -1101,7 +1130,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.26112v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.24539v1",
@@ -1119,7 +1148,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.24539v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.24117v1",
@@ -1147,7 +1176,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.24117v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.22794v2",
@@ -1167,7 +1196,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.22794v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.21997v1",
@@ -1180,7 +1209,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.21997v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.14211v3",
@@ -1196,7 +1225,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.14211v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.13119v1",
@@ -1216,7 +1245,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.13119v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.12978v1",
@@ -1235,7 +1264,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.12978v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.11117v1",
@@ -1250,7 +1279,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.11117v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.10832v2",
@@ -1273,7 +1302,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.10832v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.09650v1",
@@ -1290,7 +1319,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.09650v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.08693v2",
@@ -1309,7 +1338,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.08693v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.06822v1",
@@ -1327,7 +1356,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.06822v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2605.05170v1",
@@ -1343,7 +1372,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.05170v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2604.25850v4",
@@ -1366,7 +1395,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.25850v4",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2604.21003v3",
@@ -1382,7 +1411,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.21003v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2604.19064v1",
@@ -1400,7 +1429,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.19064v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2604.17488v1",
@@ -1417,7 +1446,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.17488v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2604.07645v1",
@@ -1431,7 +1460,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.07645v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2604.04247v1",
@@ -1457,7 +1486,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.04247v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2603.23994v2",
@@ -1482,7 +1511,7 @@
     ],
     "source": "https://arxiv.org/abs/2603.23994v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2603.10600v1",
@@ -1501,7 +1530,7 @@
     ],
     "source": "https://arxiv.org/abs/2603.10600v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2603.05872v2",
@@ -1522,7 +1551,7 @@
     ],
     "source": "https://arxiv.org/abs/2603.05872v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2603.29848v1",
@@ -1540,7 +1569,7 @@
     ],
     "source": "https://arxiv.org/abs/2603.29848v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2602.04248v1",
@@ -1557,7 +1586,7 @@
     ],
     "source": "https://arxiv.org/abs/2602.04248v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2511.06449v2",
@@ -1579,7 +1608,7 @@
     ],
     "source": "https://arxiv.org/abs/2511.06449v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "2410.13266v1",
@@ -1594,7 +1623,7 @@
     ],
     "source": "https://arxiv.org/abs/2410.13266v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   },
   {
     "id": "1806.03112v2",
@@ -1610,6 +1639,6 @@
     ],
     "source": "https://arxiv.org/abs/1806.03112v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-07-16"
+    "discovered_on": "2026-07-20"
   }
 ]
