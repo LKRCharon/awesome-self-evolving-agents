@@ -129,8 +129,15 @@ Each entry exposes the claims that matter for comparing evolution systems. `arXi
   Validation: benchmark comparison against prompt optimization baselines<br>
   Code: -
 
+- **[RewardHarness: Self-Evolving Agentic Post-Training](https://arxiv.org/abs/2605.08703)** — `arXiv 2026`<br>
+  Mutable object: `skills, tools, scoring rubrics` · Scope: `cross-session`<br>
+  Evolution loop: preference demonstrations -> reasoning-chain analysis -> skill and tool updates -> later evaluation<br>
+  Evidence: 47.4% average accuracy on EditReward-Bench and GenAI-Bench using 100 preference demonstrations<br>
+  Validation: held-out validation gate, checkpointing, and rollback of regressions beyond the exploration tolerance<br>
+  Code: [repo](https://github.com/TIGER-AI-Lab/RewardHarness)
 
-Catalog size: **12 reviewed papers**. Full records and stable fields live in [`data/papers.json`](data/papers.json).
+
+Catalog size: **13 reviewed papers**. Full records and stable fields live in [`data/papers.json`](data/papers.json).
 <!-- PAPERS:END -->
 
 The most useful questions for comparing systems are:
