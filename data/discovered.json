@@ -1,5 +1,295 @@
 [
   {
+    "id": "2608.14441v1",
+    "title": "PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments",
+    "summary": "Self-evolving agents improve future behavior from interaction experience, yet existing evaluations typically optimize under fixed execution conditions and do not test recovery after those conditions change. To address this gap, we introduce PACE-Bench (Physics Adaptation via Code Evolution), a simulator-grounded benchmark of 144 source-to-target adaptation pairs across six physics domains. Each pair links a source environment to a mutated target environment with the same goal and interface. A code-driven design that succeeds in the source fails in the target, where agents must iteratively adapt it into a working target design using diagnostic sandbox feedback within a limited attempt budget. We compare ten self-evolving methods from four paradigms. The benchmark remains far from saturated: Reflexion + Qwen3-14B succeeds on only 35.9\\% of full-benchmark pairs, while GPT-5.5 solves 66.7\\% of the Statics subset under the full budget. Together, these results show that simulator-grounded reflection is more reliable than unverified self-revision, while memory anchors agents to early designs and broad tree search explores without converging. Even revealing exact physical changes does not raise the performance ceiling, pointing to mechanism redesign rather than parameter inference as the central bottleneck. Data and code are available at https://github.com/thunlp/PACE-Bench.",
+    "published": "2026-08-14T16:25:43Z",
+    "updated": "2026-08-14T16:25:43Z",
+    "authors": [
+      "Yuhao Zhan",
+      "Bingxiang He",
+      "Zecong Tang",
+      "Chaojun Xiao"
+    ],
+    "source": "https://arxiv.org/abs/2608.14441v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.14270v1",
+    "title": "TimeSage-EV: A Live Benchmark for Agentic Time Series Analysis in Evolving Environments",
+    "summary": "Time series analysis in high-stakes domains relies on recurring data releases, where new observations can alter the evidence base and the validity of later conclusions. Existing time series QA benchmarks mostly rely on fixed snapshots, leaving temporal validity and cutoff-aware evidence use unevaluated. We introduce TimeSage-EV, a live benchmark for agentic time series analysis in evolving environments. It tracks 60 real institutional scenarios across 6 domains, comprising 1,485 scenario-period QA pairs from Feb 2023 to May 2026 and spanning monthly, weekly, daily, and irregular release cadences. At each period, large language model (LLM) agents receive time series data and source reports, while the withheld target release provides ground truth. TimeSage-EV evaluates state identification, data summarization, and outlook reasoning. Experiments with frontier LLM agents and TimeSage-1.0, a novel self-evolving agent with a reusable analytical skill library, reveal significant performance gaps across model tiers and recurring failures in temporal validity, exogenous context use, and adaptation. We release TimeSage-EV as a research resource with monthly updates, code, a leaderboard, and failure-mode analyses.",
+    "published": "2026-08-14T12:53:21Z",
+    "updated": "2026-08-14T12:53:21Z",
+    "authors": [
+      "Qingren Yao",
+      "Yaxuan Kong",
+      "Yuqi Nie",
+      "Yichen Li",
+      "Stefan Zohren",
+      "Anna Vettoruzzo",
+      "Qingsong Wen",
+      "Ming Jin",
+      "Joaquin Vanschoren"
+    ],
+    "source": "https://arxiv.org/abs/2608.14270v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.14036v1",
+    "title": "Demystifying Agent Skills: Why They Work-Until They Don't",
+    "summary": "Skills have emerged as a practical and effective approach for enhancing LLM agents at inference time through structured packages of knowledge. However, existing evaluations largely measure whether skills improve aggregated task success, leaving a more fundamental question underexplored: \\emph{\\textbf{When do skills help, why do they work, and where do they fail?}} Through controlled experiments across various benchmarks, agent harnesses and LLMs, we isolate the effects of representation, outcome annotation, retrieval difficulty, and cross-framework robustness of skills. To further answer this question, we design a contrastive study that combines controlled quantitative experiments with paired trajectory analysis. We normalize 8,135 trial records from controlled experiments and retain 238 valid unique labels from 240 open-coded records. We consolidate these observations into a taxonomy of three high-level categories and twelve skill-use modes: skills work when noisy trajectories become procedural anchors that stabilize execution. Skills improve over Workflow Memory by 6.06 points in matched comparisons. Procedural anchoring accounts for 65.7\\% of skill cases, versus 4.5\\% for explicit knowledge injection, showing that skills stabilize action rather than inject missing facts. Retrieval is a separate bottleneck: as pools grow from 5 to 100, actual-use precision falls from 29.6\\% to 3.3\\%. Confusable distractors impair offline identification, yet downstream success remains stable; exact ground-truth invocation is neither sufficient nor necessary. Skills fail under brittle assumptions, incompatible contexts, or insufficient adaptation. These findings move evaluation beyond aggregate success rates and guide reliable self-evolving agents.",
+    "published": "2026-08-14T07:26:38Z",
+    "updated": "2026-08-14T07:26:38Z",
+    "authors": [
+      "Zhiyuan Jiang",
+      "Fangrui Huang",
+      "Hanwen Xing",
+      "Xander Wu",
+      "Yipeng Gao",
+      "Rui Cao",
+      "Mengdi Wang",
+      "Shilong Liu",
+      "Yijiang Li"
+    ],
+    "source": "https://arxiv.org/abs/2608.14036v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.11654v1",
+    "title": "Towards a Formal Definition of Agent Memory: Basis, Span, Optimality, and the Sequential Memory Problem",
+    "summary": "Despite the wide deployment of memory in large-model agents, there is no unified formal account of what a memory is or when it is optimal. This paper takes a first step toward this account. The central idea is that memory is a basis, knowledge is its span, and answerability is a coverage problem: an agent stores events extracted from a material; a generation operator turns any event set into the knowledge it entails; and a query is answerable exactly when some single item in the span covers it. The optimal memory is then the capacity-constrained maximizer of expected coverage, and its value traces a utility--capacity frontier, the common yardstick on which memory systems can be compared. Next, we consider noise in the memory and discuss coverage versus precision under it: a memory may store false claims, so the write policy must infer the truth of what it stores. Drawing an analogy with biological memory, which is formed continuously through ongoing experience, we formalize the continual agent-memory problem in a sequential MDP that covers multiple levels, where memory is the state, writing is the action, and the utility settled at query time is the delayed reward that drives learning. To make the framework concrete, we instantiate it on Homer's \\emph{Odyssey}, turning the frontier, the compression zone, and the divergence of coverage from precision into concrete numbers. Finally, we position existing systems within the framework, making ``how good is a memory'' measurable and recasting the open problems of constructing and learning agent memory as concrete research questions.",
+    "published": "2026-08-12T04:54:26Z",
+    "updated": "2026-08-12T04:54:26Z",
+    "authors": [
+      "Hongyao Tang"
+    ],
+    "source": "https://arxiv.org/abs/2608.11654v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.11079v1",
+    "title": "SkillZip: Evaluation-Free Skill Compression for Self-Evolving Agents by Discovering Reusable Structure",
+    "summary": "Self-evolving agents accumulate reusable skills by appending successful procedures and failure fixes. Over time, the same requirement is often restated in several branches, examples, and warnings, while common action sequences are copied rather than reused. The resulting skill becomes expensive to inject and difficult to maintain. Generic prompt compression is ill-suited to this setting because a skill is not a flat passage: its name and description define when it applies, its workflow controls execution, its tool and output contracts constrain validity, and rare exceptions may remain essential even when no sampled task activates them. Evaluation-guided compression can test these behaviors, but it introduces rollouts, cost, and dependence on the compression-time evaluation set. We present SkillZip, an evaluation-free method that compresses a skill by finding its shortest faithful structural explanation. The intuition is explain once, reference many: state a repeated rule once at the scope where it applies, factor a repeated action sequence into a shared procedure, and keep only the differences as explicit exceptions. We formalize this intuition as a typed minimum description-length objective over a skill contract and a residual, subject to a hard coverage constraint for every extracted trigger, workflow edge, tool requirement, obligation, and output field. The formulation provides simple sharing thresholds, preserves unique rare rules by construction, and supports efficient local updates. SkillZip has a one-shot mode with one structured extraction call and deterministic optimization, and a continual Zip-on-Write mode that integrates each self-evolution patch without replaying tasks or reparsing the full history. Through comprehensive experimental evaluations, we demonstrate the effectiveness and superiority of SkillZip in compression performance, generalizability, and cost overhead.",
+    "published": "2026-08-11T15:41:19Z",
+    "updated": "2026-08-11T15:41:19Z",
+    "authors": [
+      "Xiaofan Bai",
+      "Hongqiang Lin",
+      "Chao Liu",
+      "Yantao Zhang",
+      "Xuan Jin",
+      "Xipeng Cao",
+      "Yuhong Li"
+    ],
+    "source": "https://arxiv.org/abs/2608.11079v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.10538v2",
+    "title": "SKILLER: Language-Level Reinforcement Learning for Reusable Skill Extraction in Small Language Models",
+    "summary": "Agent skills represent a standardized format for packaging procedural knowledge and domain expertise, serving within agent harness systems as an essential mechanism to continually constrain a language model's behavior space for repeatable, high-quality task execution. However, because strong closed-source models entail high inference costs, current popular agent harnesses, such as Codex and OpenClaw, remain prohibitively expensive when deploying these skills to accomplish real-world tasks. The rapid capability enhancement of open-source models deployable on consumer-grade GPUs presents a compelling opportunity to drastically reduce these costs by leveraging skill-based behavioral constraints. Nevertheless, automatically generating effective skills tailored specifically for such compact models remains a significant practical challenge. To address this, we propose SKILLER, a natural-language-driven reinforcement learning framework designed to automatically generate executor-specific skills for small models, which employs a strong model as the actor and critic, treats the small-model agent system as the environment, and propagates all reinforcement learning signals entirely via natural language. Extensive experimental evaluations across five relevant benchmarks using Qwen3.5-9B and Qwen3.5-4B demonstrate that SKILLER outperforms three open-source and one closed-source skill generation or evolution methods, achieving absolute gains ranging from 4.3 to 20.4 percentage points for the 9B model and 1.8 to 13.3 points for the 4B model, while remarkably matching the performance of strong closed-source models on single-skill tasks in SkillsBench. The project is available at https://github.com/DANG-ai/SKILLER.",
+    "published": "2026-08-11T06:22:02Z",
+    "updated": "2026-08-14T06:10:28Z",
+    "authors": [
+      "Chenhao Dang",
+      "Siyuan Xiong",
+      "Conghui He",
+      "Weijia Li"
+    ],
+    "source": "https://arxiv.org/abs/2608.10538v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.10504v1",
+    "title": "MEGA: Self-Evolving Agent Optimization Infrastructure via Wisdom Graph",
+    "summary": "As coding agents increasingly handle implementation, the central challenge shifts from building individual agents to building an infrastructure that systematically improves them. Current approaches optimize agent systems without accumulating transferable knowledge, accumulate knowledge without compositional reasoning over it, and lack a mechanism for that knowledge to self-evolve through operational evidence. MEGA (Meta Evaluation-Grounded Adaptation) addresses these gaps as a self-evolving infrastructure: each optimization cycle produces durable assets, compositional reasoning over those assets guides subsequent optimization, and operational evidence refines both the accumulated wisdom and the reasoning that governs it. Layer 1 distills reusable wisdom from agent sessions through behavioral-pattern clustering and empirical A/B validation, transforming each process into a durable asset. Layer 2 decomposes these assets into atomic PCR (Primary-Context-Resultant) units within a typed Wisdom Graph and performs deductive, abductive, and inductive reasoning to expand implicit relations; it then assembles context-specific execution plans through compositional retrieval that surfaces bridging knowledge unreachable by embedding similarity alone. Layer 3 performs multi-agent collaborative optimization over heterogeneous agent workflows (code nodes, LLM calls, and tool-using agents), attributing improvement effects to specific strategy changes through controlled evaluation that eliminates data variance. Evidence fed back from Layer 3 drives the self-evolution of both the curation strategies that govern wisdom composition and the optimization trajectories accumulated across runs. The result is an infrastructure in which optimizing an agent system and evolving the knowledge that guides optimization are one and the same process.",
+    "published": "2026-08-11T05:21:16Z",
+    "updated": "2026-08-11T05:21:16Z",
+    "authors": [
+      "Jung Hwan Lee",
+      "Kyu Ho Lee",
+      "Gwang Hoon Yoo"
+    ],
+    "source": "https://arxiv.org/abs/2608.10504v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.10494v1",
+    "title": "GeoForge: Non-Parametric Self-Evolving Agents for Earth-Observation Reasoning",
+    "summary": "Earth observation (EO) agents construct scientifically valid tool workflows and ground their conclusions in current geospatial evidence. This is challenging because EO workflows are constrained by sensing semantics, product dependencies, spatial and temporal compatibility, and parameter requirements. Existing agents often search a broad operation space for each query, while recent self-evolving systems do not fully organize heterogeneous EO trajectories into reusable knowledge across different decision levels. To solve this problem, we present GeoForge, a training-free, self-evolving framework that transforms completed trajectories into a structured nonparametric execution state. GeoForge constrains the operation space according to the sensing context, then retrieves a task-conditioned prior from three complementary memories. Workflow Graph Memory captures global operation order, Action-Level Experiences provide local corrections, and the Adapted Skill Standard Operating Procedure preserves procedural and data constraints. The retrieved prior guides tool execution, while current observations remain the basis of the final answer. After each task, a safety-gated distillation process converts grounded trajectories into reusable execution knowledge for future retrieval. This execution, distillation, and reuse loop improves planning without updating the backbone LLM. Experiments on multiple geospatial benchmarks demonstrate that GeoForge consistently improves both task accuracy and tool-use trajectory quality across diverse LLM backbones, while substantially reducing tool-planning and reasoning errors for most LLMs.",
+    "published": "2026-08-11T05:11:10Z",
+    "updated": "2026-08-11T05:11:10Z",
+    "authors": [
+      "Xin Xiao",
+      "Jiang Zhong",
+      "Junnan Zhu",
+      "Yingchao Feng",
+      "Peijin Wang",
+      "Yidan Zhang",
+      "Kaiwen Wei"
+    ],
+    "source": "https://arxiv.org/abs/2608.10494v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.10224v1",
+    "title": "Self-evolving Agentic Customer Support System at LinkedIn",
+    "summary": "Enterprise support agents operate in rapidly changing environments where policies, product capabilities, and knowledge bases evolve continuously, making static assistants brittle and costly to maintain. We present LinkedIn's self-evolving agentic support system, which integrates retrieval-augmented generation with evolutionary auto-prompting and a modular, production-aligned evaluation framework to enable safe, continuous improvement without retraining foundation models. The system treats prompts, retrieval, and evaluation as a closed-loop, versioned workflow with operational guardrails. Offline simulations and ablations show clear quality gains over vanilla RAG and baseline agents, including reduced hallucinations and improved response completeness. In a two-week user-randomized A/B test on LinkedIn's production support traffic, the integrated self-evolved workflow increased QA self-serve by 9.0 percentage points, cancellation self-serve by 4.8 points, and routing accuracy by 30.6 points. These results demonstrate a practical path to scalable, self-evolving AI agents in real-world enterprise settings.",
+    "published": "2026-08-10T20:51:18Z",
+    "updated": "2026-08-10T20:51:18Z",
+    "authors": [
+      "Chih Hui Wang",
+      "Mengdie Tu",
+      "Qianyun Zhang",
+      "Wei Wu",
+      "Lili Zhou",
+      "Mingqi Shen",
+      "Changshuai Wei"
+    ],
+    "source": "https://arxiv.org/abs/2608.10224v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.10157v1",
+    "title": "SBCO: Self-Supervised, Verifier-Grounded Harness Optimization For Planning Agents",
+    "summary": "Self-improving agents seek to reduce the human engineering effort behind AI systems by enabling them to evolve and self-improve their performance over time. Recently, methods like the Darwin Gödel Machine and the Huxley Gödel Machine have been proposed which enable open-ended, recursive self-improvement through self-reference where a coding agent edits its own code. Such self-referential self-improvement methods require that the competence required to perform the task coincides or aligns well with the competence required for self-modification which is the case for coding tasks. For domains or tasks, which do not satisfy the alignment needed, self-referential self-improvement is not available. In such cases, it is possible to adapt the above algorithms to other tasks by removing the self-referential aspect or introducing explicit self-modification of a meta-agent -- both computationally expensive, relying on population or self-modification search over many candidate agents. For planning tasks with explicit constraints, we propose a far cheaper alternative. We introduce SBCO (Self-supervised Block Coordinate Optimizer), a verifier-grounded harness optimizer in the same closed-loop, improve-from-experience family as the Gödel-machine methods, but self-supervised rather than self-referential. Given an agentic harness, SBCO learns a decomposed bank of verifiers and a harness policy via approximate block coordinate ascent, improving the agent's outputs from its own graded feedback---with a fixed meta-agent and no human labels. Across two domains SBCO matches or exceeds a customized self-modifying baseline while using 4-5.5 times less compute budget.",
+    "published": "2026-08-10T19:25:59Z",
+    "updated": "2026-08-10T19:25:59Z",
+    "authors": [
+      "Vivek Kulkarni",
+      "Sudipta Paul",
+      "Aounon Kumar",
+      "Nicholas Tzou",
+      "Srinivas Chappidi"
+    ],
+    "source": "https://arxiv.org/abs/2608.10157v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.09885v1",
+    "title": "SHE: Trajectory-driven Safety Harness Evolution for LLM Agents",
+    "summary": "The safety of large language model (LLM) agents depends not only on model weights but also on the agent harness that manages context, memory, tools, permissions, and runtime control. Existing safety mechanisms often treat the harness as a fixed deployment artifact, limiting their ability to evolve with emerging risks. Moreover, coupled functions across harness components obscure safety responsibility attribution, making localized evolution difficult. We propose Safety Harness Evolution (SHE), a framework that learns evolving safe boundaries from rollout trajectories. SHE decomposes the harness into four artifacts with explicit safety responsibilities, including the System Prompt, Rule Bank, Safety Memory, and Tool Policy, defining clear functional boundaries for localized evolution. Based on this decomposition, SHE introduces an attribution-guided evolution loop that converts trajectory failures into structured diagnoses, learns artifact-specific boundary refinements, and selects evolved harnesses through safety-utility validation. Experiments on Agent-SafetyBench demonstrate that SHE effectively enhances safety through harness evolution, achieving a 3.1x ASR reduction compared with static SafeHarness, while also improving benign utility. The evolved harness further generalizes to unseen risks on the held-out AgentHarm benchmark and transfers across agent models without additional evolution.",
+    "published": "2026-08-10T17:35:08Z",
+    "updated": "2026-08-10T17:35:08Z",
+    "authors": [
+      "Wanying Qu",
+      "Qinghua Mao",
+      "Yu Li",
+      "Jiyao Liu",
+      "Xin Zhang",
+      "Dadi Guo",
+      "Yanxu Zhu",
+      "Qingyu Liu",
+      "Leitao Yuan",
+      "Xi Lin",
+      "Shanfeng Zhu",
+      "Yanwei Fu",
+      "Jing Shao",
+      "Xia Hu",
+      "Dongrui Liu"
+    ],
+    "source": "https://arxiv.org/abs/2608.09885v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.09629v1",
+    "title": "Rethinking Self-Evolving Agents: Do We Still Need Prescribed Optimization Pipelines?",
+    "summary": "Self-evolving agents are usually built around prescribed optimization pipelines: the framework decides how to gather evidence, revise a persistent artifact, select candidates, and stop. We ask whether this task-specific procedure remains necessary when a frontier model acts as the optimizer. We introduce Open-Ended Optimization (OEO), which keeps the objective, permitted interactions, resource budget, data boundary, and evaluation fixed while allowing the optimizer to compose the improvement process online. We compare OEO with two complementary prescribed approaches: SkillOpt, a staged pipeline with bounded edits, and GEPA, a reflective evolutionary search. Across 14 head-to-head comparisons over 8 benchmark-target-model settings, GPT-5.5-driven OEO records 12 wins, 1 tie, and 1 narrow loss of 0.21 percentage points. It uses a median 34.3 percent of SkillOpt's configured target-interaction token budget. A one-shot, zero-interaction control shows that the gains are not explained by a single prior-driven rewrite. However, delegation has a capability boundary: SkillOpt outperforms OEO with a medium optimizer, and a weak optimizer cannot operate through the unchanged OEO interface. In the fully instrumented OEO-SkillOpt pair, trajectory analysis further shows that prescription changes how optimization proceeds more consistently than it changes final behavior. Together, these findings recast prescribed pipelines as capability-dependent scaffolding: essential constraints remain external, but a sufficiently capable optimizer can compose the route from measurable feedback to persistent improvement.",
+    "published": "2026-08-10T14:10:25Z",
+    "updated": "2026-08-10T14:10:25Z",
+    "authors": [
+      "Hui Xue",
+      "Fan Yang"
+    ],
+    "source": "https://arxiv.org/abs/2608.09629v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.09096v2",
+    "title": "Evo-Bench: Can Language Models Improve Agent Harness?",
+    "summary": "Large Language Models (LLMs) have driven rapid progress in autonomous agents, yet standard evaluations remain confined to static task solving. An emerging frontier is harness evolution---the agent's capacity to autonomously optimize its own operating harness. However, systematically benchmarking this capability remains challenging, as existing evaluations fail to isolate harness improvements from base model strength, prevent task-specific overfitting, or capture long-horizon iterative research. To address these challenges, we introduce Evo-Bench, the first benchmark designed to evaluate models' intrinsic harness-evolving capabilities across Search, Office, and General agent domains. To rigorously isolate this capability, Evo-Bench employs a novel harness-guided construction framework: it leverages auxiliary-task evolution to identify tasks genuinely sensitive to framework improvements, followed by sensitivity-aware stratified splitting to ensure robust cross-suite generalization. Extensive evaluations across nine frontier and open-weight models reveal that top models achieve massive absolute gains reaching 16.6 points, closely approaching state-of-the-art human-engineered baselines. Crucially, while autonomous evolution outpeforms artificial harness in General tasks and excels in Search tasks, it struggles in Office tasks that demand highly specific processing workflows. Furthermore, our analysis exposes critical temporal anomalies like early saturation, while demonstrating that the synthesized harnesses act as highly transferable reasoning structures, consistently boosting diverse policy models.",
+    "published": "2026-08-10T03:49:28Z",
+    "updated": "2026-08-11T02:53:55Z",
+    "authors": [
+      "Lisheng Huang",
+      "Chen Yang",
+      "Hao Zhou",
+      "Huatong Song",
+      "Zongchao Chen",
+      "Ran Le",
+      "Yang Song",
+      "Wayne Xin Zhao",
+      "Tao Zhang"
+    ],
+    "source": "https://arxiv.org/abs/2608.09096v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.09044v1",
+    "title": "Tree-of-Experience: Hierarchical Experience Management for Self-Evolving Agents",
+    "summary": "Continual self-evolution requires LLM agents to transform environmental interactions into reliable and reusable experience. Existing methods typically refine individual trajectories or abstract shared knowledge from related trajectories, but their experience representations are often disconnected from the underlying reasoning process. This limits feedback attribution, cross-task transfer, and update and retrieval efficiency, particularly in complex reasoning tasks with outcome-level feedback. To overcome this limitation, we propose \\textbf{T}ree-\\textbf{o}f-\\textbf{E}xperience (ToE), a structured experience-management framework that aligns experience organization with the hierarchical reasoning process of LLM agents. Specifically, ToE organizes the experience into a shared tree of analytical perspectives and reasoning paths, whose reliability is calibrated through environmental outcomes to support systematic updating, transfer, and efficient retrieval. The experimental results on \\textsc{Game of 24} and \\textsc{FinEvolveBench} show that ToE substantially improves both problem-solving performance and efficiency. On \\textsc{Game of 24}, ToE achieves a 31.4\\% relative improvement in accuracy over the experience-free ToT baseline. On \\textsc{FinEvolveBench}, ToE improves tsIC by an average of 41.24\\% over the experience-free pipeline across 12 evaluation settings, whereas conventional experience-management methods often underperform experience-free baselines.",
+    "published": "2026-08-10T02:49:38Z",
+    "updated": "2026-08-10T02:49:38Z",
+    "authors": [
+      "Zihao Deng",
+      "Yining Zhu",
+      "Leiming Wang",
+      "Jingfei Lu",
+      "Junbo Wang",
+      "Chuncheng Ran",
+      "Yu Yang",
+      "Dixuan Yang",
+      "Jikun Shen"
+    ],
+    "source": "https://arxiv.org/abs/2608.09044v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.08466v1",
+    "title": "Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses",
+    "summary": "Modern LLM agents are often improved by modifying prompts, tools, or workflows manually, while the executable scaffold surrounding the model---the \\emph{harness}---is typically treated as a fixed artifact after deployment. This work studies an alternative where the harness is \\emph{task-specific and continuously evolvable}: each task family maintains its own harness, which is hot-swapped across iterations through a fixed task-injection seam and rewritten using environment feedback. We introduce \\textbf{Hierarchical Self-Improvement (HSI)}, a framework in which a single frozen LLM $M$ operates across three hierarchical scopes: a task harness $H$ that executes tasks, an evolver that rewrites $H$, and a meta-evolver that rewrites the evolver's strategy code under a frozen outer anchor. A thinking-on/off design isolates the contribution of harness evolution by disabling reasoning during task execution while enabling it during self-modification. HSI is bounded by two factors: a \\emph{feedback-fidelity bound}, since evolution requires informative reward signals to guide selection, and a \\emph{backbone capability bound}, since harness redesign cannot overcome limitations of the frozen model. On BALROG with DeepSeek-V4-Flash-Preview as the frozen backbone, HSI achieves consistent gains over the initial harness on moderate-difficulty tasks ($+39.3$ on BabyAI, $+33.0$ on Crafter, $+25.0$ on TextWorld, and $+15.0$ on MiniHack, all in raw \\% Progress), while obtaining strong held-out generalization on BabaIsAI sub-suites ($0.98$ best-test on BreakStop and $1.00$ on GoTo from a $20\\%$ unseen split). On tasks beyond the backbone's capability (NLE), harness evolution provides no improvement. These results demonstrate task-specific harness evolution as a viable axis for improving frozen LLM agents under clear empirical limits. Code is available at https://github.com/TailinZhou/hsi.",
+    "published": "2026-08-09T04:17:11Z",
+    "updated": "2026-08-09T04:17:11Z",
+    "authors": [
+      "Tailin Zhou"
+    ],
+    "source": "https://arxiv.org/abs/2608.08466v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.08311v2",
+    "title": "Ouroboros: A Self-Developing Frontier Coding Agent with Reviewed Core Evolution",
+    "summary": "We present Ouroboros, a self-developing agent harness whose tools, prompts, context assembly, and core implementation improve through reviewed commits that become the runtime for later work. Core evolution proceeds in two modes. In recursive free evolution, improvement is itself a task, and completing one evolution cycle can schedule the next. In experience-driven core evolution, ordinary work and social interaction expose bugs, rough edges, and inefficient context construction that lead to reviewed structural changes. On Terminal-Bench 2.1, an Opus 5 run scores 86.74%, the best result reported on the benchmark. On OSWorld-Verified, an Opus 5 run reaches 90.69%, exceeding the best previously reported score. A five-rollout CL-Bench campaign achieves a normalized reward of 0.2301, setting a new state of the art. Hope is the longest-running publicly documented Ouroboros deployment. It is a 161-day living agent experiment in free evolution under governed human communication across seven surfaces. Human interaction surfaces faults and generates proposals, but the agent decides which changes to pursue. Because a self-developing agent may rewrite its own code and select new model APIs, operational safety becomes a primary design problem: guardrails must remain authoritative under evolutionary and public social pressure. Benchmark campaigns use frozen system snapshots, while Hope continues live evolution on a separate lineage.",
+    "published": "2026-08-08T19:45:22Z",
+    "updated": "2026-08-11T09:39:00Z",
+    "authors": [
+      "Anton Razzhigaev",
+      "Andrei Gritsaev",
+      "Andrei Kaznacheev",
+      "Nikita Dragunov",
+      "Roman Yampolskiy",
+      "Andrei Kuznetsov"
+    ],
+    "source": "https://arxiv.org/abs/2608.08311v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
     "id": "2608.07449v1",
     "title": "SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent",
     "summary": "LLM agents increasingly adapt to recurring tasks by accumulating procedural knowledge in skills. These skills are lightweight, reusable textual artifacts that are loaded into the agent's context without weight updates. Recent methods refine skills through iterative task execution, failure diagnosis, and trajectory-guided text-space updates. However, existing frameworks lack explicit diagnosis--outcome feedback and treat deletion as a generic edit operation rather than a dedicated mechanism for consolidating accumulated knowledge. We introduce SkillProx, a proximal-gradient-inspired forward--backward framework that couples closed-loop diagnostic evolution with utility-aware proximal refinement. Motivated by a composite objective balancing task loss and skill complexity, the forward stage re-executes diagnosis-driven edits on the same task batch, rolls back regressions, and feeds measured outcomes into subsequent diagnoses. The backward stage decomposes the resulting skill into auditable knowledge units, estimates their contributions using a frozen leave-one-out utility audit, and applies validation-gated consolidation, demotion, or removal. Experiments on in-distribution and out-of-distribution benchmarks across multiple backbone LLMs show that SkillProx improves average accuracy by 3.0 percentage points over the strongest gradient-based baseline. Component ablations demonstrate the complementary effects of closed-loop diagnosis and proximal refinement.",
@@ -18,7 +308,26 @@
     ],
     "source": "https://arxiv.org/abs/2608.07449v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.07622v1",
+    "title": "Controlled Memory Interference in Continual LLM Agents",
+    "summary": "Long-term memory enables AI agents to maintain continuity across sessions, personalize behavior, and evolve through accumulated experience. Yet memory evolution is not simply a process of storing more information: new experiences may reinforce, revise, or interfere with existing memory states. Existing systems mainly emphasize memory construction and relevance-based retrieval, but several memories may remain simultaneously relevant while differing in state, temporal validity, or authority. We introduce Controlled Memory Interference (CMI), a controlled diagnostic and data-generation framework for studying how agent memory evolves under different memory relationships. Across controlled memory evolution, benign accumulation has limited effects, whereas relationship-specific interference sharply suppresses update plasticity with little stability gain, either by blocking target-memory exposure or by disrupting its downstream use. Lexical and Dense retrieval exhibit distinct interference pathways, while poisoning is more sensitive to update-authority cues than to recency alone. Beyond diagnosis, CMI provides targeted examples for interference-aware memory learning, improving the distinction between valid updates and interference-inducing memories while preserving performance on original memory tasks. These findings show that memory evolution is shaped not only by memory scale, but also by interactions among accumulated experiences. More broadly, memory interference emerges as an important factor for reliable continual agent memory systems.",
+    "published": "2026-08-07T09:46:19Z",
+    "updated": "2026-08-07T09:46:19Z",
+    "authors": [
+      "Ao Ding",
+      "Hongzong LI",
+      "Shiqin Tang",
+      "Li Zhang",
+      "Liang Chen",
+      "Xuyang Chen",
+      "Zi Liang"
+    ],
+    "source": "https://arxiv.org/abs/2608.07622v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.06144v1",
@@ -39,7 +348,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.06144v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.06020v1",
@@ -61,7 +370,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.06020v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.05810v1",
@@ -80,7 +389,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.05810v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.05563v2",
@@ -102,7 +411,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.05563v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.04872v2",
@@ -126,7 +435,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04872v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.04761v2",
@@ -142,7 +451,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04761v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.04625v1",
@@ -163,7 +472,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04625v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.03509v2",
@@ -182,7 +491,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.03509v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.03392v1",
@@ -198,7 +507,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.03392v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.02508v2",
@@ -219,6 +528,26 @@
     "source": "https://arxiv.org/abs/2608.02508v2",
     "review_status": "unreviewed",
     "discovered_on": "2026-08-10"
+  },
+  {
+    "id": "2608.02508v3",
+    "title": "RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States",
+    "summary": "Learning-based memory systems for self-evolving LLM agents face two tightly coupled challenges. First, trajectory-indexed utilities grow with the interaction history, thereby dispersing limited feedback over an ever-expanding state space. Second, because trajectory-level rewards are jointly assigned to co-retrieved memories, irrelevant experiences may receive misleading utility updates and consequently enter the memory-reward trap. To address these challenges, we introduce Reduced-Order Memory Reinforcement Learning (RoMeRL), which represents the growing trajectory-indexed utility space using a fixed-dimensional per-task memory state factorized by outcome polarity and memory dynamics. RoMeRL incorporates new experiences through a fixed set of semantic coordinates whose contents are updated or replaced over time, thereby concentrating feedback over a bounded utility support. Theoretically, we show that this reduced-order parameterization increases the average feedback received by each utility coordinate and characterize the steady-state occupancy of erroneous coordinates under a generic coordinate-transition model. Empirically, across ALFWorld and LifelongAgentBench, RoMeRL improves task performance, reduces the Cold-Q ratio by 80.0%, increases feedback density by approximately 6.0 times, reduces the maintained memory size by 84.4%, and cuts LLM calls by 21.1%. These results show that reduced-order utility states support efficient self-evolving agent memory while limiting persistent reward contamination. Code is available at: https://github.com/YOUNG-fnxm/RoMeRL",
+    "published": "2026-08-03T17:07:50Z",
+    "updated": "2026-08-10T04:22:00Z",
+    "authors": [
+      "Yi Yang",
+      "Zhennan Chen",
+      "Yihong Zhuang",
+      "Tiehan Fan",
+      "Yinan Chen",
+      "Jian Li",
+      "Jian Yang",
+      "Ying Tai"
+    ],
+    "source": "https://arxiv.org/abs/2608.02508v3",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.01918v1",
@@ -242,7 +571,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.01918v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.01759v1",
@@ -260,7 +589,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.01759v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.00540v1",
@@ -278,7 +607,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.00540v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.00155v1",
@@ -297,7 +626,31 @@
     ],
     "source": "https://arxiv.org/abs/2608.00155v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.07545v1",
+    "title": "DarwinX: Evolving Agent Harnesses Through Natural Selection",
+    "summary": "An LLM agent's capability depends not only on model weights but on its harness: prompts, tools, skills, and control flow. Self-improvement loops already edit harnesses, yet single-lineage search is path-dependent and local wins often regress other tasks. We introduce DarwinX, which treats self-evolution as selection over a population of harnesses with the model frozen: a preserve-and-extend contract admits only variants that extend coverage without regressing, an archive keeps alternative lineages for recombination, and failure-, teacher-, and self-derived evidence share one edit interface. Fitness comes from each benchmark's own verifier: no gold solutions, no hand-picked winners. Across four benchmarks that progressively separate the evolution signal from the test, one loop adds about 17 points on average: Terminal-Bench 2.1 rises +7.7 to 83.2% on a matched base and to the verified frontier at 84.7% on a stronger one; TerminalWorld's held-out split reaches 68.3%, ahead of every off-the-shelf agent; WebArena-Infinity real-task pass@1 rises from 43.5% to 93.0% audit-clean; and a Terminal-Bench 2.1 harness transfers unchanged to SWE-bench Verified. What evolves is general agent competence, not benchmark-specific patches, so it survives changes of task, verifier, and base model. A frozen model need not be a fixed agent: harness selection turns evaluation compute into durable capability.",
+    "published": "2026-07-31T05:34:02Z",
+    "updated": "2026-07-31T05:34:02Z",
+    "authors": [
+      "Yifan Zhang",
+      "Yutong Dai",
+      "Juntao Tan",
+      "Luyu Yang",
+      "Rishi Mullur",
+      "Thai Hoang",
+      "Zhiyuan Hu",
+      "James Zhu",
+      "Phil Mui",
+      "Silvio Savarese",
+      "Ran Xu",
+      "Zeyuan Chen"
+    ],
+    "source": "https://arxiv.org/abs/2608.07545v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2608.02636v1",
@@ -321,7 +674,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.02636v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.27994v1",
@@ -334,7 +687,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.27994v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.28692v1",
@@ -352,7 +705,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.28692v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.27557v1",
@@ -368,7 +721,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.27557v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.26598v1",
@@ -395,6 +748,30 @@
     "discovered_on": "2026-08-10"
   },
   {
+    "id": "2607.26598v2",
+    "title": "Living-Harness Is an Interactive-Agent Evolver",
+    "summary": "Large language model (LLM) agents may recover from a failure within an episode or after a retry, yet the same execution failure can recur in later tasks because post-episode feedback rarely revises the persistent harness that guides future interactions. Static harnesses improve reliability through fixed tools, context, memory, and workflow structures, but remain unchanged after deployment. We propose $\\textbf{Living-Harness}$, a self-evolving agent harness that converts each completed trajectory and its evaluator signals into posterior evidence for bounded harness updates. Guided by a domain-level $\\textbf{Evolution-SOP}$ ($\\textbf{S}$tandard $\\textbf{O}$perating $\\textbf{P}$rocedure), Living-Harness extracts an episode abstraction and structured update evidence, and writes two complementary forms of procedural knowledge: episodic memory that records trigger conditions, failure patterns, and recovery actions, and a state graph that records state nodes, repair edges, and transition rules. The updated harness state is retrieved to guide future interactions, while tools and base context remain frozen, allowing procedural repairs to accumulate across evolution cycles. On eight interactive environments derived from $τ^2$-Bench and MultiWOZ-2.4, Living-Harness improves average Pass@1 over the strongest interactive baseline by 10.07 and 9.91 percentage points, respectively, and supports retrieval-only reuse of the evolved harness state across model backbones. Our code will be made publicly available soon at https://github.com/anotherbricki/Living-Harness.",
+    "published": "2026-07-29T08:20:11Z",
+    "updated": "2026-08-11T14:10:30Z",
+    "authors": [
+      "Yuetian Du",
+      "Yucheng Wang",
+      "He Xu",
+      "Jiexu Xu",
+      "Shanwen Tan",
+      "Bing Zhao",
+      "Boyu Yang",
+      "Zhijie Xu",
+      "Ming Kong",
+      "Hu Wei",
+      "Jie Liu",
+      "Qiang Zhu"
+    ],
+    "source": "https://arxiv.org/abs/2607.26598v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
     "id": "2607.26117v1",
     "title": "Try Again, Don't Look Back: Blind Resampling Outperforms Self-Repair in Small Code Models",
     "summary": "Self-repair - returning a failed program to the model together with its test output and asking for a correction - is a standard component of code agents, and is almost always evaluated against a baseline that does not retry at all. We argue that this comparison confounds the value of the feedback with the value of the extra attempt. Using a placebo-controlled design on MBPP+ at three model scales (1.5B, 3B, 7B), we compare four matched-budget retry conditions: blind resampling, a content-free failure notice, genuine execution feedback, and feedback augmented with verbal self-reflection. Blind resampling is the strongest condition below 7B, and remains statistically tied with the best condition at 7B, while consuming 2.5-5.5x fewer tokens; conditioning on the model's own failed attempt costs 6.1 points at 1.5B (p=0.006), and the informational content of execution feedback adds nothing measurable over the placebo. We attribute this to anchoring: when shown its previous attempt, a model reproduces a near-identical program in 33-68% of retries, against 2-14% under blind resampling. Two further experiments delimit the effect. Retrieved solutions to other tasks change nothing (bounded to +/-3.5 points), which localizes the harm to self-conditioning rather than context length; and reflection, the only condition that measurably weakens the anchor, remains dominated on cost. Replication rules out two competing explanations: the penalty is unchanged at full precision, and it reproduces on an independent model family. Across six configurations spanning two families and two precisions, its magnitude is predicted by baseline quality alone (r=0.96) - the cost of anchoring is the cost of committing to a bad first attempt.",
@@ -405,7 +782,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.26117v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.24300v1",
@@ -423,7 +800,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.24300v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.22511v1",
@@ -451,7 +828,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.22511v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.21461v2",
@@ -487,7 +864,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.21461v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.20019v1",
@@ -523,7 +900,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.19592v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.17352v1",
@@ -558,7 +935,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.16632v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.16352v1",
@@ -653,7 +1030,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13683v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.13285v1",
@@ -675,7 +1052,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13285v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.12790v1",
@@ -737,7 +1114,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13104v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.12254v1",
@@ -763,7 +1140,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.12254v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.13083v1",
@@ -783,7 +1160,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13083v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.11288v1",
@@ -830,6 +1207,36 @@
     "discovered_on": "2026-08-10"
   },
   {
+    "id": "2607.11175v2",
+    "title": "The Path to Self-Evolving Clinical Systems: Scaling Medical Agents from Assistance to Autonomy",
+    "summary": "The growing ability of large language models and vision-language models to jointly interpret and reason over images and text is reshaping medical imaging AI, moving it from task-specific predictors toward autonomous agents that perceive, reason, plan, remember, and act in clinical environments. This survey departs from the capability-first perspective of existing literature and instead begins from clinical deployment, asking what tasks, contamination-resistant benchmarks, and interactive training environments are required before medical agents can be trusted in practice. Medical agents are formalized as sequential decision-making systems under partial observability, together with a three-level autonomy taxonomy spanning assisted, cooperative, and fully autonomous operation. The field is organized along a unified scaling spine consisting of framework scaling, capability scaling, and environment scaling. Within this framework, clinical environment scaling, the integration of tools, data, and clinical gyms, is identified as the most actionable yet underexplored direction for agents operating in PACS, EHR, and FHIR ecosystems. Clinical self-evolution, where agents improve through interaction with their environments rather than parameter scaling alone, is further positioned as a key research frontier, drawing insights from self-improving agents, agent gyms, and test-time compute scaling. Applications across radiology, pathology, ophthalmology, and hospital workflows are examined together with deployment challenges including hallucination, cascading failures, and fairness. By consolidating more than 300 references, with particular emphasis on advances from 2025 to 2026, this survey provides a roadmap toward trustworthy, self-improving medical imaging systems for real clinical practice.",
+    "published": "2026-07-13T07:16:50Z",
+    "updated": "2026-08-12T13:35:16Z",
+    "authors": [
+      "Chunzheng Zhu",
+      "Lei Tian",
+      "Bohan Tan",
+      "Ziqi Zhou",
+      "Yuxuan Sun",
+      "Yijun Wang",
+      "Chengchao Lv",
+      "Yilin Wen",
+      "Yijun He",
+      "Jinghao Lin",
+      "Yihang Chen",
+      "Chee Wei Tan",
+      "Qianshan Wei",
+      "Lei Zhao",
+      "Bin Pu",
+      "Kenli Li",
+      "Yuan Xue",
+      "Jianxin Lin"
+    ],
+    "source": "https://arxiv.org/abs/2607.11175v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
     "id": "2607.13070v1",
     "title": "Falsifiable Release Gates for Self-Improving Systems",
     "summary": "Safety claims on self-improving agent runtimes are almost always self-graded: a policy file, a guardrail, or a README commitment. We describe falsifiable release gates, and a methodology to build and validate such systems, such that every new capability must pass a pre-specified, machine-verifiable acceptance suite before it ships, and a fixed set of standing invariants is preserved at each gate. I think we applied the method in the Antahkarana, an open runtime, via seven gates from basic observability into a self governing loop that suggests changes to its own policy. no action goes to an effector without a safety-critical property capability token minted by a control ring is exhaustively machine-checked over the one million recorded reachable state space of a bounded model and re-checked against execution traces. A purposely broken model gives the shortest counterexample, so the checker has teeth, is apparent. The self-enhancement loop is positively Constrained: the entire write surface is policy rules, tightening changes. may auto-apply loosening changes always require a human merge and a proposal autoclosed is one that mispredicts its own effect; We publish the acceptance measured results for all the seven gates, define precisely the scope of each claim (a bounded of the coordination skeleton (not the learned components) and free the runtime, either command line tools and the gate suite, so the results reproduce, and gates can run against other agent frameworks. Reviewers may repeat the single command central non-bypass in seconds.",
@@ -853,7 +1260,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13070v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.09521v1",
@@ -890,7 +1297,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09195v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.09175v1",
@@ -904,7 +1311,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09175v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.08010v1",
@@ -977,7 +1384,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05297v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.05155v1",
@@ -1036,7 +1443,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05155v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.11913v1",
@@ -1068,7 +1475,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.03691v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2607.01120v2",
@@ -1176,7 +1583,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.00017v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.29823v1",
@@ -1213,7 +1620,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.29823v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.28971v1",
@@ -1310,7 +1717,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.27243v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.26294v2",
@@ -1335,7 +1742,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.26294v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.24151v1",
@@ -1445,7 +1852,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.17546v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.17220v1",
@@ -1496,7 +1903,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.16420v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.28368v1",
@@ -1529,7 +1936,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.15363v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.14249v2",
@@ -1581,7 +1988,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.14249v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.12780v1",
@@ -1616,7 +2023,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.11182v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.10316v1",
@@ -1661,6 +2068,28 @@
     "discovered_on": "2026-08-10"
   },
   {
+    "id": "2606.08348v2",
+    "title": "Bayesian-Agent: Posterior-Guided Skill Evolution Across LLM Agent Harnesses",
+    "summary": "LLM agents increasingly rely on prompts, tools, memory, SOPs, skills, and harness feedback, yet current self-evolution pipelines often update these assets through heuristic reflection or raw success counts. Such updates are brittle when trajectories are sparse, expensive, and context-dependent. We introduce Bayesian-Agent, a native and cross-harness framework that treats reusable agent skills as Bayesian evidence objects. Bayesian-Agent records verified trajectories, maintains posterior beliefs over skill reliability and failure modes, and turns those beliefs into auditable skill actions and model-facing guardrails. This posterior view provides a finite-sample alternative to raw empirical-rate skill updates and frames prompt, context, and harness engineering as inference over the external decision environment. On RealFin-Bench, Bayesian skill evolution matches or improves the raw empirical-rate control and yields large gains on native runs. In the incremental mode, incremental repair improves SOP-Bench from 80\\% to 95\\%, Lifelong AgentBench from 90\\% to 100\\%, and RealFin-Bench from 45\\% to 65\\%. Backend and model-scaling ablations further show that posterior-guided repair can operate across BA native, MiniSWEAgent, and Claude Code, provided the harness produces verifiable task artifacts. The source code is available at https://github.com/DataArcTech/Bayesian-Agent.",
+    "published": "2026-06-06T21:40:19Z",
+    "updated": "2026-08-11T13:44:18Z",
+    "authors": [
+      "Xiaojun Wu",
+      "Cehao Yang",
+      "Honghao Liu",
+      "Xueyuan Lin",
+      "Wenjie Zhang",
+      "Zhichao Shi",
+      "Xuhui Jiang",
+      "Chengjin Xu",
+      "Jia Li",
+      "Jian Guo"
+    ],
+    "source": "https://arxiv.org/abs/2606.08348v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-17"
+  },
+  {
     "id": "2606.08091v1",
     "title": "VideoWeaver: Evaluating and Evolving Skills for Agentic Long Video Generation",
     "summary": "Recent agent frameworks such as Claude Code, Codex, and OpenClaw are strong at tool use and orchestration, but whether they can handle long video generation, a long-horizon multimodal task, remains underexplored. Unlike earlier video agents whose pipeline is handcrafted, these frameworks can build and refine their own workflows. We introduce VideoWeaver, an agent harness and benchmark that evaluates and evolves skills for long video generation, where an agent turns a single instruction into a long video by composing foundation skills into its own workflow rather than following a predefined pipeline. The benchmark has 16 task categories and 285 cases, with references spanning text, image, audio, video, and their combinations. Because errors can arise at any stage and not just in the final video, we propose an agent-as-judge that inspects both the execution trace and the final video, grounding its scores in evidence such as metadata and intermediate files. Using this feedback, we further design a skill evolution algorithm that refines and merges the agent's skills. Across multiple frameworks and models, we find that an explicit composition skill improves the generation process over using foundation skills alone, that skill evolution further improves output quality, and that performance varies notably across harness and model choices. The proposed agent-as-judge also aligns well with human judgments, especially on process metrics. Code and dataset is available at https://github.com/JianhuiWei7/VideoWeaver",
@@ -1679,7 +2108,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.08091v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.07462v1",
@@ -1702,7 +2131,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07462v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.06324v2",
@@ -1720,7 +2149,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.06324v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.05404v1",
@@ -1743,7 +2172,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.05404v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.03544v1",
@@ -1760,7 +2189,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.03544v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.01314v1",
@@ -1779,7 +2208,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.01314v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2606.07603v1",
@@ -1795,7 +2224,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07603v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2605.29341v2",
@@ -1929,7 +2358,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.21997v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2605.14211v3",
@@ -1945,7 +2374,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.14211v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2605.13119v1",
@@ -1965,7 +2394,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.13119v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2605.12978v1",
@@ -1984,7 +2413,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.12978v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2605.11117v1",
@@ -1999,7 +2428,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.11117v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2605.10832v2",
@@ -2058,7 +2487,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.08693v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2605.06822v1",
@@ -2180,7 +2609,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.07645v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2604.04247v1",
@@ -2306,7 +2735,7 @@
     ],
     "source": "https://arxiv.org/abs/2602.04248v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2511.06449v2",
@@ -2328,7 +2757,7 @@
     ],
     "source": "https://arxiv.org/abs/2511.06449v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "2410.13266v1",
@@ -2343,7 +2772,7 @@
     ],
     "source": "https://arxiv.org/abs/2410.13266v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   },
   {
     "id": "1806.03112v2",
@@ -2359,6 +2788,6 @@
     ],
     "source": "https://arxiv.org/abs/1806.03112v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-10"
+    "discovered_on": "2026-08-17"
   }
 ]
