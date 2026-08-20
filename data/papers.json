@@ -178,5 +178,20 @@
     "code": null,
     "review_status": "reviewed",
     "last_verified": "2026-07-16"
+  },
+  {
+    "id": "2605.08703",
+    "title": "RewardHarness: Self-Evolving Agentic Post-Training",
+    "year": 2026,
+    "source": "https://arxiv.org/abs/2605.08703",
+    "mutable_object": ["skills", "tools", "scoring rubrics"],
+    "evolution_scope": "cross-session",
+    "loop": "preference demonstrations -> reasoning-chain analysis -> skill and tool updates -> later evaluation",
+    "evidence": "47.4% average accuracy on EditReward-Bench and GenAI-Bench using 100 preference demonstrations",
+    "validation": "held-out validation gate, checkpointing, and rollback of regressions beyond the exploration tolerance",
+    "venue_status": "arXiv",
+    "code": "https://github.com/TIGER-AI-Lab/RewardHarness",
+    "review_status": "reviewed",
+    "last_verified": "2026-08-15"
   }
 ]
