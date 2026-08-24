@@ -1,5 +1,96 @@
 [
   {
+    "id": "2608.18066v1",
+    "title": "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification",
+    "summary": "Memory-based self-improving agents--those that learn from an online stream of tasks and improve over time by maintaining a textual memory bank--have shown great promise in recent literature. However, the reliability aspects of these methods have been critically overlooked. In this work, we conduct a comprehensive re-evaluation of two memory-based methods, broadening the scope of evaluation along two axes: (1) including multiple runs to quantify variance, and (2) randomly shuffling the tasks to investigate the effect of task order. Through these experiments, we make two observations that expose the fragility of current methods: First, agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise. Second, the agent's improvement is highly dependent on task order. Prior works often adopt default orderings that impose an implicit curriculum, acting as a hidden prerequisite for success. To better understand this fragility, we manually examine the agents' memory and hypothesize that task and environment underspecification contribute to this fragility. We validate this hypothesis by incorporating information that enables better specification, such as detailed rubrics and environment feedback, into the memory construction process. While this added information partially closes the performance degradation in previous experiments, significant gaps still remain, suggesting that other uncharacterized factors contribute to this fragility. Looking ahead, our work advocates for more rigorous evaluation protocols for self-improving agents by reporting results across multiple runs and stress-testing them under challenging conditions. Moreover, our findings on underspecification call for systems and interfaces that enable effective human oversight, preventing agents from failing in unforeseeable ways.",
+    "published": "2026-08-18T17:55:07Z",
+    "updated": "2026-08-18T17:55:07Z",
+    "authors": [
+      "Qinyuan Ye",
+      "Yu Li",
+      "Yada Pruksachatkun",
+      "Jiaxin Zhang",
+      "Chien-Sheng Wu"
+    ],
+    "source": "https://arxiv.org/abs/2608.18066v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-24"
+  },
+  {
+    "id": "2608.17684v1",
+    "title": "Auditing Self-Evolution in Financial Agents: Capability Gains, Security Drift, and Execution-Interface Mismatch",
+    "summary": "Self-evolving agents turn experience into reusable skills, workflows, or memories, but post-evolution accuracy alone does not show whether learned behavior preserves previously correct behavior or security. We audit SkillOpt, Agent Workflow Memory (AWM), and ReasoningBank in simulated e-banking using matched benign acquisition trajectories, sealed evaluation endpoints, execution-grounded checks, and independent state replay. On Qwen 3.7 Flash, SkillOpt raises benign utility from 0.741 to 0.837 while exposure to injected content rises from 0.820 to 0.943. Conditional attack success after exposure falls from 0.605 to 0.562, yet overall attack success rate (ASR) rises from 0.496 to 0.530 and unauthorized financial state changes rise to 0.685. Across three independently evolved lineages, capability, exposure, and unauthorized-state changes increase in all three, whereas ASR increases in only two. ReasoningBank raises utility to 0.859 without increasing aggregate ASR, although unauthorized state changes remain slightly above Static. AWM reveals a separate evaluation hazard: a literal WebArena text-action envelope disrupts tool execution in our native function-calling executor. In a post-hoc sensitivity test, removing only that envelope restores utility from 0.319 to 0.756, while exposure rises from 0.299 to 0.909 and ASR from 0.195 to 0.575. Auditing self-evolving financial agents therefore requires tracking regressions, attack-surface contact, unauthorized financial-state change, and artifact-executor compatibility, not accuracy alone.",
+    "published": "2026-08-18T11:57:44Z",
+    "updated": "2026-08-18T11:57:44Z",
+    "authors": [
+      "Jialong Li",
+      "Jialing Zhu"
+    ],
+    "source": "https://arxiv.org/abs/2608.17684v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-24"
+  },
+  {
+    "id": "2608.16411v1",
+    "title": "Towards Risk-free AI Agent Deployment",
+    "summary": "LLM-based agents are rapidly moving from research prototypes into the core business processes of organizations, but these agents pose deployment risks to security, compliance, and functionality. In this article, we argue that risk-free deployment must be grounded in the agent's trajectory: the recorded sequence of reasoning steps, tool invocations, and environmental observations. Trajectories are available for any agent, and many failures are visible only in the trajectory. To make agents deployable and sustainable, we advocate agent testing and debugging as a systematic research direction for detecting and mitigating these risks. This article begins with the challenges of testing agents, including the oracle problem, non-determinism, trajectory validation, and the absence of adequacy metrics. We then turn to debugging agents, from automated failure attribution to repair and self-evolution. We distill these directions into a practical deployment-readiness checklist covering the full deployment lifecycle. Finally, we identify open problems, i.e., formal adequacy metrics, root-cause attribution over long-horizon trajectories, and the reliability of self-evolving agents, that the community must address to enable trustworthy agent deployment.",
+    "published": "2026-08-17T11:07:07Z",
+    "updated": "2026-08-17T11:07:07Z",
+    "authors": [
+      "Yintong Huo",
+      "Rangeet Pan",
+      "Abhik Roychoudhury"
+    ],
+    "source": "https://arxiv.org/abs/2608.16411v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-24"
+  },
+  {
+    "id": "2608.15089v1",
+    "title": "StateM: Reaching 95.3% Raw Accuracy, or a \\$15 Frontier Run, on Terminal-Bench 2.1 via Harness Scaling",
+    "summary": "Long-horizon agents can fail even when their underlying models can solve the constituent steps. They may lose track of mutable state, fail to reactivate lessons from earlier executions, skip known procedures, or stop prematurely. We bet on harness scaling to improve the execution system around an agent without changing its model weights. We introduce StateM, an agent-native runtime that organizes execution around durable states, phase-local context, checked transitions, recoverable runbooks, and versioned procedural practices that agents and users can inspect together. On Terminal-Bench 2.1, StateM raises GPT-5.5 xhigh to 92.1\\%, versus 83.1\\% reference and GPT-5.6 Sol Ultra at 91.9\\%. The runbook transfers unchanged to GPT-5.6. With GPT-5.6 Sol xhigh, StateM reaches 95.3\\% raw accuracy across 445 trials and succeeds on all 89 tasks at least once. The frozen profile raises GPT-5.6 Luna from 76.7 to 85.4\\%, above the 84.9\\% Sol xhigh reference. Using the same runtime, runbook structure, and golden rules, less than \\$38 of adaptation raises DeepSeek-V4 Flash from 82.7 to 88.1\\% under standard timeouts and to 89.1\\% on an 88-task common core. Extending only the remaining latency-sensitive task matches the reported 88.8\\% GPT-5.6 Sol max result. Final-score API usage is about \\$15 versus \\$574.68 for the GPT reference; total DeepSeek expenditure is \\$52.22. On BusinessBench, family-specific runbooks built on development sets yield held-out gains of 0.55 macro and 1.34 micro points; two mechanism-matched families improve by 10.04 points. Concrete rules generalize when tasks share execution structure, while the control methodology applies broadly. StateM turns selected postmortem findings into persistent, executable preconditions and practices, making learned controls explicit and enforceable through stateful controls. Code at github.com/henryqin1997/statem.",
+    "published": "2026-08-15T07:16:28Z",
+    "updated": "2026-08-15T07:16:28Z",
+    "authors": [
+      "Ziheng Qin",
+      "Yaxin Lu",
+      "Zhangyang Atlas Wang",
+      "Kai Wang"
+    ],
+    "source": "https://arxiv.org/abs/2608.15089v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-24"
+  },
+  {
+    "id": "2608.15071v1",
+    "title": "Evo-Harness: Context-to-Harness Skill Compilation for Self-Evolving Agents",
+    "summary": "Learning from experience is critical for developing capable, self-improving large language model (LLM) agents. Existing methods typically extract knowledge from accumulated trajectories via reflection, memory, rules, or skills. However, agents in realistic environments continuously encounter novel tasks, often offering only a one-shot opportunity to improve. These executions yield rich but highly noisy contexts, entangling broadly useful lessons with task-specific artifacts. Critically, prior works rarely validate their effectiveness on complex real-world tasks or isolate the underlying drivers of improvement. To address these gaps, we formulate online harness learning, where a frozen agent improves by continually updating a structured harness across sequential tasks. This formulation enables a systematic study of key self-improvement factors through our proposed Evo-Harness. At its core, context-to-harness skill compilation distills noisy, single-shot executions into reusable skill harnesses for cross-domain and topic-level adaptation. To demonstrate the efficacy of one-shot skill compilation, we evaluate across five realistic benchmarks (TerminalBench2, SWE-bench, CL-Bench, -bench, WebArena-Infinity). Our extensive analysis demonstrates the effectiveness of Evo-Harness and provides a principled understanding of how LLM agents can effectively learn on the fly. Our code is available at https://github.com/A-EVO-Lab/a-evolve/tree/release/evo-harness.",
+    "published": "2026-08-15T06:43:56Z",
+    "updated": "2026-08-15T06:43:56Z",
+    "authors": [
+      "Tianxin Wei",
+      "Zhan Shi",
+      "Minhua Lin",
+      "Bing He",
+      "Zewen Liu",
+      "Yisi Sang",
+      "Yuanchen Bei",
+      "Xuying Ning",
+      "Jiaru Zou",
+      "Ting-Wei Li",
+      "Xiao Lin",
+      "Yanjun Zhao",
+      "Chi Wang",
+      "Benoit Dumoulin",
+      "Dakuo Wang",
+      "Jingrui He",
+      "Hanqing Lu"
+    ],
+    "source": "https://arxiv.org/abs/2608.15071v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-24"
+  },
+  {
     "id": "2608.14441v1",
     "title": "PACE-Bench: Benchmarking Physics Adaptation via Code Evolution in Dynamic Environments",
     "summary": "Self-evolving agents improve future behavior from interaction experience, yet existing evaluations typically optimize under fixed execution conditions and do not test recovery after those conditions change. To address this gap, we introduce PACE-Bench (Physics Adaptation via Code Evolution), a simulator-grounded benchmark of 144 source-to-target adaptation pairs across six physics domains. Each pair links a source environment to a mutated target environment with the same goal and interface. A code-driven design that succeeds in the source fails in the target, where agents must iteratively adapt it into a working target design using diagnostic sandbox feedback within a limited attempt budget. We compare ten self-evolving methods from four paradigms. The benchmark remains far from saturated: Reflexion + Qwen3-14B succeeds on only 35.9\\% of full-benchmark pairs, while GPT-5.5 solves 66.7\\% of the Statics subset under the full budget. Together, these results show that simulator-grounded reflection is more reliable than unverified self-revision, while memory anchors agents to early designs and broad tree search explores without converging. Even revealing exact physical changes does not raise the performance ceiling, pointing to mechanism redesign rather than parameter inference as the central bottleneck. Data and code are available at https://github.com/thunlp/PACE-Bench.",
@@ -13,7 +104,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.14441v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.14270v1",
@@ -34,7 +125,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.14270v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.14036v1",
@@ -55,7 +146,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.14036v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.11654v1",
@@ -68,7 +159,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.11654v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.11079v1",
@@ -90,6 +181,25 @@
     "discovered_on": "2026-08-17"
   },
   {
+    "id": "2608.11079v2",
+    "title": "SkillZip: Evaluation-Free Skill Compression for Self-Evolving Agents by Discovering Reusable Structure",
+    "summary": "Self-evolving agents accumulate reusable skills by appending successful procedures and failure fixes. Over time, the same requirement is often restated in several branches, examples, and warnings, while common action sequences are copied rather than reused. The resulting skill becomes expensive to inject and difficult to maintain. Generic prompt compression is ill-suited to this setting because a skill is not a flat passage: its name and description define when it applies, its workflow controls execution, its tool and output contracts constrain validity, and rare exceptions may remain essential even when no sampled task activates them. Evaluation-guided compression can test these behaviors, but it introduces rollouts, cost, and dependence on the compression-time evaluation set. We present SkillZip, an evaluation-free method that compresses a skill by finding its shortest faithful structural explanation. The intuition is explain once, reference many: state a repeated rule once at the scope where it applies, factor a repeated action sequence into a shared procedure, and keep only the differences as explicit exceptions. We formalize this intuition as a typed minimum description-length objective over a skill contract and a residual, subject to a hard coverage constraint for every extracted trigger, workflow edge, tool requirement, obligation, and output field. The formulation provides simple sharing thresholds, preserves unique rare rules by construction, and supports efficient local updates. SkillZip has a one-shot mode with one structured extraction call and deterministic optimization, and a continual Zip-on-Write mode that integrates each self-evolution patch without replaying tasks or reparsing the full history. Through comprehensive experimental evaluations, we demonstrate the effectiveness and superiority of SkillZip in compression performance, generalizability, and cost overhead.",
+    "published": "2026-08-11T15:41:19Z",
+    "updated": "2026-08-16T16:13:50Z",
+    "authors": [
+      "Xiaofan Bai",
+      "Hongqiang Lin",
+      "Chao Liu",
+      "Yantao Zhang",
+      "Xuan Jin",
+      "Xipeng Cao",
+      "Yuhong Li"
+    ],
+    "source": "https://arxiv.org/abs/2608.11079v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-24"
+  },
+  {
     "id": "2608.10538v2",
     "title": "SKILLER: Language-Level Reinforcement Learning for Reusable Skill Extraction in Small Language Models",
     "summary": "Agent skills represent a standardized format for packaging procedural knowledge and domain expertise, serving within agent harness systems as an essential mechanism to continually constrain a language model's behavior space for repeatable, high-quality task execution. However, because strong closed-source models entail high inference costs, current popular agent harnesses, such as Codex and OpenClaw, remain prohibitively expensive when deploying these skills to accomplish real-world tasks. The rapid capability enhancement of open-source models deployable on consumer-grade GPUs presents a compelling opportunity to drastically reduce these costs by leveraging skill-based behavioral constraints. Nevertheless, automatically generating effective skills tailored specifically for such compact models remains a significant practical challenge. To address this, we propose SKILLER, a natural-language-driven reinforcement learning framework designed to automatically generate executor-specific skills for small models, which employs a strong model as the actor and critic, treats the small-model agent system as the environment, and propagates all reinforcement learning signals entirely via natural language. Extensive experimental evaluations across five relevant benchmarks using Qwen3.5-9B and Qwen3.5-4B demonstrate that SKILLER outperforms three open-source and one closed-source skill generation or evolution methods, achieving absolute gains ranging from 4.3 to 20.4 percentage points for the 9B model and 1.8 to 13.3 points for the 4B model, while remarkably matching the performance of strong closed-source models on single-skill tasks in SkillsBench. The project is available at https://github.com/DANG-ai/SKILLER.",
@@ -103,7 +213,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10538v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.10504v1",
@@ -118,7 +228,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10504v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.10494v1",
@@ -137,7 +247,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10494v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.10224v1",
@@ -156,7 +266,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10224v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.10157v1",
@@ -173,7 +283,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10157v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.09885v1",
@@ -200,7 +310,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.09885v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.09629v1",
@@ -214,7 +324,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.09629v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.09096v2",
@@ -235,7 +345,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.09096v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.09044v1",
@@ -259,6 +369,23 @@
     "discovered_on": "2026-08-17"
   },
   {
+    "id": "2608.09044v2",
+    "title": "Tree-of-Experience: Hierarchical Experience Management for Self-Evolving Agents",
+    "summary": "Continual self-evolution requires LLM agents to transform environmental interactions into reliable and reusable experience. Existing methods typically refine individual trajectories or abstract shared knowledge from related trajectories, but their experience representations are often disconnected from the underlying reasoning process. This limits feedback attribution, cross-task transfer, and update and retrieval efficiency, particularly in complex reasoning tasks with outcome-level feedback. To overcome this limitation, we propose \\textbf{T}ree-\\textbf{o}f-\\textbf{E}xperience (ToE), a structured experience-management framework that aligns experience organization with the hierarchical reasoning process of LLM agents. Specifically, ToE organizes the experience into a shared tree of analytical perspectives and reasoning paths, whose reliability is calibrated through environmental outcomes to support systematic updating, transfer, and efficient retrieval. The experimental results on \\textsc{Game of 24} and \\textsc{FinEvolveBench} show that ToE substantially improves both problem-solving performance and efficiency. On \\textsc{Game of 24}, ToE achieves a 31.4\\% relative improvement in accuracy over the experience-free ToT baseline. On \\textsc{FinEvolveBench}, ToE improves tsIC by an average of 41.24\\% over the experience-free pipeline across 12 evaluation settings, whereas conventional experience-management methods often underperform experience-free baselines.",
+    "published": "2026-08-10T02:49:38Z",
+    "updated": "2026-08-21T09:01:00Z",
+    "authors": [
+      "Zihao Deng",
+      "Yining Zhu",
+      "Leiming Wang",
+      "Junbo Wang",
+      "Jingfei Lu"
+    ],
+    "source": "https://arxiv.org/abs/2608.09044v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-24"
+  },
+  {
     "id": "2608.08466v1",
     "title": "Hierarchical Self-Improvement: A Framework for Task-Specific Evolvable Agent Harnesses",
     "summary": "Modern LLM agents are often improved by modifying prompts, tools, or workflows manually, while the executable scaffold surrounding the model---the \\emph{harness}---is typically treated as a fixed artifact after deployment. This work studies an alternative where the harness is \\emph{task-specific and continuously evolvable}: each task family maintains its own harness, which is hot-swapped across iterations through a fixed task-injection seam and rewritten using environment feedback. We introduce \\textbf{Hierarchical Self-Improvement (HSI)}, a framework in which a single frozen LLM $M$ operates across three hierarchical scopes: a task harness $H$ that executes tasks, an evolver that rewrites $H$, and a meta-evolver that rewrites the evolver's strategy code under a frozen outer anchor. A thinking-on/off design isolates the contribution of harness evolution by disabling reasoning during task execution while enabling it during self-modification. HSI is bounded by two factors: a \\emph{feedback-fidelity bound}, since evolution requires informative reward signals to guide selection, and a \\emph{backbone capability bound}, since harness redesign cannot overcome limitations of the frozen model. On BALROG with DeepSeek-V4-Flash-Preview as the frozen backbone, HSI achieves consistent gains over the initial harness on moderate-difficulty tasks ($+39.3$ on BabyAI, $+33.0$ on Crafter, $+25.0$ on TextWorld, and $+15.0$ on MiniHack, all in raw \\% Progress), while obtaining strong held-out generalization on BabaIsAI sub-suites ($0.98$ best-test on BreakStop and $1.00$ on GoTo from a $20\\%$ unseen split). On tasks beyond the backbone's capability (NLE), harness evolution provides no improvement. These results demonstrate task-specific harness evolution as a viable axis for improving frozen LLM agents under clear empirical limits. Code is available at https://github.com/TailinZhou/hsi.",
@@ -269,7 +396,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.08466v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.08311v2",
@@ -287,7 +414,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.08311v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.07449v1",
@@ -308,7 +435,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07449v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.07622v1",
@@ -327,7 +454,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07622v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.06144v1",
@@ -348,7 +475,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.06144v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.06020v1",
@@ -370,7 +497,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.06020v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.05810v1",
@@ -389,7 +516,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.05810v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.05563v2",
@@ -411,7 +538,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.05563v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.04872v2",
@@ -435,7 +562,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04872v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.04761v2",
@@ -451,7 +578,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04761v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.04625v1",
@@ -472,7 +599,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04625v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.03509v2",
@@ -491,7 +618,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.03509v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.03392v1",
@@ -508,6 +635,22 @@
     "source": "https://arxiv.org/abs/2608.03392v1",
     "review_status": "unreviewed",
     "discovered_on": "2026-08-17"
+  },
+  {
+    "id": "2608.03392v2",
+    "title": "Self-Evolving Coding Agents",
+    "summary": "Large language models are increasingly embedded in software engineering workflows as coding agents that can inspect repositories, invoke tools, execute tests, debug failures, and generate patches. Yet most existing agents remain largely static after deployment, even though software development is a dynamic, feedback-rich process in which repositories evolve, dependencies change, tests fail, and repair attempts leave reusable experience. This tension has motivated a growing body of work on self-evolving coding agents, where the agent improves its future behavior by persistently updating its framework, memory, skills and tools, model-side components, workflow and topology, or environment and context from prior coding interactions. In this survey, we provide a structured synthesis of this emerging area. We first define self-evolving coding agents and distinguish them from conventional coding agents and general self-evolving agents. We then develop a target-centered taxonomy that characterizes what evolves in these systems, and complement it with two orthogonal perspectives: when evolution occurs and what code-specific signals drive it. We further examine the benchmarks used to measure adaptation and the early appearance of related mechanisms in deployed coding products. Across the literature, we find that executable feedback, repository-level context, and coding trajectories make software engineering a natural domain for agent self-evolution, but also introduce challenges in feedback reliability, benchmark overfitting, reversibility, system complexity, safety, cost, and generalization. By organizing existing work around these dimensions, this survey aims to clarify the conceptual boundaries of self-evolving coding agents and provide a foundation for designing more adaptive, reliable, and software-aware agentic systems.",
+    "published": "2026-08-04T09:43:46Z",
+    "updated": "2026-08-20T06:07:25Z",
+    "authors": [
+      "Hao Zhou",
+      "Haichuan Hu",
+      "Ye Shang",
+      "Quanjun Zhang"
+    ],
+    "source": "https://arxiv.org/abs/2608.03392v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.02508v2",
@@ -547,7 +690,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.02508v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.01918v1",
@@ -571,7 +714,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.01918v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.01759v1",
@@ -589,7 +732,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.01759v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.00540v1",
@@ -607,7 +750,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.00540v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.00155v1",
@@ -650,7 +793,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07545v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2608.02636v1",
@@ -687,7 +830,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.27994v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.28692v1",
@@ -769,7 +912,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.26598v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.26117v1",
@@ -782,7 +925,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.26117v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.24300v1",
@@ -800,7 +943,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.24300v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.22511v1",
@@ -828,7 +971,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.22511v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.21461v2",
@@ -864,7 +1007,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.21461v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.20019v1",
@@ -900,7 +1043,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.19592v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.17352v1",
@@ -935,7 +1078,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.16632v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.16352v1",
@@ -1030,7 +1173,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13683v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.13285v1",
@@ -1052,7 +1195,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13285v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.12790v1",
@@ -1114,7 +1257,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13104v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.12254v1",
@@ -1140,7 +1283,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.12254v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.13083v1",
@@ -1160,7 +1303,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13083v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.11288v1",
@@ -1234,7 +1377,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.11175v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.13070v1",
@@ -1260,7 +1403,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13070v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.09521v1",
@@ -1297,7 +1440,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09195v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.09175v1",
@@ -1311,7 +1454,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09175v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.08010v1",
@@ -1384,7 +1527,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05297v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.05155v1",
@@ -1443,7 +1586,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05155v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.11913v1",
@@ -1475,7 +1618,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.03691v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2607.01120v2",
@@ -1583,7 +1726,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.00017v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.29823v1",
@@ -1620,7 +1763,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.29823v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.28971v1",
@@ -1717,7 +1860,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.27243v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.26294v2",
@@ -1742,7 +1885,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.26294v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.24151v1",
@@ -1852,7 +1995,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.17546v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.17220v1",
@@ -1903,7 +2046,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.16420v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.28368v1",
@@ -1936,7 +2079,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.15363v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.14249v2",
@@ -1988,7 +2131,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.14249v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.12780v1",
@@ -2023,7 +2166,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.11182v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.10316v1",
@@ -2087,7 +2230,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.08348v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.08091v1",
@@ -2108,7 +2251,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.08091v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.07462v1",
@@ -2131,7 +2274,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07462v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.06324v2",
@@ -2149,7 +2292,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.06324v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.05404v1",
@@ -2172,7 +2315,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.05404v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.03544v1",
@@ -2189,7 +2332,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.03544v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.01314v1",
@@ -2208,7 +2351,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.01314v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2606.07603v1",
@@ -2224,7 +2367,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07603v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2605.29341v2",
@@ -2358,7 +2501,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.21997v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2605.14211v3",
@@ -2374,7 +2517,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.14211v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2605.13119v1",
@@ -2394,7 +2537,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.13119v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2605.12978v1",
@@ -2413,7 +2556,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.12978v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2605.11117v1",
@@ -2428,7 +2571,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.11117v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2605.10832v2",
@@ -2609,7 +2752,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.07645v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2604.04247v1",
@@ -2735,7 +2878,7 @@
     ],
     "source": "https://arxiv.org/abs/2602.04248v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2511.06449v2",
@@ -2757,7 +2900,7 @@
     ],
     "source": "https://arxiv.org/abs/2511.06449v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "2410.13266v1",
@@ -2772,7 +2915,7 @@
     ],
     "source": "https://arxiv.org/abs/2410.13266v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   },
   {
     "id": "1806.03112v2",
@@ -2788,6 +2931,6 @@
     ],
     "source": "https://arxiv.org/abs/1806.03112v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-17"
+    "discovered_on": "2026-08-24"
   }
 ]
