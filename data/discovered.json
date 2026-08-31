@@ -1,5 +1,181 @@
 [
   {
+    "id": "2608.28363v1",
+    "title": "EvoUndo: Recoverability-Constrained Self-Evolution for LLM Agent Harnesses",
+    "summary": "LLM agents increasingly modify their own prompts, tools, middleware, resources, and execution harnesses at runtime. Such self-evolution can improve capability, but a successful mutation may leave persistent effects that cannot be safely reversed in states different from the one in which it was created. We introduce EvoUndo, a framework for representing, synthesizing, diagnosing, and independently verifying recoverability of model-generated self-modifications across counterfactual states. Across 600 unseen one-shot self-evolution tasks, we identify 197 capability-improving mutations that fail recoverability verification. Under the original recovery representation, conventional repair strategies recover 0/197 of these natural failures. Deterministic oracle analysis recovers 48/197 under the original recovery language L0, while the extended recovery calculus increases empirical oracle recovery to 191/197. A protocol-locked 2x2 grounding-by-expressivity intervention then separates two bottlenecks: exact state-address grounding increases successful recovery from 0/48 to 38/48 (79.2%) when the original language is sufficient, while extending the recovery language enables recovery on 142/143 (99.3%) failures in the oracle-defined S1 stratum. On the primary gpt-oss-120b backbone, adding exact-address diagnostics to the richer language reduces recovery to 133/143 (93.0%); a Qwen3.8-27B replication preserves the grounding and expressivity effects but not this negative interaction, indicating that the latter is model-dependent. These results indicate that reliable agent self-evolution requires co-designing verification, state grounding, witness semantics, and recovery-language expressivity rather than relying on iterative prompting alone.",
+    "published": "2026-08-28T14:15:36Z",
+    "updated": "2026-08-28T14:15:36Z",
+    "authors": [
+      "Tanmay Sah",
+      "Dolly Sah",
+      "Harshul Jain",
+      "Tanya Sah"
+    ],
+    "source": "https://arxiv.org/abs/2608.28363v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
+    "id": "2608.27311v1",
+    "title": "Verify Smarter, Evolve Further: Efficient Harness Evolution through Behavior-Aware Verification",
+    "summary": "Agent harnesses shape how language-model agents use instructions, tools, and runtime components, but adapting these harnesses requires costly verification. Existing propose-and-verify methods typically score every candidate on a fixed task set, wasting rollouts on unrelated behaviors and allowing aggregate scores to obscure specific regressions. We introduce HarnessLens, a budget-aware framework for automated harness evolution. HarnessLens jointly explores the task space and user-configurable components, derives candidate modifications from execution trajectories, and selectively verifies each candidate on behavior-relevant tasks using an attributable-evidence gate. Across three agent harnesses and four benchmarks, HarnessLens improves average held-out performance by 7.6-13.6% while consuming substantially less evaluation budget than competing baselines. These results demonstrate that behavior-aware verification with explicit attribution enables more reliable and sample-efficient harness evolution under constrained interaction budgets. Our code is available at https://github.com/jhxu5214/HarnessLens.",
+    "published": "2026-08-27T16:12:23Z",
+    "updated": "2026-08-27T16:12:23Z",
+    "authors": [
+      "Jinghan Xu",
+      "Yikai Zhang",
+      "Aili Chen",
+      "Weiyuan Li",
+      "Jiaqing Liang",
+      "Deqing Yang"
+    ],
+    "source": "https://arxiv.org/abs/2608.27311v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
+    "id": "2608.25593v1",
+    "title": "JIT-Agent: Scaling Harness Intelligence via Just-in-Time Harness Evolution",
+    "summary": "Agent capability is not determined by the model alone. The agent harness, encompassing memory management, planning strategy, action protocol, and tool/skill orchestration, can dominate the contribution of the underlying foundation model. Yet harness design remains manual, task-specific, and fundamentally unscalable. We present JIT-Agent, a harness intelligence model trained to synthesize task-adaptive agent harnesses on the fly for arbitrary off-the-shelf agentic LLMs. We formalize the agent harness as a composable, machine-generatable artifact governed by a fixed four-module protocol, and train JIT-Agent to customize harnesses for a given task at hand, repair harnesses for stable and reliable execution, and self-evolve by distilling performance signals from an expanding archive of prior harness configurations. Equipped with JIT-Agent as a harness helper, DeepSeek-V4-Flash surpasses GPT-5.6 on DeepSearchQA (+9.1) and OdysseyBench (+4.3), while the already strong GLM-5.2 gains up to +20.2 points. Across controlled evaluations, JIT-Agent-generated harnesses are performance-competitive with mature agent runtimes such as OpenCode and Claude Code and consistently improve multi-scale model families of DeepSeek V4, Mimo-V2.5, and Qwen3.6. To our knowledge, JIT-Agent is the first model purpose-built for just-in-time harness generation, establishing harness intelligence as a trainable, transferable, and compounding dimension of agent capability orthogonal to model scaling.",
+    "published": "2026-08-26T10:05:33Z",
+    "updated": "2026-08-26T10:05:33Z",
+    "authors": [
+      "Guibin Zhang",
+      "Leo Lu",
+      "Fangzhou Xie",
+      "Kang Zhu",
+      "Junhao Wang",
+      "Zhifei Xie",
+      "Zhaochen Yu",
+      "Zihang Liu",
+      "Zhongxiang Sun",
+      "Qiankun Li",
+      "Yue Liao",
+      "Heng Chang",
+      "Xiaobin Hu",
+      "Qibing Ren",
+      "Wangchunshu Zhou",
+      "Shuicheng Yan"
+    ],
+    "source": "https://arxiv.org/abs/2608.25593v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
+    "id": "2608.25512v1",
+    "title": "A Programming Paradigm for Spatiotemporal Composability",
+    "summary": "Modern software -- from plugin systems to self-evolving agent harnesses -- increasingly requires dynamic composition, yet its formal foundations remain underdeveloped. We identify two orthogonal dimensions of the problem: temporal composability, the ability to completely revert a component's side effects upon removal, and spatial composability, the ability to declare and reactively manage inter-component dependencies. We address the two dimensions by lifting classical effect and coeffect concepts to runtime mechanisms. In particular, we formalize revertible effects, in which every context transformation carries an inverse that the runtime holds, establishing temporal composability local to one component. We formalize reactive coeffects, in which every context change is classified against a component's coeffect specification to drive its activation and deactivation, establishing spatial composability local to one component. We then unify the effect context and the coeffect context into a single context type and mediate every effect and coeffect through it, yielding a discipline we call the context paradigm; the mediation induces an observational equivalence up to which the effects of distinct components interleave without disturbing one another. Combining these mechanisms into the notion of a component, we give a calculus of dynamic composition whose metatheory carries spatiotemporal composability from a single component to a whole system of interleaved components. We implement these ideas in Cordis, a meta-framework of spatiotemporal composability that provides a core library with effect tracking and coeffect resolution, as well as a declarative component loader with configuration reconciliation and hot module replacement.",
+    "published": "2026-08-26T08:22:19Z",
+    "updated": "2026-08-26T08:22:19Z",
+    "authors": [
+      "Yifan Shi",
+      "Wei Zhang",
+      "Tianyi Cui"
+    ],
+    "source": "https://arxiv.org/abs/2608.25512v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
+    "id": "2608.24876v1",
+    "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
+    "summary": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architecture for long-horizon agent harnesses, in which Working Memory tracks task progress and guides skill selection from Experiential Memory, grounding skill use in current needs rather than the full history. This coupling also turns execution into structured evidence that localizes failures to specific memory components. Across tasks, a fixed Meta-Agent turns that evidence into localized, validation-gated updates to Skill Memory that reshape execution and yield new evidence, forming a bounded recursive memory-evolution loop. Across four long-horizon benchmarks and ten models, Recuris improves task success in 35 of the 37 completed model-benchmark pairs, carrying frontier models to SOTA-level task success: on tau-bench it adds +17.8 points to GPT-5.6 Sol and +15.6 to Claude Opus 5, taking Opus 5 to 87.9%, and +16.6/+13.5 points on Qwen3.6-27B/35B on SkillFlow. The advantage widens as the interaction horizon grows, to +32.2 points on the longest tasks, and common long-horizon failures fall by up to 80%. These results position recursively evolving memory as a scalable foundation for RSI, enabling agents to continuously transform accumulated experience into increasingly effective long-horizon behavior. Code: https://github.com/Gen-Verse/Recuris",
+    "published": "2026-08-25T17:56:35Z",
+    "updated": "2026-08-25T17:56:35Z",
+    "authors": [
+      "Zhaochen Yu",
+      "Yingcheng Wu",
+      "Zhenfei Yin",
+      "Kaiyuan Chen",
+      "Zhe Zhao",
+      "Mengdi Wang",
+      "Shuicheng Yan",
+      "Ling Yang"
+    ],
+    "source": "https://arxiv.org/abs/2608.24876v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
+    "id": "2608.24804v1",
+    "title": "StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments",
+    "summary": "We present StarHarness, a framework for evolving environment-specific agent harnesses while keeping model weights fixed. The evolved harness can include prompt and task framing, tool interfaces, skills, MCP-backed providers, subagent structure, and agent-loop configuration. StarHarness constructs a compact evolution pool by stratifying tasks according to baseline failure behavior, separates proposer-visible search tasks from proposer-hidden selection tasks, and reserves held-out tasks for evaluating generalization. Across ITBench SRE, EnterpriseOps-Gym ITSM, and AutomationBench Finance, harness evolution improves full-benchmark performance by 20-35 percentage points over the default harness after 4-12 accepted changes per environment. These gains persist on tasks excluded from evolution and transfer without re-evolution across GPT and Qwen model families. Trace analysis links the improvements to interface repairs, environment conventions, and operational knowledge that compresses search, with fewer false-positive diagnoses and shorter trajectories in several settings. StarHarness therefore offers a practical way to reduce persistent model-environment mismatch in tool-rich enterprise tasks.",
+    "published": "2026-08-25T16:48:05Z",
+    "updated": "2026-08-25T16:48:05Z",
+    "authors": [
+      "Esakkivel Esakkiraja",
+      "Denis Akhiyarov",
+      "Vikas Yadav",
+      "Sai Rajeswar",
+      "Patrice Bechard",
+      "Sridhar Nemala",
+      "Sagar Davasam"
+    ],
+    "source": "https://arxiv.org/abs/2608.24804v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
+    "id": "2608.24735v1",
+    "title": "Meta$^n$: Recursive Self-Improvement through Emergent Depth",
+    "summary": "Self-improving LLM agents refine answers, not the process that produces those answers. Systems that add a meta-level hold that level fixed, and those that edit themselves must leave part of their own editing machinery untouched to stay stable, capping the meta-depth they realize at roughly two. We present Meta$^n$, which keeps the meta-operation fixed and recurses on its input instead. That operation, $Ω$, is applied repeatedly to its own products, reading the traces of the solver stack below together with the code that produced them, then writing the next layer as a strategic pre-process and a library of callable helpers. Because $Ω$ never changes, it cannot destabilize the system, and because its input strictly grows, each layer reasons from a higher vantage than the last. Depth is set by convergence rather than fixed in advance, and an evolutionary archive searches over layer chains. Across two backbones, Meta$^n$ outperforms prior self-improving agents on all eight benchmark families. The sharpest case is ARC-AGI-2, built to resist skill memorization, where it alone scores above zero. Ablations indicate that most of the gain from recursion comes from the conditioning each layer passes to the next, and distinct layer roles emerge with depth although no prompt prescribes them. Code available at https://github.com/minnesotanlp/meta-n",
+    "published": "2026-08-25T15:44:25Z",
+    "updated": "2026-08-25T15:44:25Z",
+    "authors": [
+      "Zae Myung Kim",
+      "Young-Jun Lee",
+      "Seungyeon Jwa",
+      "Dongyeop Kang"
+    ],
+    "source": "https://arxiv.org/abs/2608.24735v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
+    "id": "2608.22610v1",
+    "title": "Coalition-Aware Skill Reliability for Self-Evolving Agents",
+    "summary": "Agent skills, structured artifacts distilled from interaction trajectories and dynamically reused from skill banks, have become a central mechanism for enabling large language model (LLM)-based self-evolving agents to learn from past experience. Yet existing work has largely focused on the operational aspects of skills, such as acquisition, evolution, and retrieval, while leaving a more fundamental reliability question unresolved: Do accumulated skills in an agent's skill bank actually make positive mechanistic contributions? We investigate this question through systematic skill-bank audits across alternative bank compositions and deployment domains, measuring the resulting changes in agent behavior. These audits reveal two recurring reliability failures: coalition pollution, where bank-level gains conceal negative coalition-level skill contributions, and cross-domain utility reversal, where source-beneficial skills reverse their effects after transfer. These findings motivate two reliability interventions: coalition-aware skill selection during skill accumulation and label-free skill masking after transfer. Coalition-Aware Skill Selection (CASS) selects more reliable candidate skills for the current bank using sampled Shapley marginals. Unsupervised Skill-Masked Coalition Optimizer (u-SMCO) masks transferred skills whose exclusion improves retrieval quality on unlabeled target-domain data. Agentic experiments on LoCoMo, LongMemEval, HotpotQA, and ALFWorld show that CASS and u-SMCO consistently improve task performance and cross-domain generalization over strong skill-based self-evolving agent baselines. Beyond accuracy, coalition-conditioned reliability modeling reduces sensitivity to noisy outcome-reward fluctuations during reinforcement learning and exposes the limits of isolation-based skill evaluation.",
+    "published": "2026-08-23T21:35:22Z",
+    "updated": "2026-08-23T21:35:22Z",
+    "authors": [
+      "Qiyan Zhao",
+      "Xiaofeng Zhang",
+      "Bo Liu",
+      "Minda Chen",
+      "Wei Xiong",
+      "Jingyang Chen",
+      "Guanting Ye",
+      "Wenhao Yu",
+      "Xiaosong Yuan",
+      "Shijie Han",
+      "Da-Han Wang",
+      "Jianmin Ji",
+      "Fei Huang",
+      "Xu-Yao Zhang"
+    ],
+    "source": "https://arxiv.org/abs/2608.22610v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
+    "id": "2608.22132v1",
+    "title": "SSE-Bio: A Structured Self-Evolving Agent with Agentic Retrieval Policy for Multi-Hop Biomedical Reasoning",
+    "summary": "Biomedical multi-hop question answering (QA) requires models to connect evidence across intermediate entities such as diseases, drugs, proteins, and phenotypes. Existing agents typically rely on static retrieval workflows or coarse-grained prompt rewriting, which can lead to instruction drift when reasoning procedures need to be updated. We propose SSE-Bio, a structured self-evolving agent with an agentic retrieval policy for multi-hop biomedical reasoning. Instead of globally rewriting agent instructions, SSE-Bio maintains a structured state, selectively retrieves knowledge triplets and prior templates through a trainable proxy policy, and improves its reasoning memory through fine-grained template editing. To optimise retrieval decisions, we introduce a proxy-training strategy based on group relative policy optimization, where the proxy is improved through decision-contrastive groups over alternative retrieval choices. Experiments on three biomedical multi-hop QA benchmarks show that SSE-Bio consistently outperforms existing baselines, achieving an improvement of 6.56 absolute points over the strongest self-evolving baseline on BioHopR.",
+    "published": "2026-08-22T23:08:56Z",
+    "updated": "2026-08-22T23:08:56Z",
+    "authors": [
+      "Zhaohan Meng",
+      "Zaiqiao Meng",
+      "Siwei Liu",
+      "Hao Xu",
+      "Ke Yuan",
+      "Iadh Ounis"
+    ],
+    "source": "https://arxiv.org/abs/2608.22132v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
+  },
+  {
     "id": "2608.18066v1",
     "title": "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification",
     "summary": "Memory-based self-improving agents--those that learn from an online stream of tasks and improve over time by maintaining a textual memory bank--have shown great promise in recent literature. However, the reliability aspects of these methods have been critically overlooked. In this work, we conduct a comprehensive re-evaluation of two memory-based methods, broadening the scope of evaluation along two axes: (1) including multiple runs to quantify variance, and (2) randomly shuffling the tasks to investigate the effect of task order. Through these experiments, we make two observations that expose the fragility of current methods: First, agent evaluation is inherently noisy in complex environments and on multi-step tasks, and stacking a self-improving loop on top can further amplify this noise. Second, the agent's improvement is highly dependent on task order. Prior works often adopt default orderings that impose an implicit curriculum, acting as a hidden prerequisite for success. To better understand this fragility, we manually examine the agents' memory and hypothesize that task and environment underspecification contribute to this fragility. We validate this hypothesis by incorporating information that enables better specification, such as detailed rubrics and environment feedback, into the memory construction process. While this added information partially closes the performance degradation in previous experiments, significant gaps still remain, suggesting that other uncharacterized factors contribute to this fragility. Looking ahead, our work advocates for more rigorous evaluation protocols for self-improving agents by reporting results across multiple runs and stress-testing them under challenging conditions. Moreover, our findings on underspecification call for systems and interfaces that enable effective human oversight, preventing agents from failing in unforeseeable ways.",
@@ -14,7 +190,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.18066v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.17684v1",
@@ -28,7 +204,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.17684v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.16411v1",
@@ -43,7 +219,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.16411v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.15089v1",
@@ -59,7 +235,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.15089v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.15071v1",
@@ -88,7 +264,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.15071v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.14441v1",
@@ -104,7 +280,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.14441v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.14270v1",
@@ -125,7 +301,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.14270v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.14036v1",
@@ -146,7 +322,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.14036v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.11654v1",
@@ -159,7 +335,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.11654v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.11079v1",
@@ -197,7 +373,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.11079v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.10538v2",
@@ -213,7 +389,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10538v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.10504v1",
@@ -228,7 +404,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10504v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.10494v1",
@@ -247,7 +423,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10494v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.10224v1",
@@ -266,7 +442,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10224v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.10157v1",
@@ -283,7 +459,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.10157v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.09885v1",
@@ -310,7 +486,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.09885v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.09629v1",
@@ -324,7 +500,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.09629v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.09096v2",
@@ -345,7 +521,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.09096v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.09044v1",
@@ -383,7 +559,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.09044v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.08466v1",
@@ -396,7 +572,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.08466v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.08311v2",
@@ -414,7 +590,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.08311v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.07449v1",
@@ -435,7 +611,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07449v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.07622v1",
@@ -454,7 +630,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07622v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.06144v1",
@@ -475,7 +651,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.06144v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.06020v1",
@@ -497,7 +673,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.06020v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.05810v1",
@@ -516,7 +692,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.05810v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.05563v2",
@@ -538,7 +714,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.05563v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.04872v2",
@@ -562,7 +738,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04872v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.04761v2",
@@ -578,7 +754,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04761v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.04625v1",
@@ -599,7 +775,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.04625v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.03509v2",
@@ -618,7 +794,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.03509v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.03392v1",
@@ -650,7 +826,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.03392v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.02508v2",
@@ -714,7 +890,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.01918v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.01759v1",
@@ -793,7 +969,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07545v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2608.02636v1",
@@ -830,7 +1006,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.27994v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.28692v1",
@@ -912,7 +1088,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.26598v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.26117v1",
@@ -925,7 +1101,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.26117v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.24300v1",
@@ -943,7 +1119,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.24300v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.22511v1",
@@ -972,6 +1148,20 @@
     "source": "https://arxiv.org/abs/2607.22511v2",
     "review_status": "unreviewed",
     "discovered_on": "2026-08-24"
+  },
+  {
+    "id": "2607.22511v3",
+    "title": "CausalSmith: A Formally Grounded, Self-Improving Agentic Framework for Automated Research in Causal Inference",
+    "summary": "Automating theoretical research is constrained not only by the generation of candidate results, but also by their reliable evaluation. A common approach is to close the research loop with a large language model (LLM) reviewer. However, such reviewers remain empirically unreliable: they may accept fabricated papers and detect them at rates close to chance (Bad Scientist, 2025). We present CausalSmith, a framework for automated theoretical research in causal inference grounded in the Lean proof assistant. CausalSmith combines Causalean, a foundational Lean library for causal inference containing 7,035 machine-checked declarations developed with language-model assistance under human design and review, with CausalSmith, a self-improving agentic pipeline that selects research topics, proposes results, formalizes statements, constructs proofs, and presents the resulting artifacts for human inspection. Because a machine-checked proof establishes only that a formal statement follows from its assumptions, not that the statement faithfully captures the intended scientific claim, the pipeline augments kernel verification with a statement audit that compares each formal theorem against the informal claim it is intended to express. We evaluate the system using artifacts produced by completed autonomous research runs. The source code, formal library, and run records are available at https://github.com/Jiyuan-Tan/CausalSmith.",
+    "published": "2026-07-24T17:32:35Z",
+    "updated": "2026-08-22T00:45:37Z",
+    "authors": [
+      "Jiyuan Tan",
+      "Vasilis Syrgkanis"
+    ],
+    "source": "https://arxiv.org/abs/2607.22511v3",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.21461v2",
@@ -1007,7 +1197,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.21461v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.20019v1",
@@ -1043,7 +1233,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.19592v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.17352v1",
@@ -1078,7 +1268,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.16632v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.16352v1",
@@ -1173,7 +1363,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13683v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.13285v1",
@@ -1195,7 +1385,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13285v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.12790v1",
@@ -1257,7 +1447,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13104v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.12254v1",
@@ -1283,7 +1473,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.12254v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.13083v1",
@@ -1303,7 +1493,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13083v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.11288v1",
@@ -1377,7 +1567,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.11175v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.13070v1",
@@ -1403,7 +1593,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.13070v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.09521v1",
@@ -1440,7 +1630,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09195v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.09175v1",
@@ -1454,7 +1644,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.09175v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.08010v1",
@@ -1527,7 +1717,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05297v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.05155v1",
@@ -1586,7 +1776,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05155v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.11913v1",
@@ -1618,7 +1808,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.03691v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2607.01120v2",
@@ -1726,7 +1916,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.00017v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.29823v1",
@@ -1763,7 +1953,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.29823v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.28971v1",
@@ -1860,7 +2050,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.27243v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.26294v2",
@@ -1885,7 +2075,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.26294v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.24151v1",
@@ -1995,7 +2185,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.17546v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.17220v1",
@@ -2046,7 +2236,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.16420v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.28368v1",
@@ -2079,7 +2269,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.15363v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.14249v2",
@@ -2131,7 +2321,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.14249v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.12780v1",
@@ -2166,7 +2356,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.11182v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.10316v1",
@@ -2292,7 +2482,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.06324v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.05404v1",
@@ -2332,7 +2522,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.03544v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.01314v1",
@@ -2351,7 +2541,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.01314v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2606.07603v1",
@@ -2367,7 +2557,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07603v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2605.29341v2",
@@ -2501,7 +2691,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.21997v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2605.14211v3",
@@ -2517,7 +2707,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.14211v3",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2605.13119v1",
@@ -2537,7 +2727,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.13119v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2605.12978v1",
@@ -2556,7 +2746,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.12978v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2605.11117v1",
@@ -2752,7 +2942,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.07645v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2604.04247v1",
@@ -2878,7 +3068,7 @@
     ],
     "source": "https://arxiv.org/abs/2602.04248v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2511.06449v2",
@@ -2900,7 +3090,7 @@
     ],
     "source": "https://arxiv.org/abs/2511.06449v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "2410.13266v1",
@@ -2915,7 +3105,7 @@
     ],
     "source": "https://arxiv.org/abs/2410.13266v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   },
   {
     "id": "1806.03112v2",
@@ -2931,6 +3121,6 @@
     ],
     "source": "https://arxiv.org/abs/1806.03112v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-08-24"
+    "discovered_on": "2026-08-31"
   }
 ]
