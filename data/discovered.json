@@ -1,5 +1,399 @@
 [
   {
+    "id": "2610.13098v1",
+    "title": "VETR: Execution-Grounded Self-Improving Agent for Symbolic Graphics Reasoning",
+    "summary": "Visual agents for symbolic graphics reasoning depend on executable world representations, yet continued improvement remains bottlenecked by ambiguous supervision from final renders. Recent agentic systems refine scenes through repeated interaction, but they lack mechanisms to recursively extract actionable evidence from execution traces, overlooking which proposed symbolic edits survived, disappeared, or interfered during program execution. To address this, we propose VETR (Verified Execution Trajectories for Refinement), a framework that enables agentic recursive self-improvement over executable world representations for symbolic graphics reasoning. Within each task, VETR retains aligned program/render records with bounded runtime observations and introduces an execution refiner that compiles observed writes and state changes into constrained alternative programs. The refiner validates their endpoints and preservation conditions against captured runtime state; the ordinary visual verifier then assesses goal relevance. Repair construction makes no additional language-model calls, but can require additional executions. Evaluations on BlenderGym (280 tasks) and BlenderBench (27 released tasks) with GPT-5.6-luna and Qwen3.8-27B show that VETR consistently outperforms existing refinement strategies, including BlenderAlchemy and VIGA. Controlled ablations evaluate the contributions of execution refinement and role-asymmetric evidence organization under fixed generator-interaction caps.",
+    "published": "2026-10-09T06:51:59Z",
+    "updated": "2026-10-09T06:51:59Z",
+    "authors": [
+      "Yingbo Ma",
+      "Kuangshi Ai",
+      "Gordon Dai",
+      "Chenglong Yu",
+      "Chaoli Wang",
+      "Hua Shen"
+    ],
+    "source": "https://arxiv.org/abs/2610.13098v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.13025v1",
+    "title": "Evo$^2$: Evolving the Evolver through Weight-Harness Co-Evolution",
+    "summary": "Self-evolving agents are increasingly used to improve language model systems without human intervention through either weight updates or harness improvements. Existing approaches typically pursue these directions separately: some methods update model weights using self-generated experience, while others rewrite the harness that defines how an agent uses prompts, tools, context, and execution feedback. However, these approaches overlook the relationship between model weights and the agent harness. To connect these processes and ensure effective and smooth agent self-evolving, we propose Evo$^2$, a framework for weight-harness co-evolution. For harness updates, we design a unified dual-role pipeline that a single policy serves as both a Proposer, which writes harness edits, and a Reflector, which diagnoses their effects and guides revision. For weight updates, harness modifications and their execution outcomes guide the training of both the Proposer and the Reflector. We further develop EvoTIDE, a training pipeline that recovers usable trajectories through edit extraction and prefix continuation, then combines SFT with interleaved GRPO across the two roles. Extensive experiments across three coding benchmarks demonstrate that Evo$^2$ significantly outperforms existing self-evolution methods. It achieves 82.1% on Polyglot and 48.3% on SWE-bench Verified, compared with 62.6% and 41.0% for the strongest baseline, respectively. We also show that the evolved harnesses transfer to different tasks without further evolution and rank first in cross-benchmark evaluations. Our dual-role harness improvement framework is also able to extend to self-evolution with proprietary models, improving a GPT-5-mini agent's performance from 24.4% to 48.3%. These results demonstrate the applicability of the framework Evo$^2$ across domains and its broad transferability across models and tasks.",
+    "published": "2026-10-09T05:28:02Z",
+    "updated": "2026-10-09T05:28:02Z",
+    "authors": [
+      "Chejian Xu",
+      "Shujian Zhang",
+      "Wenxuan Zhou",
+      "John Lambert",
+      "Beck Chen",
+      "Bo Li",
+      "Andrew Hard",
+      "Rajiv Mathews"
+    ],
+    "source": "https://arxiv.org/abs/2610.13025v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.13021v1",
+    "title": "EmbodiedCLBench: Evaluating Continual Learning for Self-Evolving Embodied Agents",
+    "summary": "Continual learning requires models to accumulate past experience and transfer it to new tasks. Despite substantial research on continual learning, existing work remains largely confined to non-embodied settings, without extending to embodied environments. To address this gap, we introduce EmbodiedCLBench, the first benchmark in embodied simulation for evaluating the continual learning capability of self-evolving agents. With compositional generalization as the core evaluation principle, our benchmark evaluates whether agents can first learn from basic tasks and then recombine the acquired skills to solve complex, unseen advanced tasks. Based on EmbodiedCLBench, we conduct extensive experiments across multiple agent harnesses and learning methods, revealing consistent limitations and distinctive behaviors. Our results show that while advanced tasks can be hardly solved under zero-shot setting, the experience from basic tasks enables consistent improvement. Such benefit from the experience remains stable even if the task complexity increases. However, this improvement does not scale accordingly with the number of learning samples, and current agents cannot extract meaningful information from additional experience. Collectively, our findings highlight continual learning as a fundamental yet underexplored capability, and our benchmark offers valuable resources for designing effective self-evolving agents in embodied environments. Our code and dataset are available at https://pku-value-lab.github.io/EmbodiedCLBench-homepage.",
+    "published": "2026-10-09T05:23:00Z",
+    "updated": "2026-10-09T05:23:00Z",
+    "authors": [
+      "Jie Huang",
+      "Yanan Chen",
+      "Ruixun Liu",
+      "Kaichen He",
+      "Xinyi He",
+      "Rui Huang",
+      "Zilong Zheng",
+      "Zhenliang Zhang",
+      "Yiwu Zhong"
+    ],
+    "source": "https://arxiv.org/abs/2610.13021v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.12086v1",
+    "title": "EvoAlloc: A Self-Evolving Resource Allocation Agent for Efficient Program Evolution",
+    "summary": "LLM-based program evolution relies on evaluation feedback to guide the iterative search for high-performing programs. However, evaluation is often computationally expensive, making it essential to allocate limited resources to candidates that can most effectively advance the search. Existing LLM-based methods typically rely on fixed allocation strategies throughout the search, potentially wasting resources on low-value candidates while overlooking promising ones. We propose EvoAlloc, a self-evolving resource-allocation agent that learns from search experience to revise its strategy for allocating computational resources across candidates. EvoAlloc periodically consolidates prior search and allocation outcomes into reusable experience, which informs subsequent strategy revisions. It further uses a counterfactual exploration mechanism to occasionally evaluate candidates denied resources by the allocator, revealing their outcomes to enrich its experience for future strategy updates. Across coding and agent-harness optimization benchmarks, EvoAlloc requires 59-82% fewer full evaluations and 61-89% fewer total LLM tokens to reach baseline-level performance. Moreover, under the same full-evaluation budget, EvoAlloc achieves 8.7-12.0% higher final performance.",
+    "published": "2026-10-08T14:57:35Z",
+    "updated": "2026-10-08T14:57:35Z",
+    "authors": [
+      "Yanning Dai",
+      "Yuhui Wang",
+      "Nanbo Li",
+      "Wenyi Wang",
+      "Jürgen Schmidhuber"
+    ],
+    "source": "https://arxiv.org/abs/2610.12086v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.11552v1",
+    "title": "Safe, Persistent, and Evolving Agent Harness for Understanding Partially Observable Worlds",
+    "summary": "Large language model agents can invoke tools fluently, but enterprise workflows demand more than selecting the right tools: actions must strictly comply with organizational policies, tool feedback often conceals hidden side effects under partial observability, and long-horizon tasks require persistent state tracking across multiple records. To address these challenges, we introduce E-Ledger, a multi-agent harness for safe and persistent execution. E-Ledger employs a code approval layer that checks every proposed action against policy before execution, and maintains a world ledger of verified hidden rules alongside evidence-backed dynamic state. Because hidden rules are typically unknown a priori, we further propose WorldAbduct, an abductive, world-model-driven harness evolution framework. WorldAbduct diagnoses execution trajectories across four complementary views (state consistency, world-observation gap, policy-gate correctness, and goal judgment) to hypothesize latent rules, and verifies them through targeted abductive interactions before integrating them into the ledger. On the enterprise benchmark World of Workflows, E-Ledger with WorldAbduct improves safe task completion across four LLM backbones, outperforming the strongest evolution baseline by 5--15 percentage points. Experiments in ScienceWorld and DiscoveryWorld further show that abductive harness evolution carries over to scientific environments. Our code is available at https://github.com/HKUST-KnowComp/E-LEDGER-WorldAbduct.",
+    "published": "2026-10-08T09:15:28Z",
+    "updated": "2026-10-08T09:15:28Z",
+    "authors": [
+      "Yisen Gao",
+      "Yue Guo",
+      "Qing Zong",
+      "Yiwen Guo",
+      "Yangqiu Song"
+    ],
+    "source": "https://arxiv.org/abs/2610.11552v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.11464v1",
+    "title": "Who Verifies the Verifier? Co-Evolving Inspectable Graders with Self-Improving Agents",
+    "summary": "We changed the agent: did it actually get better? Every self-improving agent loop answers this hundreds of times, and every answer comes from a verifier. On open-ended tasks none exists, so the loop is handed a hand-written rubric or a bare LLM judge grading output from a model like itself, inviting reward hacking and shared blind spots. We make the verifier the evolving object: an inspectable expression over small, mostly deterministic drawback detectors, synthesized from clustered failures, gated at birth, and selected for agreement with a ten-item anchored reference set plus consensus over unlabeled outputs, never for the agent's score. On MBPP+ it gains +0.21 held-out agreement over the hand-authored seed composition, on every seed, and ends ahead of the bare LLM judge it contains. One finding should change how co-evolved verifiers are validated: removing the anchor guards collapses the verifier into a vacuous always-pass grader, yet that collapsed verifier trains skills just as well. Downstream task score cannot certify a self-evolved verifier. Score does answer sufficiency, and there an evolved verifier can substitute: Double Ratchet, pairing the verifier with a lifecycle-managed skill loop, retains 88-110% of the lift that ground truth or a rubric buys the same loop, across code generation, enterprise text-to-SQL, and reference-free report generation. When evolved skills gamed the report rubric, an outer judge caught it and one added detector repaired it; the judge itself was wrong until given the task contract.",
+    "published": "2026-10-08T08:13:53Z",
+    "updated": "2026-10-08T08:13:53Z",
+    "authors": [
+      "Xing Zhang",
+      "Guanghui Wang",
+      "Yanwei Cui",
+      "Ziyuan Li",
+      "Wei Qiu",
+      "Bing Zhu",
+      "Peiyang He"
+    ],
+    "source": "https://arxiv.org/abs/2610.11464v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.10498v1",
+    "title": "EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution",
+    "summary": "Robot foundation models provide strong visuomotor control, yet their performance can degrade when object positions or task instructions change. Further improvements often require post-training on substantial robot data, which can be costly to collect through methods such as teleoperation. Agentic harnesses can adapt around the model, but current self-evolving harnesses use robot trials inefficiently when deciding which code and skill changes to pursue. We introduce EmbodiedRSI, a self-evolving agentic harness that autonomously decides where to explore next and turns the resulting physical interaction into improved code and skills. EmbodiedRSI realizes this through a Fast-Slow Dual-System Architecture, in which competing code and skill hypotheses are maintained in a Hypothesis Graph. Value-of-Information Experiment Selection chooses physical experiments that can distinguish these hypotheses. Their outcomes guide Code-Skill Co-Evolution. The Slow System builds Hierarchical Memory, and Reward-Grounded Memory Learning selects effective memory according to their value for later Fast-System improvement. On RoboCasa365, EmbodiedRSI reaches 77.0% overall success and 71.3% on Composite-Unseen, compared with 40.1% for the best baseline. EmbodiedRSI also reaches 86.8% overall success on LIBERO-Pro. Beyond benchmark performance, EmbodiedRSI transfers zero-shot to real-world robot, achieving 71.3% overall success across multiple challenging tasks.",
+    "published": "2026-10-07T17:48:02Z",
+    "updated": "2026-10-07T17:48:02Z",
+    "authors": [
+      "Python Song",
+      "Zhixuan Liang",
+      "Kelsey Fu",
+      "Mengdi Wang",
+      "Junfeng Yang",
+      "Shilong Liu"
+    ],
+    "source": "https://arxiv.org/abs/2610.10498v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.10088v1",
+    "title": "SkillSandbox: Skill Verification via Dynamic Scenario Synthesis",
+    "summary": "Self-evolving agents distill task-solving experience into skills for future reuse, but these skills can encode incorrect procedures or non-transferable knowledge. It is therefore critical to verify each skill's reusability: whether its guidance remains useful beyond the experience from which it was distilled. Such verification requires observing how a skill affects execution in new tasks, yet existing tasks may not expose the situations where the target skill can actually be exercised. To construct such situations, we propose SkillSandbox, a framework that dynamically synthesizes a task and its environment for each skill that are skill-relevant yet novel. A Proposer specifies the conditions to preserve and the source-specific details to vary, a Builder constructs an executable scenario, and a Verifier compares executions with and without the skill. The Verifier assesses executability, utility, and efficiency to assign a Keep or Reject verdict, determining whether the skill enters the library. Across ALFWorld and WebShop with three models, SkillSandbox consistently yields the strongest downstream performance and improved execution efficiency. Further analyses examine whether these gains reflect accurate assessment of skill reusability and identify which components of SkillSandbox contribute to them.",
+    "published": "2026-10-07T13:48:58Z",
+    "updated": "2026-10-07T13:48:58Z",
+    "authors": [
+      "Serin Kim",
+      "Kwangwook Seo",
+      "Dokyung Song",
+      "Jinyoung Yeo",
+      "Dongha Lee"
+    ],
+    "source": "https://arxiv.org/abs/2610.10088v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.09426v1",
+    "title": "RSI-Forge: From Research Papers to Environments for Recursive Self-Improvement",
+    "summary": "Environments are the foundation of recursive self-improvement: they provide the problems agents work on and the feedback used to evaluate progress. Yet constructing challenging research environments with reliable evaluation still depends on domain experts, limiting their scale and disciplinary coverage. We introduce RSI-Forge, a multi-agent pipeline that turns published papers into executable environments for self-improvement. Three agents coordinate construction, reproduction, and review to produce tasks with automated evaluators; each paper's method is independently reimplemented to establish a baseline score. We present 210 environments across 18 fields, including 90 reviewed by independent human domain experts. Both experts and agent judges give high ratings to the potential for improving the provided starting solutions and the evaluators' ability to distinguish solution quality, whereas experts are more critical of shortcut resistance, faithfulness to the source paper, and whether a single idea can exhaust a task. To validate their use for repeated improvement, we evaluate four models over 3 successive attempts on 120 environments, with each attempt inheriting prior code and notes while model weights remain fixed. At least one model improves after the first attempt in 84% of environments. Models also outperform the reproduced paper methods in 68 of the 120 environments, demonstrating room for gains beyond these baselines. Transcript analysis identifies work beyond parameter tuning in 95% of these successful attempts. Analysis of the resulting trajectories shows that models scoring lower on these tasks explore less, more often accept gains smaller than the reported standard error, and rely more heavily on tuning to the development set. RSI-Forge provides a scalable approach to constructing research environments for training and evaluating self-improving agents.",
+    "published": "2026-10-07T04:27:21Z",
+    "updated": "2026-10-07T04:27:21Z",
+    "authors": [
+      "Renxiong Wang",
+      "Darvin Yi",
+      "Abril Herrlein",
+      "Anas Mahmoud",
+      "Advait Gosai",
+      "Lisiman Hua",
+      "MohammadHossein Rezaei",
+      "Xingang Guo",
+      "Anisha Gunjal",
+      "Utkarsh Tyagi",
+      "David J. Lee",
+      "Minglai Yang",
+      "Haris Riaz",
+      "Chenguang Wang",
+      "Huaxiu Yao",
+      "Daniel Yue Zhang",
+      "Aakash Sabharwal",
+      "Tong Zhao",
+      "Yunzhong He"
+    ],
+    "source": "https://arxiv.org/abs/2610.09426v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.08993v1",
+    "title": "Verify Less, Evolve More: Training Idea-Level Critics for Verification-Efficient ML Evolving Agents",
+    "summary": "As large language models become more powerful, self-evolving agents are able to tackle challenging tasks including AI for machine learning (AI4ML). In AI4ML, while empirical verification is available, it often requires computationally costly model training and evaluation, limiting the speed and scale of agent evolution. Yet verification efficiency remains under-explored, and frontier models provide only limited gains when used directly as idea selectors. We address this gap with specialized idea-level critic models that predict whether a proposed ML modification will improve upon the current solution, allowing agents to screen ideas and concentrate verification resources on the most promising candidates. We train the critic models through supervised fine-tuning on high-quality critiques synthesized by Gemini-3.1-Pro, followed by GRPO to further improve their predictive accuracy. Empirically, our critic models outperform Gemini-3.1-Pro in static idea evaluation, and these gains extend to agent inference, continual learning, and policy training. During inference-time evolution, they improve final solution quality under the same verification budget by selecting more promising ideas, with further gains from continual learning. During policy training, they serve as learned reward models, reserving empirical verification for uncertain cases and enabling substantially more policy updates with the same verification resources. Together, these results show that idea-level critic models help ML agents discover better solutions and learn stronger proposal policies under limited verification budgets.",
+    "published": "2026-10-06T18:52:00Z",
+    "updated": "2026-10-06T18:52:00Z",
+    "authors": [
+      "Jiamu Bai",
+      "Lizhu Zhang",
+      "Xin Yu",
+      "Yanhong Wu",
+      "Zellux Wang",
+      "Serena Li",
+      "Weiwei Li",
+      "Zhuokai Zhao",
+      "Lingzhou Xue",
+      "Kiwan Maeng",
+      "Xiangjun Fan",
+      "Bo Peng"
+    ],
+    "source": "https://arxiv.org/abs/2610.08993v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.08902v1",
+    "title": "Agent Plasticity: Measuring Self-Improvement Through Experience",
+    "summary": "AI agents increasingly operate in environments where they can diagnose failures and improve through experience, yet existing evaluations largely measure what an agent can do at a fixed point in time rather than how effectively it learns. Evaluating self-improvement requires answering three questions: does future performance improve and generalize beyond the interactions that enabled learning; how efficiently are new capabilities acquired; and where does the self-improvement process break down? To answer these questions, we study self-improvement in a controlled setting where agents amortize past experience into reusable artifacts that are inherited by future instances. At each checkpoint, we measure performance on training and held-out environment interactions while accounting for learning cost. We introduce agent plasticity, the efficiency with which an agent converts experience into gains in future held-out performance. Across multiple environments, frontier models exhibit sharply different improvement trajectories despite comparable opportunities to learn. Some achieve substantial and persistent gains, while others remain near or below their initial performance, and gains within the training regime often transfer only partially to out-of-distribution conditions. Endpoint capability and acquisition efficiency also diverge: the agent that ultimately performs best need not be the one that improves most efficiently. Tracing failures through the improvement loop further reveals different candidate bottlenecks. Agents with low plasticity often fail to reuse relevant artifacts, whereas more plastic agents may still fail despite reusing relevant artifacts, pointing to limitations in artifact quality, generalization, or application. Evaluating self-improving agents requires measuring not only what they can do, but how effectively they become better through experience.",
+    "published": "2026-10-06T17:58:57Z",
+    "updated": "2026-10-06T17:58:57Z",
+    "authors": [
+      "Harman Singh",
+      "Anton Bakhtin",
+      "Rulin Shao",
+      "Gabriel Synnaeve",
+      "Ilia Kulikov",
+      "Rob Fergus",
+      "Sanjeev Arora",
+      "Kurt Keutzer",
+      "Jason Weston",
+      "Anuj Mahajan",
+      "Anirudh Goyal"
+    ],
+    "source": "https://arxiv.org/abs/2610.08902v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.08761v1",
+    "title": "VeriFine: Scaling Verification for Self-Improvement in Embodied Reasoning",
+    "summary": "Self-improving policies continually expose new failure patterns, changing what their judges must be able to verify. However, current fixed judges constrain both optimization feedback and the discovery of useful training examples, limiting further self-improvement. This challenge is even more acute in embodied reasoning, where reliable evaluation must account for spatial grounding, causal reasoning, and safety-aware decision-making. We introduce VeriFine, an agent harness framework that scales verification through the co-evolution of the policy, training curriculum, and judge. The Policy Improvement Loop uses a rubric judge to diagnose recurring failures, construct an adaptive curriculum, and optimize the policy. When progress plateaus and verification becomes a bottleneck, the Judge Improvement Loop selectively queries human guidance on informative failure cases and refines the judge through coactive calibration, in which humans and agents resolve disagreements and converge toward the objective rubric of physical reasoning. The revised judge then guides the next stage of data selection and policy optimization. Experiments on driving and robot navigation tasks demonstrate continuous self-improvement in both policy and judge capability across reinforcement and supervised fine-tuning. These results show how scaling verification supports continuous self-improvement as policy failure patterns evolve.",
+    "published": "2026-10-06T17:50:29Z",
+    "updated": "2026-10-06T17:50:29Z",
+    "authors": [
+      "Zewei Zhou",
+      "Rachel Luo",
+      "Yulong Cao",
+      "Chaowei Xiao",
+      "Chensheng Peng",
+      "Boyi Li",
+      "Thomas Tian",
+      "Zheng Lian",
+      "Yan Wang",
+      "Jiaqi Ma",
+      "Boris Ivanovic",
+      "Marco Pavone",
+      "Wenhao Ding"
+    ],
+    "source": "https://arxiv.org/abs/2610.08761v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.08327v1",
+    "title": "MedZERO: Self-Evolving Agents for Open-Ended Medical Reasoning Through Controlled Knowledge Accumulation",
+    "summary": "Large language models (LLMs) have shown promise in medical question answering and clinical reasoning, yet their improvement remains constrained by static parametric knowledge and costly expert supervision. Self-evolving agents offer a promising alternative by enabling models to improve through iterative task generation and problem-solving. However, most existing self-evolving methods are designed for easily verifiable domains such as mathematics and coding, where solutions can be checked by exact answers or executable programs. Medical reasoning is fundamentally different: it is open-ended, knowledge-intensive, and often only partially verifiable. We present MedZERO, a self-evolving framework for open-ended medical reasoning. MedZERO couples an Examiner that generates frontier medical question-option pairs with a Reasoner that solves them through evidence-grounded multi-turn reasoning with external knowledge tools. To support reliable, continual improvement, MedZERO adopts controlled knowledge accumulation, which maintains temporary exploratory knowledge and curated persistent knowledge in reasoning. We evaluate MedZERO on five public medical reasoning benchmarks using 4B- and 8B-scale base models under open-ended evaluation. Across all settings, MedZERO consistently outperforms the underlying base models and prior self-evolving baselines, achieving up to 13.7 average accuracy-point gains over the next-best self-evolving baseline.",
+    "published": "2026-10-06T13:25:55Z",
+    "updated": "2026-10-06T13:25:55Z",
+    "authors": [
+      "Xilin Dang",
+      "Weilin Ruan",
+      "Xue Yang",
+      "Jinghao Wang",
+      "Xiaowei Hu",
+      "Jinpeng Li",
+      "Pheng-Ann Heng"
+    ],
+    "source": "https://arxiv.org/abs/2610.08327v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.07979v1",
+    "title": "Learning from Revision Consequences: Hindsight Meta-Experience Distillation for Self-Improving Agents",
+    "summary": "As agents continuously improve by generating and revising Skills, the process that discovers and refines those Skills becomes a learnable object in its own right. Task-Skills directly act on task execution, whereas Meta-Skills govern how agents discover and improve future Skills; their value therefore emerges through the subsequent search processes they induce. Existing approaches improve Meta-Skills from observed raw Skill-search trajectories and branch outcomes. However, branch performance entangles the effects of the initial discovery state and the Meta-Skill revision that generated the search process, making it difficult to characterize what a particular revision actually changed, and pushing updates toward revisions that benefit from favorable states rather than those that improve the process. We introduce HMED (Hindsight Meta-Experience Distillation), a mechanism for constructing Meta-Experience for self-improving agents. HMED revisits the completed event from which a revision originates and re-executes the incumbent and revised Meta-Skills from the same restored discovery state, so that the changes associated with the revision can be observed under a shared condition. Each comparison is distilled into a Meta-Experience, a structured record that can be reused by future updates, so that even revisions that are not ultimately retained still contribute a learning signal. Across three interactive agent benchmarks and both open-source and closed-source models, HMED consistently improves Skill discovery performance over strong baselines, shifting Meta-Skill learning beyond branch outcomes toward the consequences of changing the improvement process.",
+    "published": "2026-10-06T08:43:43Z",
+    "updated": "2026-10-06T08:43:43Z",
+    "authors": [
+      "Qianhan Feng",
+      "Zhongzhen Huang",
+      "Yakun Zhu",
+      "Xiaofan Zhang",
+      "Qi Dou"
+    ],
+    "source": "https://arxiv.org/abs/2610.07979v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.07335v1",
+    "title": "Selective Critique for Cost-Aware LLM Agents in Long-Horizon Decision Making",
+    "summary": "Improving the reliability of large language model (LLM) agents in long-horizon decision-making remains a key challenge. When deployed as autonomous agents interacting with complex environments, early mistakes can propagate through trajectories and cause cascading failures. Recent approaches improve reliability by incorporating external critique or deliberation, but invoking these mechanisms at every step substantially increases token consumption and latency, limiting practical deployment. We propose SAG (Self-improving Agent with Gated critique), a cost-aware framework that formulates critique invocation as a step-wise decision problem during long-horizon interaction. SAG introduces a lightweight, training-free gating mechanism that estimates the utility of critique using action-level ambiguity signals--global entropy and local top-2 margin--computed over admissible actions. From a decision-theoretic perspective, this mechanism approximates the Value of Information (VoI) of critique, enabling the agent to selectively allocate expensive feedback only when its expected benefit justifies the cost. SAG further incorporates online bootstrapped self-improvement, allowing the actor to internalize critic-assisted behaviors and progressively reduce reliance on critique. Across three long-horizon interactive benchmarks and multiple backbone models, SAG substantially improves the performance-cost trade-off compared with both no-critique and always-on critique agents. On ALFWorld, SAG increases task success from 24.6% to 78.4% while maintaining a token budget comparable to ReAct, yielding a $3.1\\times$ improvement in normalized token efficiency. Moreover, a 7B actor with a lightweight 3B critic achieves performance comparable to a 14B actor without critique, showing that selective critique can recover most of the reliability benefits of deliberation while dramatically reducing inference cost.",
+    "published": "2026-10-05T20:09:48Z",
+    "updated": "2026-10-05T20:09:48Z",
+    "authors": [
+      "Heewon Park",
+      "Somin Im",
+      "Minhae Kwon"
+    ],
+    "source": "https://arxiv.org/abs/2610.07335v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.07250v1",
+    "title": "Internalizing Agent Experience into Diffusion Model Weights via On-Policy Context Distillation",
+    "summary": "Wrapping an image generation model in an agentic harness can effectively boost Text-to-Image task performance: the harness can leverage memory, skills, workflow orchestration, result verification, and iterative refinement to continually construct and revise prompts, thereby eliciting better images. These gains, however, remain external to the diffusion model and are realized only while the full harness runs. We propose Diffusion On-Policy Context Distillation (D-OPCD), which treats the agent-improved prompt as privileged context and distills the knowledge encoded in the agent harness into the weights of the diffusion model, so that the model retains part of the harness's benefit when conditioned on the original query alone. Using a Text-to-Image agent equipped with our proposed Auto Skill Evolver (ASE), we show that D-OPCD can internalize harness capabilities into the generator's weights, raising the average direct-generation score from 60.52 to 65.09 across four benchmarks. With this knowledge absorbed into the weights, the harness can shed its saturated skills and resume evolving: a second ASE round on the updated generator improves on a skill-free harness by additional 1.83 points, pointing toward text-to-image systems in which harness and model keep improving each other through continual co-evolution.",
+    "published": "2026-10-05T18:50:09Z",
+    "updated": "2026-10-05T18:50:09Z",
+    "authors": [
+      "Wenxuan Wang",
+      "Zekai Liu",
+      "Weinan Zhang",
+      "Yu Cheng",
+      "Yang Yang"
+    ],
+    "source": "https://arxiv.org/abs/2610.07250v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.06563v1",
+    "title": "HERA: Harness-Environment Co-Evolution for Reliable Agentic Abstention",
+    "summary": "Large language model (LLM) agents are increasingly capable of acting in complex tool-use environments, yet they often fail to recognize when tasks are infeasible and no valid solution exists. Recent work has formalized this reliability gap as the problem of agentic abstention, and existing approaches typically optimize a model or agent harness against a fixed set of tasks, leading to limited generalization to unseen failure modes. We introduce HERA, a framework for harness-environment co-evolution for agentic abstention. HERA consists of (i) a pipeline to automatically construct verifiable pairs of feasible and infeasible tasks by applying controlled environment mutations that transform solvable tasks into cases requiring abstention, and (ii) a co-evolution procedure in which performance failures on previous tasks are used to drive harness adaptation and generate new execution environments and tasks geared towards previous weaknesses. On held-out evaluation tasks, an evolved harness from HERA improves abstention accuracy from 61.7% to 83.3% while improving feasible-task completion from 68.3% to 76.7%, achieving the highest abstention and feasible-task completion among the compared methods. The resulting best harness transfers across 19 other LLMs, improving abstention accuracy by 15.3 percentage points on average without any model-specific optimization, and enabling smaller models to match the performance of more powerful models at an estimated 85% lower cost.",
+    "published": "2026-10-05T15:49:12Z",
+    "updated": "2026-10-05T15:49:12Z",
+    "authors": [
+      "Han Luo",
+      "Bingbing Wen",
+      "Guang Yang",
+      "Zora Zhiruo Wang",
+      "Pan Lu",
+      "Lucy Lu Wang"
+    ],
+    "source": "https://arxiv.org/abs/2610.06563v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.05300v1",
+    "title": "MESH-Harness: Self-Improving Agent Harnesses via Bandit-Guided Compositional Evolution",
+    "summary": "An agent harness is the code that organizes context, maintains state, and coordinates tool calls for a language model. We study how to improve the harness under a limited evaluation budget while keeping model weights fixed. Our method, MESH-Harness, organizes each harness into functional modules with explicit role-specific interfaces, allowing alternative implementations of each module to be substituted and recombined. It uses shared module representations and full-covariance LinUCB to score candidate combinations based on predicted performance and exploration value. Mixed-start coordinate ascent selects complete configurations for evaluation without enumerating the combinatorial space. Validation traces then guide local code edits, and the resulting candidates are incorporated into fixed-capacity role-specific pools for subsequent recombination. On text tasks, retrieval-augmented mathematical reasoning, code generation, and interactive scientific tasks, MESH-Harness outperforms Meta-Harness by 5.70, 7.01, 2.00, and 5.00 points, respectively, under matched candidate-evaluation budgets. Iterative harness optimization improves MESH-Harness by 5.63-7.79 points over its first-round configurations. For the reported configurations, aggregate test-time cost is 44.2% lower than that of Meta-Harness, while total cost including search is 14.6% lower. These results show that combining module-level design reuse with feedback-driven compositional search can systematically improve agent harnesses while keeping overall optimization cost under control.",
+    "published": "2026-10-04T15:22:23Z",
+    "updated": "2026-10-04T15:22:23Z",
+    "authors": [
+      "Zhiwei Shang",
+      "Yu Huo",
+      "Mingrong Gong",
+      "An Yan",
+      "Zikun Qu",
+      "Junhao Dong",
+      "Bryan Kian Hsiang Low",
+      "Chenglin Wu",
+      "Zhongxiang Dai"
+    ],
+    "source": "https://arxiv.org/abs/2610.05300v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.05039v1",
+    "title": "Causal Improvement Graph for Agentic Harness Optimization",
+    "summary": "Agentic Harness is the runtime that constructs task context and controls execution flow, thereby shaping overall agent performance. Given a fixed model and external evaluation, automated Harness optimization seeks to improve this runtime through an iterative proposal--evaluation loop to better solve target tasks. Existing meta-harness methods mainly adopt proposer-centric discovery, in which an LLM-based proposer integrates accumulated experimental findings to determine subsequent Harness revisions. This places the burden of maintaining the evolving improvement state on the proposer as history expands and its underlying experimental logic becomes harder to discern. In this paper, we introduce the Causal Improvement Graph (CIG), a graph-governed meta-harness framework that externalizes the evolving improvement state in a persistent graph, allowing prior findings to directly govern subsequent Harness optimization through local proposer operations. CIG grows and links Evidence, Hypothesis, Intervention, and Outcome nodes to represent what was observed, how it may be explained, how to test that explanation, and what the evaluation reveals. Their structural relations preserve how the improvement state changes across iterations, allowing local proposers to build directly on relations among prior findings rather than recover them from raw history. Across various agent tasks, CIG discovers stronger Harnesses than previous meta-harness baselines and remains robust to the choice of task solver and proposer. Structural ablations further support the design of an explicit improvement state with graph-governed evolution.",
+    "published": "2026-10-04T08:15:37Z",
+    "updated": "2026-10-04T08:15:37Z",
+    "authors": [
+      "Junjie Zhang",
+      "Shunyu Liu",
+      "Haoyu Wang",
+      "Ting-En Lin",
+      "Yongbin Li",
+      "Dacheng Tao"
+    ],
+    "source": "https://arxiv.org/abs/2610.05039v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
+    "id": "2610.04832v1",
+    "title": "Agent Skill Evolution: How Revisions Affect Coding Agents",
+    "summary": "Agent Skills, the SKILL.md files that tell an LLM coding agent how a project works, are revised like code, yet what a revision does to the agent is unknown. From 2,608 first/last revision pairs of 3,159 Skills, we characterize how Skills evolve and how they change together with the configuration of the agent's harness. We then focus on rule changes, revisions that add or remove a rule we can check automatically, such as \"run allium check\". We measure their effect on 21 models in single answers and on four agents in a sandbox, and their cost on 20 of these models and the four agents. Most revisions (55%) change a rule or procedure, and commits that revise a Skill change harness files such as CLAUDE.md more often than other commits of the same size. Across 16 open-weight models, an added rule raises compliance in a single answer by +0.41 on average. Across the four agents, the rate at which the agent takes the required action rises by +0.23 on average (+0.16 to +0.36), and for the three agents that blind judges assessed, final correctness rises by +0.10 on average (+0.06 to +0.14). The gain comes mainly from rules that name a command or path the old Skill did not mention. Real tools load a Skill's body only when the agent decides it needs it. In that setting the four agents keep about half of the action gain on average (51%), and the three open models about 38%. A revision adds 18-19% input tokens to a single answer and no detectable cost to an agent episode, while loading a Skill's body raises the tokens of an episode by 50% on average.",
+    "published": "2026-10-04T00:33:46Z",
+    "updated": "2026-10-04T00:33:46Z",
+    "authors": [
+      "Jiajie Wang",
+      "Yutong Zhao",
+      "Tianlin Li",
+      "Huashan Chen",
+      "Jinfu Chen",
+      "Kebin Peng",
+      "Sen He"
+    ],
+    "source": "https://arxiv.org/abs/2610.04832v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
+  },
+  {
     "id": "2610.02920v1",
     "title": "HASTE: Evolving Agent Harnesses Against Emerging Attacks Using Sparse Evidence",
     "summary": "Agent harnesses play a critical role in defenses by enforcing safety constraints to prevent unsafe actions. However, rapidly emerging attacks outpace manual harness adaptation, motivating automated harness evolution. Yet the signals available for harness evolution are often sparse, such as brief descriptions or a few attack examples in threat reports and preprints. To address this limitation, we introduce HASTE, a multi-agent framework that evolves agent harnesses from sparse threat evidence through an adversarial interplay between safety-specification generation and attack-case generation. Safety specifications guide harness updates toward addressing identified safety vulnerabilities, while attack cases probe for remaining safety vulnerabilities after each update. By feeding evaluation outcomes back into both processes, HASTE enables harness evolution against emerging attacks beyond the initially observed evidence. Experimental results across multiple backbone models, attack types, and evidence forms show that HASTE consistently reduces attack success rates while preserving benign-task utility. The code is available at https://github.com/xxiqiao/HASTE.",
@@ -16,7 +410,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.02920v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2610.02616v1",
@@ -37,7 +431,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.02616v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2610.01833v1",
@@ -52,7 +446,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.01833v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2610.01766v1",
@@ -68,7 +462,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.01766v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2610.01161v1",
@@ -93,7 +487,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.01161v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.40169v1",
@@ -111,7 +505,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.40169v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.39304v1",
@@ -127,6 +521,21 @@
     "source": "https://arxiv.org/abs/2609.39304v1",
     "review_status": "unreviewed",
     "discovered_on": "2026-10-05"
+  },
+  {
+    "id": "2609.39304v2",
+    "title": "Scale and Selection: What Makes Automatic Harness Evolution Work for Visual-Interface Robot Agents",
+    "summary": "When an off-the-shelf coding agent is used directly as a robot policy, observing a browser-based 3D interface through screenshots and acting by posing a virtual target gripper through a few tools, the agent's harness, its prompts, tools, and control rules, largely determines success, and until now it has been written by hand. We show that this harness can be improved automatically by another coding agent, the optimizer agent, and report two findings about what makes it work. First, the number of rollouts the optimizer agent sees per round governs whether the evolved harness generalizes: with rounds fixed, held-out success rises as the training batch grows from 5 to 100 rollouts, while small batches overfit the training tasks. Second, the optimizer agent must not be given free rein. Accepting every revision it proposes degrades the harness within a few rounds; a simple Champion-Challenger rule that promotes a revision only if it beats the incumbent on the same fixed cases turns the same loop into one that raises held-out success on LIBERO tasks from 51% to 67% over 30 rounds. Combining the evolved harness with a pretrained policy, through one tool that hands it control, reaches 71.2% on the RoboCasa365 leaderboard benchmark, 13.1 points above the best published entry. Automatic harness evolution for visual-interface robot agents is thus feasible, but its gains hinge on the rollout scale behind each decision and on how the optimizer agent's revisions are selected.",
+    "published": "2026-09-30T08:46:38Z",
+    "updated": "2026-10-09T10:29:04Z",
+    "authors": [
+      "Zhijie Wei",
+      "Ferris Tan",
+      "Jinghui Wang"
+    ],
+    "source": "https://arxiv.org/abs/2609.39304v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.39207v1",
@@ -148,7 +557,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.39207v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.38413v1",
@@ -163,7 +572,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.38413v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.38349v1",
@@ -187,7 +596,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.38349v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.38288v1",
@@ -213,7 +622,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.38288v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.37968v2",
@@ -228,7 +637,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.37968v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.37864v1",
@@ -246,7 +655,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.37864v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.37834v1",
@@ -267,7 +676,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.37834v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.37025v1",
@@ -284,7 +693,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.37025v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.36887v1",
@@ -316,7 +725,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.36887v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.36746v1",
@@ -330,7 +739,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.36746v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.36235v2",
@@ -349,7 +758,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.36235v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.36043v1",
@@ -370,7 +779,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.36043v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.35596v2",
@@ -388,7 +797,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.35596v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.35568v1",
@@ -408,7 +817,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.35568v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.34988v1",
@@ -427,7 +836,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.34988v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.34785v1",
@@ -447,7 +856,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.34785v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.34649v1",
@@ -466,7 +875,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.34649v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.34633v1",
@@ -488,7 +897,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.34633v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.34151v1",
@@ -507,7 +916,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.34151v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.34069v1",
@@ -522,7 +931,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.34069v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.33524v1",
@@ -540,7 +949,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.33524v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.33123v2",
@@ -557,7 +966,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.33123v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.32870v1",
@@ -580,7 +989,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.32870v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.32677v1",
@@ -596,7 +1005,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.32677v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.32630v1",
@@ -610,7 +1019,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.32630v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.32423v1",
@@ -630,7 +1039,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.32423v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.32093v1",
@@ -655,7 +1064,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.32093v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.32091v1",
@@ -674,7 +1083,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.32091v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.31568v1",
@@ -692,7 +1101,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.31568v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.31789v1",
@@ -705,7 +1114,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.31789v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.30450v1",
@@ -726,7 +1135,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.30450v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.24972v2",
@@ -771,7 +1180,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.24663v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.21423v4",
@@ -792,6 +1201,26 @@
     "source": "https://arxiv.org/abs/2609.21423v4",
     "review_status": "unreviewed",
     "discovered_on": "2026-10-05"
+  },
+  {
+    "id": "2609.21423v5",
+    "title": "DENSE: Distilling Agent Trajectories into Evidence-Grounded Shortcut Trees for Self-Refinement",
+    "summary": "Online agent deployments accumulate execution trajectories at massive scale and behavioral diversity, for which predefined annotation criteria hardly exist. Extracting useful evidence therefore demands costly manual annotation or verifier signals that fail to scale, leaving valuable evidence buried among redundant, incomplete, and failed executions. This raises a question: without post-execution rewards or correctness labels, how can reusable experience be distilled from the trajectories themselves? To address this challenge, we introduce DENSE (Distilling Evidence from Nested Subtask Executions), which organizes trajectory-derived evidence into nested shortcut trees. By consolidating redundant attempts, identifying resolved subtasks, and retaining useful steps alongside outstanding requirements, DENSE transforms noisy execution traces into structured and reusable task-solving feedback. To evaluate whether such feedback helps agents retry the same task, we design REFIT, which measures success-rate changes between the initial attempt and feedback-guided retries. Among feedback methods without external outcome supervision, DENSE achieves the highest strict pass rate across four agent models on Terminal-Bench 2.1, improving over initial attempts by 7.12-21.81 percentage points with 19.0-43.6% fewer agent tokens on retries. In addition, on hard tasks DENSE consistently outperforms self-reflection in cumulative pass rate across multiple feedback iterations on all four models, demonstrating its strong potential for continual agent self-improvement.",
+    "published": "2026-09-18T07:36:21Z",
+    "updated": "2026-10-08T09:07:47Z",
+    "authors": [
+      "Siyuan Liu",
+      "Fan Yu",
+      "Dongyu Ru",
+      "Yizhu Liu",
+      "Yifan Yang",
+      "Xuezhi Cao",
+      "Xunliang Cai",
+      "Yixin Cao"
+    ],
+    "source": "https://arxiv.org/abs/2609.21423v5",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.19759v2",
@@ -837,7 +1266,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.19664v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.15820v2",
@@ -855,7 +1284,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.15820v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.14857v1",
@@ -895,7 +1324,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.12216v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.11911v1",
@@ -908,7 +1337,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.11911v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.11682v1",
@@ -998,7 +1427,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.08919v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.08832v1",
@@ -1015,7 +1444,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.08832v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.08404v1",
@@ -1030,7 +1459,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.08404v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2610.00093v1",
@@ -1073,7 +1502,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.00093v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.08175v2",
@@ -1195,7 +1624,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.02246v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.02217v1",
@@ -1211,7 +1640,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.02217v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2609.01437v1",
@@ -1348,7 +1777,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.00069v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2608.29621v1",
@@ -1373,7 +1802,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.29621v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2608.28363v1",
@@ -1787,7 +2216,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.11654v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2608.11079v1",
@@ -2100,7 +2529,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07622v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2608.06144v1",
@@ -3298,7 +3727,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05155v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2607.11913v1",
@@ -4079,7 +4508,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07603v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2605.29341v2",
@@ -4249,7 +4678,7 @@
     ],
     "source": "https://arxiv.org/abs/2605.13119v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2605.12978v1",
@@ -4464,7 +4893,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.07645v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2604.04247v1",
@@ -4590,7 +5019,7 @@
     ],
     "source": "https://arxiv.org/abs/2602.04248v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2511.06449v2",
@@ -4612,7 +5041,7 @@
     ],
     "source": "https://arxiv.org/abs/2511.06449v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "2410.13266v1",
@@ -4627,7 +5056,7 @@
     ],
     "source": "https://arxiv.org/abs/2410.13266v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   },
   {
     "id": "1806.03112v2",
@@ -4643,6 +5072,6 @@
     ],
     "source": "https://arxiv.org/abs/1806.03112v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-05"
+    "discovered_on": "2026-10-12"
   }
 ]
