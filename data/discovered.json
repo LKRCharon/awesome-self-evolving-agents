@@ -1,5 +1,280 @@
 [
   {
+    "id": "2610.31034v1",
+    "title": "CANNBot-CAKE: Collaborative Agentic Kernel Evolution for Ascend NPU",
+    "summary": "Efficient custom operators are essential for modern deep learning workloads, yet developing high-performance kernels for Ascend NPUs remains slow, expert-intensive, and difficult to automate. Although AI agents now approach expert performance on GPU kernel benchmarks, current models remain less capable of generating AscendC kernels for NPUs, potentially reflecting the relative scarcity of relevant training data. We thus present CAKE, a CANN-native system for deployable custom operators that combines adaptive multi-DSL routing, separate Generation and Evolution modes, and reviewed knowledge reuse through CAKE Book and a Self-Evolving Agent. On 53 CANN-Bench v1.1 operators on Ascend 950PR, CAKE's aggregated results achieve $100\\%$ case pass rate on the standard set (1,060/1,060) and $98.28\\%$ on the hidden set (4,167/4,240), with an overall mean score of 78.63 out of 100 and an average performance speedup of $1.334\\times$ over the baseline. Evolution then pushes correct operators further: EngramGateFusion cuts aggregate device time by $46.6\\%$ over 20 rounds and roughly halves the mean roofline gap. These results offer a practical path toward closing Ascend's AI-for-kernel capability gap.",
+    "published": "2026-10-22T10:12:45Z",
+    "updated": "2026-10-22T10:12:45Z",
+    "authors": [
+      "Deng Pan",
+      "Xue-Jian Gao",
+      "Junyi Fan",
+      "Bin Du",
+      "Jiasheng Li",
+      "Xinxian Chen",
+      "Nok Yan Chang",
+      "Xinlin Li",
+      "Lingchao Zheng",
+      "Jun Li",
+      "Yuwei Fan"
+    ],
+    "source": "https://arxiv.org/abs/2610.31034v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.30042v1",
+    "title": "HGM-Dual: Lineage-Aware Guided Agent Harness Optimization for Long-Horizon Planning",
+    "summary": "Harness optimization, which improves an agent's prompts, tools, and workflows, is an increasingly effective way to enhance agents built on frozen or closed-source LLMs. Leading approaches such as the Darwin--Godel Machine and the Huxley--Godel Machine (HGM) rely on recursive self-improvement and were developed mainly for coding, where the competence needed to improve the agent coincides with the competence being improved. Planning tasks, in which an agent must produce a sequence of tool calls that jointly satisfies interacting constraints, break this alignment. There, open-ended self-modification repeatedly explores ineffective changes and consumes substantial evaluation budgets. We introduce HGM-Dual, a diagnostic-guided framework for budget-efficient harness evolution for planning agents. First, HGM-Dual represents agent evolution as lineage-aware context. This context records what each ancestor changed, which behaviors improved or regressed, and which modifications were ineffective, giving the editor explicit edit-outcome attribution instead of an unstructured archive of past agents. Second, HGM-Dual introduces error-conditioned dual-path child generation. For each selected parent, it generates a general child that preserves open-ended exploration and specialized children that target the harness components most likely responsible for the parent's highest-ranked constraint violations. HGM-Dual outperforms the strongest baseline by up to 14.45% relative improvement in case accuracy while matching HGM variants' final performance with 2x-4x fewer evaluation budget.",
+    "published": "2026-10-21T17:02:28Z",
+    "updated": "2026-10-21T17:02:28Z",
+    "authors": [
+      "Sudipta Paul",
+      "Pengrui Quan",
+      "Aounon Kumar",
+      "Nicholas Tzou",
+      "Vivek Kulkarni",
+      "Srinivas Chappidi"
+    ],
+    "source": "https://arxiv.org/abs/2610.30042v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.30017v1",
+    "title": "GuideEvolve: Self-Evolving Agent Framework with Expert Guidance and 3Ts Mechanisms",
+    "summary": "This study introduces GuideEvolve, a self-evolving agent framework incorporating expert guidance and three autonomous regulatory mechanisms, collectively termed the 3Ts: Think Fast and Slow, Throwback, and Termination by choice. The framework addresses critical limitations in extant self-evolving agent paradigms through dual innovations: (1) a task-specific expert-evaluation-driven evolutionary pipeline, and (2) the integration of 3Ts mechanisms to facilitate cognitive optimization, performance recovery via temporal rollback, and adaptive termination protocols. Empirical validation across the MGSM and MMLU benchmarks demonstrates that GuideEvolve attains performance metrics comparable to current state-of-the-art models (89.8% accuracy versus Gödel Agent's 90.6% on MGSM; 89.1% versus 87.9% on MMLU), while exhibiting notably reduced variance (25-59%) and enhanced robustness. Furthermore, the framework achieves a 100% evolution success rate, superior to the baseline's 82%, diminishes required optimization iterations by approximately 50% (from 30 iterations in baseline to 15.1 and 13.4 across tasks), and provides improved stability for production deployment.",
+    "published": "2026-10-21T16:46:22Z",
+    "updated": "2026-10-21T16:46:22Z",
+    "authors": [
+      "Meihong Jia",
+      "Yasemin Timar",
+      "Jonathan Taws"
+    ],
+    "source": "https://arxiv.org/abs/2610.30017v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.29005v1",
+    "title": "VeriEvolve: Evaluator-First Evolution for Tool-Using Agents",
+    "summary": "A central obstacle to self-improving agents is the absence of a reliable fitness signal for realistic stateful tasks. We introduce \\textsc{VeriEvolve}, an evaluator-first evolution framework that constructs this missing evaluation layer before optimizing the agent. From task instruction, VeriEvolve synthesizes instruction-grounded challenge states and an executable evaluator that checks them. During each round of workflow evolution, the evaluator is frozen and serves as the fitness signal. Between rounds, VeriEvolve revises the evaluator by converting the end states of strong and weak runs into a pair of counterfactual test cases. Across all 30 MCPMark Filesystem tasks, VeriEvolve constructs 30 evaluators with 141 challenge states, achieving 141/141 agreement on the generated suites and 113/122 agreement on held-out states produced by executor agents. Evaluator-guided evolution increases externally verified success from 6/30 to 18/30 for GLM-5.2 and from 27/30 to 30/30 for Claude; refinement removes all three false positives that the weak executor exposes. Cross-environment studies on PostgreSQL, Playwright, Notion, and GitHub further expose complementary limits from observability, state representation, and search/execution capacity. These results show that executable evaluators can be synthesized and used to guide search when task success is observable and an external verifier is available for calibration.",
+    "published": "2026-10-21T00:13:29Z",
+    "updated": "2026-10-21T00:13:29Z",
+    "authors": [
+      "Yueshen Li",
+      "Kamer Ali Yuksel",
+      "Gokhan Tur",
+      "Dilek Hakkani-Tür",
+      "João Pedro Maia"
+    ],
+    "source": "https://arxiv.org/abs/2610.29005v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.28945v1",
+    "title": "Self-Improving Agents with World Model Predictive Paths",
+    "summary": "Large language model (LLM) agents are increasingly expected to interact with environments and improve their decisions during deployment. However, how anticipating future outcomes and drawing on accumulated interaction experience can jointly support decision-making remains underexplored. We propose a test-time framework, inspired by Model Predictive Path Integral (MPPI) control, that combines multi-branch predictive analysis with experience-based adaptation. At each step, the agent proposes multiple candidate actions and imagines their outcomes with a world model, so that alternatives can be compared without being executed in the environment. Since language environments provide neither explicit dynamics nor costs, the predicted outcomes are evaluated for task progress and risk, and MPPI-style weights over the resulting costs guide the final decision. A dual-branch experience memory enables self-improvement: the planner branch refines candidate generation and action selection, while the world model branch improves next-observation prediction. Experiments on ALFWorld and ScienceWorld across three backbones demonstrate the strong overall performance of our method and the effectiveness of experience-guided predictive control. Our code will be made publicly available.",
+    "published": "2026-10-20T21:46:29Z",
+    "updated": "2026-10-20T21:46:29Z",
+    "authors": [
+      "Haori Lu",
+      "Tianyu Gao",
+      "Yaoyao Liu",
+      "Yingying Li"
+    ],
+    "source": "https://arxiv.org/abs/2610.28945v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.28815v1",
+    "title": "Forging More Tasks into Better Harnesses: Agentic Harness Evolution via Successive Scale Racing",
+    "summary": "Agentic harness evolution optimizes an agent's instructions, tools, and control flow by using its task execution experiences as evolving evidence. While more evolution tasks should intuitively improve performance, our preliminary study reveals a paradoxical failure mode: the performance of existing methods degrades as the task pool expands. Our further analysis demonstrates that this degradation stems from suboptimal evidence selection during optimization, as different evidence combinations lead to substantially different evolution outcomes. To address this issue, we propose Successive Scale Racing (SSR), a framework that adaptively searches for optimal evidence combinations in each evolution round. SSR constructs diverse evidence combinations based on the corresponding task quality and coverage, and efficiently races the resulting candidate harnesses under a small compute budget. Empirically, across three distinct benchmarks, SSR achieves state-of-the-art results in all six configurations. Notably, as the task pool grows from 40 to 200, SSR steadily improves the pass rate from 64.3% to 68.3%, while the baselines' performances all drop. Furthermore, its racing mechanism identifies near-optimal candidates while reducing validation executions by 60%.",
+    "published": "2026-10-20T18:36:33Z",
+    "updated": "2026-10-20T18:36:33Z",
+    "authors": [
+      "Jingzhe Liu",
+      "Jiliang Tang",
+      "Tong Zhao",
+      "Neil Shah",
+      "Clark Mingxuan Ju"
+    ],
+    "source": "https://arxiv.org/abs/2610.28815v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.28380v1",
+    "title": "Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design",
+    "summary": "Agent harnesses are executable code that specifies the prompts, tools, and control flow around a language model. A single global harness can struggle with heterogeneous tasks that require different execution strategies. In this work, we introduce Object-Oriented Harness (OO-Harness), a harness optimization framework that evolves a hierarchy of executable harness classes using object-oriented design. During training, an evolution agent uses execution records to create a family of specialized harnesses, each implemented as a subclass of the base or an existing specialized harness via inheritance. At test time, a harness router uses routing lessons accumulated during training to select a specific harness for each task. Across three long-horizon benchmarks spanning business workflows, workspace tasks, and tool use, OO-Harness achieves the best performance among the compared methods, with an absolute improvement of up to 15% over the base. Extensive ablation studies examine the contributions of its core components.",
+    "published": "2026-10-20T15:32:52Z",
+    "updated": "2026-10-20T15:32:52Z",
+    "authors": [
+      "Gaotang Li",
+      "Bhavana Dalvi Mishra",
+      "Yifei Ming",
+      "Yanfei Chen",
+      "Zhongying CuiZhu",
+      "Lesly Miculicich",
+      "Long T. Le",
+      "Rui Meng",
+      "Chun-Liang Li",
+      "Hanghang Tong",
+      "Chen-Yu Lee",
+      "Tomas Pfister"
+    ],
+    "source": "https://arxiv.org/abs/2610.28380v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.28282v1",
+    "title": "ChartEvo: Self-Evolving Agent Harnesses for Long-Tail Chart Reasoning",
+    "summary": "Multimodal large language models (MLLMs) have substantially advanced chart understanding and reasoning, yet their performance remains highly uneven across chart types. While modern MLLMs perform well on common charts, their accuracy drops sharply on long-tail charts with diverse visual structures and reasoning requirements. Tool-augmented agents can improve complex chart reasoning by introducing specialized visual capabilities, but manually engineering strategies and tools for the heterogeneous and evolving long tail is difficult to scale. We introduce \\textbf{ChartEvo}, a recursive self-improvement framework that enables chart agents to adapt to underperforming chart types through experience-driven harness-level self-improvement. ChartEvo jointly evolves reusable chart-specific Skills and executable Tools, while learning reusable local tool-call chains to compose evolved capabilities and control the inference overhead of tool-augmented reasoning. On long-tail charts from ChartBench and ChartX, ChartEvo improves accuracy over its base MLLM, Qwen3.7-Plus, by \\textbf{45.6\\%} and \\textbf{32.5\\%}, respectively, demonstrating the effectiveness of recursive self-improvement for long-tail chart adaptation.",
+    "published": "2026-10-20T14:34:54Z",
+    "updated": "2026-10-20T14:34:54Z",
+    "authors": [
+      "Qi Wang",
+      "Peijie Wang",
+      "Jun Cao",
+      "Haoyang Tong",
+      "Xiao-Hui Li",
+      "Fei Yin",
+      "Cheng-Lin Liu"
+    ],
+    "source": "https://arxiv.org/abs/2610.28282v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.27495v1",
+    "title": "Self-Evolving Agents through Privileged Retrospective Distillation",
+    "summary": "Self-evolving agents aim to improve from their own experience rather than remain fixed after deployment, but naturally collected trajectories often lack ground-truth solutions or verifier-derived rewards. We introduce Retrospective Self-Distillation (RSD), a multi-round framework that turns such experience into dense supervision using privileged retrospective context. For each on-policy trajectory, the same underlying model acts as both student and teacher: the teacher re-scores the student's realized actions while conditioning on cross-task precedents and lessons, together with turn-level reflection and future hindsight from the completed trajectory. The resulting teacher distribution is distilled back into the policy through on-policy self-distillation. Across rounds, the experience bank grows and the retrospective context is refreshed, allowing the model, its data, and its supervision to co-evolve. We further introduce frontier-guided context-policy evolution, where a stronger frontier model proposes constrained edits to how privileged context is constructed. Across ALFWorld, ScienceWorld, and SearchQA with Qwen3-8B and Qwen3-14B, RSD improves performance by up to 59.7% relative to the base model, while frontier-guided context-policy evolution adds up to a further 44.7% relative improvement over a fixed context policy. These results show that naturally accumulated experience can be converted into persistent model capability without ground-truth trajectories or verifier-derived rewards for the core policy update.",
+    "published": "2026-10-20T02:13:21Z",
+    "updated": "2026-10-20T02:13:21Z",
+    "authors": [
+      "Yuhang Zhou",
+      "Yifan Wu",
+      "Bo Peng",
+      "Mingyi Wang",
+      "Jiayi Liu",
+      "Xiangjun Fan",
+      "Lizhu Zhang",
+      "Zhuokai Zhao"
+    ],
+    "source": "https://arxiv.org/abs/2610.27495v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.27435v1",
+    "title": "Harness Self-Evolution for Long-Horizon Terminal Agents",
+    "summary": "Long-horizon terminal agents may solve a task in one run yet fail across repeated runs. Stochastic errors can propagate through actions and context, creating a gap between capability and reliable execution. We present RiseHarness, a framework for iteratively improving agent harnesses with model weights fixed. It focuses on flipping tasks with both successful and failed runs under the same configuration, using successful runs as references for failure analysis. RiseHarness combines agent trajectories with internal harness traces from a runtime monitor to examine how model actions interact with command execution, feedback, context management, and completion decisions. A Harness Handbook links this evidence to harness behaviors and source code, helping identify recurring problems in mechanisms shared across tasks. RiseHarness then searches other harness frameworks for relevant implementations and adapts them as design references to the current model and execution protocol. Candidate changes undergo behavioral checks and repeated task evaluation; versions with measured gains seed the next iteration. This loop integrates suitable mechanisms from different frameworks into a single harness and uses new execution evidence to guide further changes. We evaluate task success and reliability across models, ablate harness execution evidence and external research, and test transfer to unseen benchmarks with the same model. RiseHarness treats a specific model as the unit of harness adaptation, studying how changes to shared interaction mechanisms can make existing capabilities more reliable across tasks.",
+    "published": "2026-10-20T00:36:49Z",
+    "updated": "2026-10-20T00:36:49Z",
+    "authors": [
+      "Ruhan Wang",
+      "Yucheng Shi",
+      "Zongxia Li",
+      "Junyao Yang",
+      "Zhongzhi Li",
+      "Yue Yu",
+      "Haitao Mi",
+      "Dongruo Zhou",
+      "Leoweiliang"
+    ],
+    "source": "https://arxiv.org/abs/2610.27435v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.26453v2",
+    "title": "Learning What to Remember: Resource-Efficient Self-Improvement for Lifelong Agents",
+    "summary": "Self-improving agents aim to continuously improve their behavior by learning from experience after deployment. However, accumulating and reusing more experience does not necessarily lead to better decisions, particularly when generation, interaction, and memory resources are jointly constrained. Under such stringent constraints, we find that several existing lifelong-memory methods provide limited benefits over simple retrieval or even no-memory agents. This reveals a fundamental challenge for resource-efficient self-improvement: agents must learn not only which past experiences are relevant, but which are actually worth reusing to improve future decisions. When memory capacity and opportunities for reasoning and recovery are limited, retrieving an ineffective experience can consume scarce resources and hinder downstream execution. To address this challenge, we propose TokenWorth, a lightweight feedback-driven memory adaptation framework that learns query-dependent memory worth from sparse execution feedback. Without updating the backbone model, TokenWorth uses the learned worth to guide both experience retrieval and bounded memory management, enabling the agent to continually adapt how it reuses accumulated experience. Across three LifelongAgentBench environments and both local and API-based deployments, TokenWorth achieves the highest task success rate while using the fewest output tokens among the evaluated methods under the specified resource budgets. These results suggest that effective self-improvement under resource constraints depends not on accumulating more experience, but on learning what is worth remembering. Our code is publicly available at https://github.com/AIGNLAI/TokenWorth.",
+    "published": "2026-10-19T14:09:45Z",
+    "updated": "2026-10-21T14:25:06Z",
+    "authors": [
+      "Guannan Lai",
+      "Zi-Yang Bai",
+      "Jun-Peng Jiang",
+      "Han-Jia Ye"
+    ],
+    "source": "https://arxiv.org/abs/2610.26453v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.25858v1",
+    "title": "Are Self-Evolving Agents Continual Learners?",
+    "summary": "Large language model agents are often deployed in environments where new knowledge, tools, and workflows keep arriving. Such an agent is therefore expected to adapt continually, learning new tasks as they arrive without forgetting earlier ones. This resembles the continual learning problem, but at a pace that conventional gradient updates cannot sustain. Nonparametric self-evolving agents are a natural alternative: they adapt by rewriting their own harness, such as prompts, memory, and skills, from task feedback while the model weights stay frozen. We study whether such agents are effective continual learners across four drifting task streams that shift in topic, workflow, or domain (built from BIRD, BFCL, and ScienceWorld). Evaluating three representative methods spanning experience retrieval and self-modification (ReasoningBank, GEPA, and Meta-Harness), we find that although self-evolution improves aggregate performance on most streams, higher plasticity consistently comes at the cost of stability. Specifically, self-modifying methods apply global edits to a shared prompt or workspace, interfering with unseen tasks and overwriting earlier knowledge as the stream shifts. Conversely, similarity-based memory retrieval localizes updates across distant domains, but still retrieves foreign memories on unseen tasks and suffers from retrieval collision when similar queries require conflicting workflows. These findings show that current self-evolving agents remain incomplete continual learners.",
+    "published": "2026-10-19T06:12:45Z",
+    "updated": "2026-10-19T06:12:45Z",
+    "authors": [
+      "Xiaoyin Chen",
+      "Yizheng Huang",
+      "Yinglun Xu",
+      "Ziyun Zhao",
+      "Emmett McQuinn",
+      "Julie Liu",
+      "Hope Yao"
+    ],
+    "source": "https://arxiv.org/abs/2610.25858v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.25012v1",
+    "title": "Conjugate Compilation: Self-Improving Agentic Co-Compilation for Speculative Decoding",
+    "summary": "As LLM adoption surges, scaling model serving requires unlocking stranded GPU capacity alongside deploying more GPUs. Speculative decoding brings two models into the serving process: a small draft model proposes tokens that a larger target model verifies. Yet compiling these models individually leaves their shared execution outside the compiler's optimization boundary. We introduce CONJUGATE COMPILATION, which reframes speculative decoding as a cross-model compilation problem and jointly optimizes the draft and target models within their shared execution rather than treating each in isolation. Our key insight is that cross-model compilation should be informed by the measured performance of the co-located shared execution it produces: an optimization that improves a kernel in isolation need not improve the models when they execute together. To expand cross-model opportunities, we devise operand layouts that interleave blocks from both models within common tiles, co-locating GEMM and non-GEMM work while preserving their mathematics. We realize CONJUGATE COMPILATION through a self-improving agentic search system in which an LLM edits cross-model optimization plans using the compiler and GPU execution as its environment. Each proposed plan is compiled and evaluated through its co-located shared execution, whose measured score, together with kernel-level verdicts and compiler feedback, informs subsequent proposals, while Monte Carlo tree search accumulates rewards to guide exploration. Across six single-GPU speculative-decoding configurations on NVIDIA B300 and RTX 5090 GPUs, CONJUGATE COMPILATION achieves a geometric-mean per-round speedup of 1.37x over conventional execution. Interleaved kernels raise this speedup to 1.45x, reaching 1.59x in the best case. CONJUGATE COMPILATION also improves GPU utilization on average by 1.46x on RTX 5090 and 1.50x on B300.",
+    "published": "2026-10-18T04:46:51Z",
+    "updated": "2026-10-18T04:46:51Z",
+    "authors": [
+      "Annabelle Sujun Tang",
+      "Rohan Mahapatra",
+      "Christopher Priebe",
+      "Hanyang Xu",
+      "Manya Ghobadi",
+      "Christopher Rossbach",
+      "Hadi Esmaeilzadeh"
+    ],
+    "source": "https://arxiv.org/abs/2610.25012v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
+    "id": "2610.24944v1",
+    "title": "Epi: Towards a Persistent, Self-Improving Agent for Autonomous Research",
+    "summary": "We present Épi, an autonomous research agent that sustains investigations across model sessions and evolves its methods through accumulated experience. Épi combines persistent research history, hierarchical memory, branching and independent review to maintain research continuity, learn from experiments, and explore and revisit alternative approaches. Its experiments run across session boundaries, and a fixed verifier evaluates their outputs. Épi produced 120 record-setting results, comprising 20 numerical bound records across 12 families and 100 construction records across eight families. These include an approximately 84-fold narrower interval for the $n$-queens constant and a more than 3.6-million-fold narrower rigorous interval for the quartic Feigenbaum attractor dimension. Exact dual certificates establish that the Cohn-Elkies linear-programming bound cannot be sharp in dimensions 10 and 11. Beyond numerical improvements, Épi gives a computer-assisted proof of Tuza's conjecture for split graphs with an eight-vertex clique part and at most three triangle-active neighborhood types, with arbitrary multiplicities. We extend this research process to algorithmic coding with Épi-turbo, a lightweight configuration that develops executable solvers for tasks including vehicle routing, scheduling and production planning. On 30 FrontierOR tasks, Épi-turbo achieves a 5.4% higher total benchmark score than Codex at 64% of its model cost, using the same underlying model and reasoning effort. Épi is designed to support human understanding by connecting computational results to explicit methods and mathematical arguments that researchers can examine and build upon.",
+    "published": "2026-10-18T01:30:40Z",
+    "updated": "2026-10-18T01:30:40Z",
+    "authors": [
+      "Yue Huang",
+      "Zhangchen Xu",
+      "Xiaonan Luo",
+      "Zheyuan Liu",
+      "Lichi Li",
+      "Yiping Wang",
+      "Peiyang Song",
+      "Eric Gabriel Ramos",
+      "Enze Xie",
+      "Olexandr Isayev",
+      "Paul Liang",
+      "Nouha Dziri",
+      "Huan Sun",
+      "Jianfeng Gao",
+      "Ying Liu",
+      "Misha Sra",
+      "Xiangliang Zhang",
+      "Alex Pentland",
+      "Zichen Chen"
+    ],
+    "source": "https://arxiv.org/abs/2610.24944v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
     "id": "2610.23791v1",
     "title": "DrugHarness: An Evolvable Agent Harness for Computational Drug Discovery",
     "summary": "Computational drug discovery requires agents to compose scientific operations and adapt to changing evidence and constraints. Here we introduce DrugHarness, an evolvable agent harness coupling composable scientific execution with conditional skill induction. Its environment integrates over 80 scientific operations, biomedical resources and task-specific code, preserving associations among candidates, results and artifacts. From execution trajectories and outcome feedback, DrugHarness induces action hypotheses with observable applicability conditions, recommended actions and supporting evidence. An independent review agent evaluates candidate skills derived from these hypotheses through source verification and, when needed, targeted execution trials. Admitted skills guide subsequent tasks and are revised through feedback. Evaluation on MolBench and SMDD-Bench demonstrates capabilities in molecular screening, optimization and constrained design. Without evolution, DrugHarness exceeds reported MolClaw-CC results by 10.8 percentage points in affinity-comparison accuracy and 55% in mean top-three active hits on MolBench. Retrospective evaluation on skill-development tasks shows that evolution increases Qwen's affinity-comparison accuracy from 62.2% to 81.1% and optimization success from 79.5% to 87.2%. In a prospective HPK1 study, DrugHarness achieves a more favorable median docking score than Biomni among system-specific candidates. A synthesized compound achieves a cellular IC50 of 14.19 nM, a 2.64-fold potency improvement over the best input reference, with activity competitive with two selected compounds designed by experienced medicinal chemists. These results support conditional skill evolution for scientific agents and demonstrate a workflow connecting computational drug design with experimental validation.",
@@ -32,7 +307,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23791v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.23599v1",
@@ -53,7 +328,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23599v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.23574v1",
@@ -72,7 +347,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23574v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.23470v1",
@@ -88,6 +363,21 @@
     "source": "https://arxiv.org/abs/2610.23470v1",
     "review_status": "unreviewed",
     "discovered_on": "2026-10-19"
+  },
+  {
+    "id": "2610.23470v2",
+    "title": "QD-Rec: Open-Ended Evolution of Recommendations via Quality-Diversity",
+    "summary": "Open-ended search combined with foundation models has produced advances such as faster algorithms, new results on open mathematical problems, and self-improving agents. We extend this paradigm to recommendation for decision-making, focusing on decisions where the set of possible choices is fixed but the reasons for choosing them are not. In high-stakes decisions, e.g., which company to acquire or which customer to target, comparing diverse, well-reasoned options can be more useful than a single ranked list. We formalize open-ended recommendation as building a diverse, high-quality set of recommendations, each an item together with a hypothesis, a natural-language reason why the item fits the needs of a decision maker. We propose QD-Rec, a quality--diversity method that selects items with a contextual bandit and generates hypotheses with a foundation model from earlier ones kept in an archive as stepping stones. A new recommendation enters the archive if it is novel or better than its nearest neighbor. Across M&A, customer targeting, and paper and book recommendation, QD-Rec gives the highest mean quality and builds the largest archive in most settings.",
+    "published": "2026-10-16T13:49:22Z",
+    "updated": "2026-10-19T15:21:31Z",
+    "authors": [
+      "Takashi Ishida",
+      "Taro Makino",
+      "Issa Sugiura"
+    ],
+    "source": "https://arxiv.org/abs/2610.23470v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.23098v1",
@@ -109,7 +399,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23098v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.22984v1",
@@ -129,7 +419,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.22984v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.22466v1",
@@ -149,7 +439,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.22466v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.21887v1",
@@ -165,7 +455,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.21887v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.21458v1",
@@ -182,7 +472,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.21458v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.20845v1",
@@ -202,7 +492,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.20845v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.20809v1",
@@ -223,7 +513,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.20809v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.20312v1",
@@ -244,7 +534,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.20312v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.19830v1",
@@ -262,7 +552,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.19830v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.19725v2",
@@ -281,7 +571,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.19725v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.19591v1",
@@ -298,7 +588,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.19591v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.19396v1",
@@ -316,7 +606,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.19396v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.18813v1",
@@ -336,7 +626,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.18813v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.18792v1",
@@ -356,7 +646,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.18792v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.17609v1",
@@ -377,7 +667,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.17609v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.15964v1",
@@ -394,7 +684,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15964v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.15772v1",
@@ -416,7 +706,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15772v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.15389v1",
@@ -436,7 +726,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15389v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.15244v1",
@@ -453,7 +743,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15244v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.15150v1",
@@ -473,7 +763,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15150v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.15055v1",
@@ -490,7 +780,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15055v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.14828v1",
@@ -511,7 +801,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14828v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.14730v2",
@@ -528,7 +818,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14730v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.14662v1",
@@ -541,7 +831,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14662v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.14495v1",
@@ -554,7 +844,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14495v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.14216v1",
@@ -567,7 +857,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14216v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.14118v1",
@@ -586,7 +876,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14118v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.13098v1",
@@ -622,7 +912,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.13098v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.13025v1",
@@ -642,7 +932,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.13025v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.13021v1",
@@ -663,7 +953,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.13021v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.12086v1",
@@ -680,7 +970,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.12086v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.11552v1",
@@ -697,7 +987,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.11552v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.11464v1",
@@ -716,7 +1006,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.11464v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.10498v1",
@@ -734,7 +1024,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.10498v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.10088v1",
@@ -751,7 +1041,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.10088v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.09426v1",
@@ -782,7 +1072,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.09426v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.08993v1",
@@ -806,7 +1096,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.08993v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.08902v1",
@@ -829,7 +1119,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.08902v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.08761v1",
@@ -854,7 +1144,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.08761v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.08327v1",
@@ -876,6 +1166,25 @@
     "discovered_on": "2026-10-19"
   },
   {
+    "id": "2610.08327v2",
+    "title": "MedZERO: Self-Evolving Agents for Open-Ended Medical Reasoning Through Controlled Knowledge Accumulation",
+    "summary": "Large language models (LLMs) have shown promise in medical question answering and clinical reasoning, yet their improvement remains constrained by static parametric knowledge and costly expert supervision. Self-evolving agents offer a promising alternative by enabling models to improve through iterative task generation and problem-solving. However, most existing self-evolving methods are designed for easily verifiable domains such as mathematics and coding, where solutions can be checked by exact answers or executable programs. Medical reasoning is fundamentally different: it is open-ended, knowledge-intensive, and often only partially verifiable. We present MedZERO, a self-evolving framework for open-ended medical reasoning. MedZERO couples an Examiner that generates frontier medical question-option pairs with a Reasoner that solves them through evidence-grounded multi-turn reasoning with external knowledge tools. To support reliable, continual improvement, MedZERO adopts controlled knowledge accumulation, which maintains temporary exploratory knowledge and curated persistent knowledge in reasoning. We evaluate MedZERO on five public medical reasoning benchmarks using 4B- and 8B-scale base models under open-ended evaluation. At both model scales, MedZERO achieves the highest average accuracy among the evaluated methods, with gains of up to 13.7 percentage points over the next-best self-evolving baseline. Code available at \\url{https://github.com/IcecreamArtist/MedZERO}.",
+    "published": "2026-10-06T13:25:55Z",
+    "updated": "2026-10-18T15:41:20Z",
+    "authors": [
+      "Xilin Dang",
+      "Weilin Ruan",
+      "Xue Yang",
+      "Jinghao Wang",
+      "Xiaowei Hu",
+      "Jinpeng Li",
+      "Pheng-Ann Heng"
+    ],
+    "source": "https://arxiv.org/abs/2610.08327v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-10-26"
+  },
+  {
     "id": "2610.07979v1",
     "title": "Learning from Revision Consequences: Hindsight Meta-Experience Distillation for Self-Improving Agents",
     "summary": "As agents continuously improve by generating and revising Skills, the process that discovers and refines those Skills becomes a learnable object in its own right. Task-Skills directly act on task execution, whereas Meta-Skills govern how agents discover and improve future Skills; their value therefore emerges through the subsequent search processes they induce. Existing approaches improve Meta-Skills from observed raw Skill-search trajectories and branch outcomes. However, branch performance entangles the effects of the initial discovery state and the Meta-Skill revision that generated the search process, making it difficult to characterize what a particular revision actually changed, and pushing updates toward revisions that benefit from favorable states rather than those that improve the process. We introduce HMED (Hindsight Meta-Experience Distillation), a mechanism for constructing Meta-Experience for self-improving agents. HMED revisits the completed event from which a revision originates and re-executes the incumbent and revised Meta-Skills from the same restored discovery state, so that the changes associated with the revision can be observed under a shared condition. Each comparison is distilled into a Meta-Experience, a structured record that can be reused by future updates, so that even revisions that are not ultimately retained still contribute a learning signal. Across three interactive agent benchmarks and both open-source and closed-source models, HMED consistently improves Skill discovery performance over strong baselines, shifting Meta-Skill learning beyond branch outcomes toward the consequences of changing the improvement process.",
@@ -890,7 +1199,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.07979v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.07335v1",
@@ -905,7 +1214,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.07335v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.07250v1",
@@ -922,7 +1231,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.07250v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.06563v1",
@@ -940,7 +1249,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.06563v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.05300v1",
@@ -961,7 +1270,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.05300v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.05039v1",
@@ -979,7 +1288,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.05039v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.04832v1",
@@ -998,7 +1307,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.04832v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.02920v1",
@@ -1017,7 +1326,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.02920v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.02616v1",
@@ -1038,7 +1347,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.02616v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2610.01833v1",
@@ -1094,7 +1403,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.01161v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2609.40169v1",
@@ -1202,7 +1511,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.39207v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2609.38413v1",
@@ -1338,7 +1647,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.37025v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2609.36887v1",
@@ -1384,7 +1693,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.36746v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2609.36235v2",
@@ -1865,7 +2174,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.21423v5",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2609.19759v2",
@@ -1982,7 +2291,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.11911v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2609.11682v1",
@@ -2861,7 +3170,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.11654v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2608.11079v1",
@@ -3174,7 +3483,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07622v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2608.06144v1",
@@ -4372,7 +4681,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05155v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2607.11913v1",
@@ -5153,7 +5462,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07603v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2605.29341v2",
@@ -5538,7 +5847,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.07645v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2604.04247v1",
@@ -5664,7 +5973,7 @@
     ],
     "source": "https://arxiv.org/abs/2602.04248v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2511.06449v2",
@@ -5686,7 +5995,7 @@
     ],
     "source": "https://arxiv.org/abs/2511.06449v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "2410.13266v1",
@@ -5701,7 +6010,7 @@
     ],
     "source": "https://arxiv.org/abs/2410.13266v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   },
   {
     "id": "1806.03112v2",
@@ -5717,6 +6026,6 @@
     ],
     "source": "https://arxiv.org/abs/1806.03112v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-19"
+    "discovered_on": "2026-10-26"
   }
 ]
