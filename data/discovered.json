@@ -1,5 +1,331 @@
 [
   {
+    "id": "2610.41210v1",
+    "title": "From Evaluation to Evolution: Benchmarking Image Editing and Evolving Image Models",
+    "summary": "Real-world image editing requires coordinating multiple visual transformations with content preservation and reference constraints, yet aggregate scores can readily obscure unmet local requirements. Effective evaluation must therefore identify local failures and translate them into priorities for subsequent model improvement. We introduce WeGenEditBench, comprising 2,740 evaluation instances and 148 task types across single-image, text-intensive, and multi-reference editing. Pre-generated checklists shared across models decompose each request into atomic requirements; item-level deductions and visual evidence are established first and then summarized into scores for edit execution, preservation, visual quality, and task-specific correctness. To support the experience-acquisition component of recursive self-improvement (RSI), we develop WeGenEvoStudio, a unified multi-agent harness for RSI-oriented learning that integrates model-conditioned failure diagnosis, retrieval-grounded data construction, supervised adaptation, and re-evaluation. Among 15 evaluated configurations, GPT-Image-2 leads single-image editing with an Overall score of 4.076, while Seedream-5.0-Pro leads text-intensive editing at 4.291. Evolution experiments across four generation and editing benchmarks demonstrate substantial targeted gains: on their report-selected Top-5 single-image targets, FLUX.2 [dev] improves Overall from 1.083 to 3.517, while Qwen-Image-Edit-2511 gains 13.2%. Together, our benchmark and harness provide a foundation for developing more reliable image models through interpretable evaluation and feedback-driven learning.",
+    "published": "2026-10-30T03:42:15Z",
+    "updated": "2026-10-30T03:42:15Z",
+    "authors": [
+      "Jun He",
+      "Canmiao Fu",
+      "Ying Zhang",
+      "Zhipeng Huang",
+      "Chenyu Mu",
+      "Yazhen Xie",
+      "Chen Li",
+      "Jing Lyu",
+      "Weijia Li",
+      "Xiang Zhang"
+    ],
+    "source": "https://arxiv.org/abs/2610.41210v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.40901v1",
+    "title": "TSFLab: A Self-Improving Agent-Agnostic Workbench for Time Series Forecasting Research",
+    "summary": "As publications and products on time series forecasting (TSF) proliferate, researchers face a growing burden of analyzing existing work. First, not all publications release code. For instance, only about 20% of arXiv TSF papers have a code link in the surveyed period. Second, released code also requires manual maintenance. Thus, TSF researchers must constantly adapt or implement existing works. However, independent implementations can differ in experimental settings and are difficult to maintain. We therefore propose to use AI agents for benchmarking TSF research and even supporting autoresearch, e.g., developing new TSF models. Yet directly applying existing coding agents, such as Claude Code and Codex, is suboptimal: prohibitive costs, limited scalability to large research projects (e.g., benchmarking), and lack of self-maintenance. To address these challenges, we propose TSFLab, a self-improving agent-agnostic \"workbench\" that equips compatible coding agents with shared resources and tools for low-cost TSF research and continuous maintenance of research resources. Our experiments cover reproduction, benchmarking, and new method development. In reproduction and benchmarking, TSFLab improves task completion by 20-163% and cuts fresh tokens per completed task by 11-66% across baselines. A pilot study of agent-driven method development also shows improved forecasting accuracy via TSFLab, with 32.8-73.6% fewer fresh tokens and 9.2-68.8% less development time than the other settings.",
+    "published": "2026-10-29T19:22:33Z",
+    "updated": "2026-10-29T19:22:33Z",
+    "authors": [
+      "ChengAo Shen",
+      "Yanjun Zhao",
+      "Haoxin Liu",
+      "Bonnie Chen",
+      "Miles Ma",
+      "Dongjin Song",
+      "Hanghang Tong",
+      "Qingsong Wen",
+      "Jingrui He",
+      "Jingchao Ni"
+    ],
+    "source": "https://arxiv.org/abs/2610.40901v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.40758v1",
+    "title": "More Rules, Longer Lists? Benchmarking Self-Evolving Agents on a Hidden-Rule Curriculum",
+    "summary": "Self-evolving agents rewrite a persistent state from feedback, but it is largely untested whether this lets them learn a rule nobody told them. An agent can also pass by writing down each correction as an exception, and its list then grows with every new rule. We introduce CLR-Bench, a Curriculum of Latent Rules benchmark. Each chain adds one hidden rule per level on top of the earlier ones. A rule acts on an opaque label that stands for a named grouping published on the Web, such as the founding members of an airline alliance. The task gives one example value, practice feedback reveals one more member and one non-member, and the test checks unseen members and similar non-members. Probes certify that the base model knows the members of each grouping and does not guess it without feedback, and that the evidence identifies the grouping once labels are read as named groupings. An automated pipeline builds chains from a new data domain, and we release 20 chains over 10 domains. We evaluate six recent self-evolution methods. With the certifying model they barely learn. The best gain at most 5 points over a frozen agent and exclude only 6-12% of the unseen members from the count, fewer than the 20% reached by simply keeping the raw practice history. A fixed lesson that states the named-grouping convention lifts the same methods by 14.5 to 16.5 points. Their states hold the revealed member in 75-98% of cases and almost never the class name, and when practice exposes a member the list misses, they add that member to the list. With the stronger GPT-6-Sol, ACE and Dynamic Cheatsheet learn from feedback alone. They reach 78% accuracy and solve 59-60% of the single cells, against 53% and 8% with the certifying model, and they surpass the raw history. CLR-Bench therefore measures how well an agent learns, and this ability differs across models.",
+    "published": "2026-10-29T17:00:10Z",
+    "updated": "2026-10-29T17:00:10Z",
+    "authors": [
+      "Chenjie Qiu",
+      "Boyan Xu",
+      "Shaobin Shi",
+      "Bingfeng Chen",
+      "Ruichu Cai",
+      "Dongsheng Luo"
+    ],
+    "source": "https://arxiv.org/abs/2610.40758v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.39508v1",
+    "title": "Compile Away Uncertainty: Self-Evolving Agent Skills via Programmatic Compilation",
+    "summary": "Self-evolving agent skills enable AI agents to accumulate and refine reusable procedural knowledge from interaction experience without updating model parameters. However, since such skills are typically represented as textual documents and executed through LLM reasoning, even previously learned procedures must be repeatedly interpreted and regenerated, introducing avoidable uncertainty into every execution. In contrast, program execution is deterministic and independently verifiable. Intuitively, transforming well-specified operations into executable programs can reduce reliance on LLM reasoning and, consequently, reduce execution uncertainty. Motivated by this intuition, we introduce SKillCompiler, a self-evolving skill framework that integrates programmatic compilation into the skill evolution process. Specifically, SkillCompiler adopts an executability-aware skill compilation strategy that decomposes skills into fine-grained operations, analyzes their executability, and constructs hybrid skill skeletons that retain LLM reasoning for context-dependent operations while compiling well-specified ones into validated programs. To avoid redundant program synthesis and enable executable knowledge to accumulate across evolving skills, we further design a program asset reuse mechanism that organizes validated programs as reusable assets, retrieves existing implementations whenever applicable, and synthesizes and verifies new programs only when necessary. Extensive experiments on five benchmarks and six model families demonstrate that SkillCompiler consistently outperforms state-of-the-art methods, achieving up to 32.33\\% improvement in task performance.",
+    "published": "2026-10-29T07:07:17Z",
+    "updated": "2026-10-29T07:07:17Z",
+    "authors": [
+      "Chengyu Yang",
+      "Yunxiang Zheng",
+      "Zongzheng Li",
+      "Jiamei Li",
+      "Boxun Lan",
+      "Xiaoyu Liu",
+      "Xiaoyu Zhang",
+      "Xiaohong Chen",
+      "Ming Hu"
+    ],
+    "source": "https://arxiv.org/abs/2610.39508v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.39417v1",
+    "title": "Well-Specified and Well-Tested? Assessing SWE-bench-Style Datasets with a Self-Evolving Agent",
+    "summary": "Large language models (LLMs) have shown strong performance on software engineering (SE) tasks, driving the need for high-quality datasets for reliable training and evaluation. SWE-bench-style datasets (SWE datasets) are widely used to evaluate LLM-based coding agents on real-world software issues, where task clarity and test coverage directly affect whether instances are solvable and verifiable. However, quality issues persist in existing SWE datasets, and manual annotation is costly and labor-intensive, motivating LLM-based annotation. Existing approaches typically rely on static, overly general rubrics, limiting their ability to handle diverse and nuanced scenarios and often yielding high false positive rates. In contrast, human annotators draw on accumulated experience to make context-aware judgments. Inspired by this, we propose ExLabel, an LLM-based, self-evolving, experience-guided assistant for task clarity and test coverage assessment in SWE datasets. ExLabel maintains an evolving experience bank that distills cross-instance knowledge into stable yet adaptive judgment criteria and reuses relevant experience to guide the assessment of new instances. For systematic evaluation, we construct SWE-TQ, a new benchmark spanning eight programming languages, by cleaning human annotations from SWE-bench and Multi-SWE-bench. Experiments with three backbone LLMs show that ExLabel achieves the best F1 across all settings, with relative improvements of 44.2%/49.9% and 24.0%/18.4% over the best baseline for task clarity and test coverage assessment on the Python/Multilingual subsets, respectively. Moreover, a coding model fine-tuned on SWE-rebench data filtered by ExLabel resolves 66.2% of issues on SWE-bench Verified, outperforming the model trained on data filtered by the best baseline by 14.5%.",
+    "published": "2026-10-29T05:59:36Z",
+    "updated": "2026-10-29T05:59:36Z",
+    "authors": [
+      "Zhonghao Jiang",
+      "Xuyang Zheng",
+      "Yanfu Yan",
+      "Zhongxin Liu",
+      "Lingfeng Bao",
+      "Shuiguang Deng"
+    ],
+    "source": "https://arxiv.org/abs/2610.39417v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.39352v1",
+    "title": "Try Before You Evolve: Ranking-Scored Trials for Recursive Self-Improvement of Recommender Systems",
+    "summary": "Recommenders on Web platforms such as e-commerce and music streaming need their training recipes re-tuned for each dataset. Large language model (LLM) agents can now rewrite these recipes, enabling recursive self-improvement (RSI) of recommender systems. Existing agents propose one edit per round, fully retrain the recommender, and keep the edit only if its ranking quality improves. Unlike programs or patches that can be scored by execution, a recommender edit changes how the model is trained, which raises two challenges. First, ranking feedback is delayed: an edit's ranking quality is known only after full retraining, so much of the retraining budget goes to edits that are later discarded. Second, the signals available before retraining are unreliable: sampled training losses can look solved while full-ranking performance remains poor, and they are not comparable across edits that change the loss or sampler. We propose RecRSI, which generates diverse candidate edits from a diagnosis of the current model and selects one for full retraining using early ranking feedback: each candidate receives a short trial, the first steps of its full training run, scored by full-ranking NDCG@10 on held-out probe users. With two sequential recommenders on three datasets and the same number of full retrainings, RecRSI significantly outperforms existing self-evolving agents in every setting, and on both Amazon datasets reaches in its first round a ranking quality that none of them reaches in five.",
+    "published": "2026-10-29T04:45:19Z",
+    "updated": "2026-10-29T04:45:19Z",
+    "authors": [
+      "Xu Huang",
+      "Jiawei Feng",
+      "Jiancan Wu"
+    ],
+    "source": "https://arxiv.org/abs/2610.39352v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.38392v1",
+    "title": "Masked Erosion: How Acceptance Gates Lose Redundant Safeguards in Self-Improving Agents",
+    "summary": "Self-improving LLM agents edit their own harness, the prompts and rules around a fixed model, and keep an edit only if an acceptance gate scores it higher on a batch of tasks. Such a gate sees what the harness does under the current model, not what it would still prevent if one safeguard failed. When safeguards overlap, deleting one is masked: the others still block the harm, so the gate decides on task success alone and redundancy erodes unseen. We measure harm for every subset of four written safeguards in two agent environments and run 411 improvement loops under ten gate rules, mostly as controlled deletion experiments, plus three runs of the GEPA optimizer. A deletion behind another working safeguard adds almost no observable harm. A paired significance test blocks deletions that pass by chance but not deletions that genuinely raise task success, and a larger evaluation batch lets it delete cheaper safeguards: at the same cost, 20-task batches kept every harness protected while 40-task batches lost all six. Large harm audits prevent exposure but not the loss of depth, which turns into harm when the harness is reused with a weaker model. GEPA kept every safety rule verbatim, yet two of its three final harnesses misused credentials under a weaker model. A statistical model frozen before the runs predicts where each gate's protection breaks as safeguard cost and batch size change, and freezing safety text or auditing one-layer ablations preserves depth.",
+    "published": "2026-10-28T07:29:55Z",
+    "updated": "2026-10-28T07:29:55Z",
+    "authors": [
+      "Hau-Sing So",
+      "Daixian Liu",
+      "Weicai Long"
+    ],
+    "source": "https://arxiv.org/abs/2610.38392v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.37905v1",
+    "title": "FilingLoop: Evaluating and Evolving LLM Agents for Corporate Disclosure Review and Revision",
+    "summary": "Public disclosure repositories such as SEC EDGAR support informed investment through web access to corporate filings. Supporting their review with language model agents requires discovering unstated deficiencies across related documents, acquiring missing company facts, and verifying that requested revisions satisfy evidence-backed requirements. Existing financial question-answering evaluations provide limited evidence of these interactive capabilities. We introduce \\textbf{FilingLoop}, an interactive benchmark and a self-evolving agent framework for corporate disclosure review and revision. Grounded in historical U.S.\\ Securities and Exchange Commission correspondence, FilingLoop reconstructs 380 predominantly IPO review tasks from 96 companies under distinct information constraints. An evaluator separate from the acting agents scores final filings and responses against 6,099 eligible requirements and audits unsupported claims and harmful revisions. Our framework couples iterative review and revision within each case with procedural learning across cases, converting requirement-level evaluation feedback into role-specific guidance without updating model weights. Updates affect only subsequent cases, allowing procedural adaptation to be assessed without retrying scored tasks. On the evaluated stream, evolution increases requirement fulfillment from 24.28\\% to 27.96\\% and full comment resolution from 16.90\\% to 20.75\\%, with a 5.8\\% increase in total cost over the fixed-policy variant. FilingLoop connects the concerns an agent discovers with the company facts it obtains and the revisions it commits, providing requirement-level feedback for procedures used in later review tasks.",
+    "published": "2026-10-27T19:45:05Z",
+    "updated": "2026-10-27T19:45:05Z",
+    "authors": [
+      "Wentao Zhang",
+      "Yilei Zhao",
+      "Guangyan Gan",
+      "Shuo Sun",
+      "Lin William Cong"
+    ],
+    "source": "https://arxiv.org/abs/2610.37905v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.37651v1",
+    "title": "GEPA-Curator: Curated Learning for Self Improving Agents",
+    "summary": "Large Language Models (LLMs) are increasingly used in multi-turn agentic workloads that require sustained interaction with complex environments. Existing reflective prompt optimizers such as GEPA learn from failed rollouts, but agentic failures can also come from prompt weaknesses, harness limitations, stochastic execution, or noisy judges. We argue that such failures may not provide useful learning signal, and may even be harmful; and thus it is essential to curate which tasks are provided to the prompt optimizer for better performance. We introduce GEPA-Curator, a framework that augments the prompt optimizer to select which agent experiences should shape prompt optimization. In particular, GEPA-Curator consists of two components: task curation, which filters out tasks that are likely to provide noisy or unreliable learning signals, and prior success retrieval, which selectively retrieves past successful trajectories for a task and provides them as additional context to the prompt optimizer. We evaluate GEPA-Curator on GoBrowse, ALFWorld, AppWorld, and $τ$-bench, using both Gemini 3.1 Pro and Claude Opus 5 as optimizer models. GEPA-Curator matches or exceeds the mean performance of both baselines, with gains of up to 20.7% over GEPA and 21.2% over ACE.",
+    "published": "2026-10-27T17:58:11Z",
+    "updated": "2026-10-27T17:58:11Z",
+    "authors": [
+      "Zack Yu",
+      "Nicholas Lee",
+      "Minjae Lee",
+      "Lakshya Agarwal",
+      "Luca Manolache",
+      "Wonjun Kang",
+      "Matei Zaharia",
+      "Michael W. Mahoney",
+      "Kurt Keutzer",
+      "Sehoon Kim",
+      "Amir Gholami"
+    ],
+    "source": "https://arxiv.org/abs/2610.37651v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.36826v1",
+    "title": "When the Critic Falls Behind: Co-Evolving Rubrics and Harnesses for Continual Agent Self-Improvement",
+    "summary": "Autonomous agents increasingly depend on harnesses that govern interaction, memory, tools, and execution around large language models (LLMs). While recent work has begun to evolve these harnesses from execution experience, the supervision used to guide evolution often remains relatively static, making it difficult to track changing behavioral weaknesses across rounds and potentially limiting generalization to unseen tasks. To address this issue, we propose RuHarness, a rubric--harness co-evolution framework for continual agent self-improvement. RuHarness continually discovers and reassesses behavioral criteria from execution trajectories, prioritizes the most relevant unresolved weaknesses, and uses them to guide targeted harness updates while keeping the task objective fixed. Extensive experiments across diverse agent tasks and backbone models show that RuHarness outperforms strong harness-evolution baselines, particularly on unseen held-out tasks. Further analyses show that adaptive rubric prioritization tracks shifting weaknesses and supports more sustained improvement and stable generalization across evolution rounds.",
+    "published": "2026-10-27T08:24:44Z",
+    "updated": "2026-10-27T08:24:44Z",
+    "authors": [
+      "Hao Chen",
+      "Yukun Yan",
+      "Ziyu Han",
+      "Ye He",
+      "Chuanzhe Guo",
+      "Shangzhan Li",
+      "Qi Shi",
+      "Qingfu Zhu",
+      "Maosong Sun",
+      "Wanxiang Che"
+    ],
+    "source": "https://arxiv.org/abs/2610.36826v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.35616v1",
+    "title": "Hierarchical Skill Evolution for Coding Agent",
+    "summary": "Skills provide agents with reusable experience to guide future decisions without modifying the underlying model. However, coding trajectories are often entangled with task- and repository-specific contexts, making it challenging to distill procedural skills that generalize across diverse coding environments. To address this challenge, we present Hierarchical Skill Evolution (HSE), which progressively distills procedural knowledge from coding trajectories through hierarchical evidence aggregation. HSE first extracts task-level evidence from individual trajectories, then aggregates recurring evidence within the same repository to form repository-specific skill candidates, and finally consolidates consistent patterns across repositories into transferable skills across repositories. The evolution is driven by an external writer-evaluator loop that generates and assesses skills while keeping the underlying coding model frozen. The loop externally updates the writer and evaluator policies to improve subsequent skill generation and assessment. This hierarchy progressively filters task-specific details while preserving procedures that generalize across diverse coding environments. Successful trajectories yield reusable guidance for future tasks, while failed trajectories reveal recurring failure modes that guide avoidance and recovery. We evaluate HSE on SWE-bench Verified and DeepSWE, using GLM-5.2 across Pi and Claude Code harnesses and GPT-5.5 and Opus 4.8 with Pi. Across both benchmarks, 10 skills evolved solely from SWE-Gym improve coding performance across all evaluated settings, demonstrating transfer across benchmarks, coding models, and agent harnesses. We further evolve the skill library from target-benchmark trajectories without verifier feedback, relying solely on the learned evaluator for candidate assessment and achieving additional gains through benchmark-tailored skills.",
+    "published": "2026-10-26T15:34:29Z",
+    "updated": "2026-10-26T15:34:29Z",
+    "authors": [
+      "Jun Gao",
+      "Yun Peng",
+      "Changhai Zhou",
+      "Yuhan Zhu",
+      "Xiangyu Zeng",
+      "Shiyang Zhang Yuhua Zhou",
+      "Luozheng Qin",
+      "Qian Qiao",
+      "Xiaoteng Ma",
+      "Baian Chen Weiyi Shang",
+      "Zhen Ming Jack Jiang",
+      "Lizhi Liao",
+      "Xiaoxue Ren"
+    ],
+    "source": "https://arxiv.org/abs/2610.35616v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.35089v1",
+    "title": "Learning to Remember: Advances in Memory Mechanisms for Large Language Models",
+    "summary": "Memory has become a central mechanism for extending large language models (LLMs) beyond fixed context windows, stateless interaction, and static parametric knowledge. This survey organizes the literature around three complementary dimensions: the life cycle of memory, the storage substrate, and the system role that memory plays in LLM-based agents, while using cognitive-science-inspired memory concepts as a lightweight conceptual motivation rather than as a separate technical contribution or implementation family. On this basis, we distinguish three mechanism families: nonparametric memory, where information is stored outside model parameters in text, graph, multimodal, or database-like structures; parametric memory, where information is stored or accessed through activations, key-value caches, learned modules, adapter-based parameterizations, or model weights; and memory for agent evolution, where stored experiences support reinforcement learning, continual learning, procedural reuse, context engineering, and agent harness design. Evaluation is treated as a separate cross-cutting component rather than as a memory mechanism. Unlike surveys that focus primarily on retrieval-augmented generation or long-context modeling, this paper emphasizes the full memory life cycle: construction, maintenance, retrieval, consolidation, forgetting, governance, and evaluation. By aligning conceptual motivations, computational memory mechanisms, benchmarks, and deployment concerns, the survey provides a structured roadmap for designing memory-augmented LLM agents that are persistent, adaptive, auditable, and safe to update over time.",
+    "published": "2026-10-26T09:31:04Z",
+    "updated": "2026-10-26T09:31:04Z",
+    "authors": [
+      "Chenye Han",
+      "Hongche Yu",
+      "Mengyue Wu",
+      "Dell Zhang",
+      "Jixiang Luo"
+    ],
+    "source": "https://arxiv.org/abs/2610.35089v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.34938v1",
+    "title": "How Do Coding-Agent Harnesses Self-Evolve? An Empirical Study of Retrospective Adaptation",
+    "summary": "Coding agents can adapt their harnesses, the software, configuration, and instructions used to run them, based on experience from earlier tasks, but whether these adaptations improve their behavior on later tasks remains unclear. We study \\retro, a skill that asks an agent to review a completed session and propose harness changes, and ask what changes it proposes and whether implemented changes reduce repeated work on later tasks. We ran Claude Code on 30 SWE-bench Verified issues, qualitatively coded the 125 proposals from \\retro, implemented 24, and evaluated 12 harness changes on later issues from the same repositories in fresh sessions with and without each change. Most proposals referred to an event in the session, but 18 of 43 lint-related proposals recommended a practice regardless of what had happened. Among the seven evaluations in which sessions without the change encountered the targeted problem, two changes eliminated the targeted action, one reduced its occurrence, four showed no reduction, and some changes added work on unrelated issues. Harness self-evolution requires more than generating and implementing changes: it needs ways to establish whether a change helps on later tasks and to revise or remove changes that do not.",
+    "published": "2026-10-26T07:06:31Z",
+    "updated": "2026-10-26T07:06:31Z",
+    "authors": [
+      "Christoph Treude",
+      "Sebastian Baltes"
+    ],
+    "source": "https://arxiv.org/abs/2610.34938v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.34043v1",
+    "title": "Holding a Steady Course: Knowledge Evolution from Expertise and Lessons for Continual Agent Learning",
+    "summary": "Autonomous agents are increasingly deployed across sequences of related tasks, yet they often fail to retain and improve their knowledge over time. Existing approaches convert interaction trajectories into memories or reusable skills, but experience is not automatically reliable knowledge. Automatically collected skills and memories can propagate errors, mislead, and corrupt useful knowledge. To address this gap, we introduce Knowledge Evolution from Expertise and Lessons (KEEL), an agent-agnostic framework that uses verifier evidence to transform successful behavior into reusable skills and failures into corrective lessons. As new evidence accumulates, individual skill claims can be supported, contradicted, replaced, or retired. On SkillFlow benchmark, KEEL improves task success by 4.2 to 21.7 percentage points over the no-knowledge baseline, compared with gains of 2.4 to 9.6 points from SkillFlow's default method. Ablations show that skills and lessons are complementary. These results show that reliable continual agent learning depends not simply on accumulating experience, but on continually validating and evolving the knowledge derived from it. Our code is available at: https://github.com/microsoft/KEEL-TTCL26.",
+    "published": "2026-10-25T04:11:33Z",
+    "updated": "2026-10-25T04:11:33Z",
+    "authors": [
+      "Wenzhe Fan",
+      "Benjamin Steenhoek",
+      "Gaurav Mittal",
+      "Yu Hu"
+    ],
+    "source": "https://arxiv.org/abs/2610.34043v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.33684v1",
+    "title": "More: Mode-Optimized Reasoning with Self-Adaptive Effort for Self-Evolving Agents",
+    "summary": "Self-evolving training improves the performance of agents on difficult tasks through verifiable feedback, but it often applies costly deliberation uniformly across tasks. To address this problem, we propose Mode-Optimized Reasoning with Self-Adaptive Effort (MORE), a self-evolving training framework that adaptively selects both reasoning form and computational effort for each task. Specifically, MORE follows a two-stage training paradigm: (i) \\emph{Stage 1} establishes a compact prior over direct answering, short and long chain-of-thought, and code-based reasoning, and (ii) \\emph{Stage 2} self-evolves this prior with Mode-Adaptive and Test-time Effort PPO (MATE-PPO) on generated, verifiable task streams without curated data. By learning mode selection and token expenditure jointly, MORE allocates concise reasoning to tasks that permit it while retaining extended deliberation where it is useful. Across coding, mathematics, and general-reasoning benchmarks, MORE achieves consistent performance gains on Base and Coder backbones at model scales from 3B to 14B. During inference, MORE demonstrates higher accuracy and better efficiency, with markedly shorter response lengths and reduced inference time.",
+    "published": "2026-10-24T14:03:20Z",
+    "updated": "2026-10-24T14:03:20Z",
+    "authors": [
+      "Dianxing Shi",
+      "Dingjie Fu",
+      "Tianyu Lei",
+      "Wangjie Qiu"
+    ],
+    "source": "https://arxiv.org/abs/2610.33684v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.33465v2",
+    "title": "LegoSR: A Unified Framework for Self-improving Agent-Guided Scientific Discovery",
+    "summary": "Equation discovery solvers often use different data interfaces, equation representations and evaluation criteria, making their results hard to compare. We present LegoSR, a unified framework for algebraic symbolic regression and differential equation discovery. LegoSR integrates seven solvers through a common equation representation and evaluation process, and supports searches constrained by partially known equations. Researchers can run solvers directly or use LegoSR Agent, which selects solvers and adapts searches using solver knowledge, intermediate results and lessons from past tasks. On noisy ordinary and partial differential equation benchmarks, LegoSR Agent recovers nearly as many equations as the union of seven expert-tuned solvers and outperforms a generic agent with the same model, tools and budget by up to 29 percentage points. Three examples of increasing difficulty show the agent's role growing from running a solver to choosing one and then to building a partially known equation from failed searches.",
+    "published": "2026-10-24T05:36:55Z",
+    "updated": "2026-10-30T13:47:18Z",
+    "authors": [
+      "Hao Mao",
+      "Xu T. Liu",
+      "Peng Zhao",
+      "Shuai Lu",
+      "Yuntian Chen"
+    ],
+    "source": "https://arxiv.org/abs/2610.33465v2",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.33106v1",
+    "title": "VibeGame: Prompt-to-Game Development with AI-Native Engine and Self-Evolving Adversarial Agent Team",
+    "summary": "Large language model agents have enabled software development through natural-language interaction, but extending this paradigm to end-to-end game development remains challenging. Building a playable game requires coordinating code, scenes, assets, animations, physics, and configurations, while allowing developers to validate their integrated behavior through interactive testing. We introduce VibeGame, a framework for creating complete 2D game projects from natural-language prompts and optional reference images. Its AI-native game engine represents project state as schema-validated structured text and provides frame-synchronous runtime control, enabling agents to inspect game states, execute actions, and verify behavior at their own pace. Built upon this interface, we design an Adversarial Agent Team of eight specialized agents to separate implementation from review, so that problems are found and fixed through multi-round loops. For each conducted and accepted project, we further introduce a training-free self-evolution mechanism to distill it into reusable skeletons, modules, and collaboration contracts for future development. We evaluate prompt-assets-to-game (PA2G), where agents are given an asset library, and prompt-to-game (P2G), where agents generate their own art. On a GameCraft-Bench subset, VibeGame in P2G consistently outperforms a range of agent harnesses in either P2G or PA2G with the same underlying model, including GPT-6.1-Sol.",
+    "published": "2026-10-22T18:03:17Z",
+    "updated": "2026-10-22T18:03:17Z",
+    "authors": [
+      "Wenbo Hu",
+      "Ken Li",
+      "Jiazhe Wei",
+      "Yukang Cao",
+      "Weiyi Hong",
+      "Jiayi Dai",
+      "Chenjun Bai",
+      "Jiajun Liang",
+      "Yucheng Liao",
+      "Ruichuan An",
+      "Zeyu Lou",
+      "Haofan Wang",
+      "Yueming Lyu",
+      "Jingkang Yang",
+      "Ziwei Liu",
+      "Chenyang Si"
+    ],
+    "source": "https://arxiv.org/abs/2610.33106v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
     "id": "2610.31034v1",
     "title": "CANNBot-CAKE: Collaborative Agentic Kernel Evolution for Ascend NPU",
     "summary": "Efficient custom operators are essential for modern deep learning workloads, yet developing high-performance kernels for Ascend NPUs remains slow, expert-intensive, and difficult to automate. Although AI agents now approach expert performance on GPU kernel benchmarks, current models remain less capable of generating AscendC kernels for NPUs, potentially reflecting the relative scarcity of relevant training data. We thus present CAKE, a CANN-native system for deployable custom operators that combines adaptive multi-DSL routing, separate Generation and Evolution modes, and reviewed knowledge reuse through CAKE Book and a Self-Evolving Agent. On 53 CANN-Bench v1.1 operators on Ascend 950PR, CAKE's aggregated results achieve $100\\%$ case pass rate on the standard set (1,060/1,060) and $98.28\\%$ on the hidden set (4,167/4,240), with an overall mean score of 78.63 out of 100 and an average performance speedup of $1.334\\times$ over the baseline. Evolution then pushes correct operators further: EngramGateFusion cuts aggregate device time by $46.6\\%$ over 20 rounds and roughly halves the mean roofline gap. These results offer a practical path toward closing Ascend's AI-for-kernel capability gap.",
@@ -20,7 +346,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.31034v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.30042v1",
@@ -38,7 +364,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.30042v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.30017v1",
@@ -53,7 +379,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.30017v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.29005v1",
@@ -70,7 +396,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.29005v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.28945v1",
@@ -86,7 +412,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.28945v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.28815v1",
@@ -103,7 +429,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.28815v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.28380v1",
@@ -127,7 +453,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.28380v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.28282v1",
@@ -146,7 +472,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.28282v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.27495v1",
@@ -166,7 +492,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.27495v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.27435v1",
@@ -187,7 +513,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.27435v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.26453v2",
@@ -203,7 +529,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.26453v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.25858v1",
@@ -222,7 +548,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.25858v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.25012v1",
@@ -241,7 +567,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.25012v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.24944v1",
@@ -272,7 +598,24 @@
     ],
     "source": "https://arxiv.org/abs/2610.24944v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.33046v1",
+    "title": "Organon : From Evolutionary Search to Recursive Self-Improving Agents for Scientific Discovery",
+    "summary": "Scientific discovery does not follow a single fixed methodology: research methods vary across domains and evolve through experimentation as investigations unfold. Although LLM-guided evolutionary search has advanced automated discovery, existing frameworks typically rely on fixed search procedures or restrict adaptation to predefined components, limiting their ability to address diverse research problems and adapt to challenges that emerge at runtime. We introduce Organon, a recursively self-improving agent for scientific discovery. During execution, a single persistent agent analyzes its accumulated experience and autonomously revises its own search strategies, population management, diagnostic tools, memory, and worker coordination. These revisions take effect at runtime, allowing the agent to continuously adapt its approach as research progresses. Importantly, the agent can also diagnose and correct flaws in its own adaptation procedures, enabling recursive improvement of the mechanisms that guide its future self-improvement. We evaluate Organon across 21 computational discovery tasks spanning algorithm design, GPU kernel optimization, mathematical construction, and systems optimization. On ALE-Bench Lite, Organon achieves the best performance among competing search frameworks on all 10 tasks, improving mean held-out performance by 20.5% over EvoX. On KernelBench, it achieves the best results on three of four workloads, with speedups of up to 1.67x over the strongest competing method. Analysis of the search trajectories further reveals how the agent develops task-specific search strategies, builds new diagnostic capabilities, and corrects or reverses its own earlier revisions. We implement Organon using DeepSeek Harness and Cordis's spatiotemporal composability. Code is available at https://github.com/cheikh025/Organon.",
+    "published": "2026-10-17T02:27:47Z",
+    "updated": "2026-10-17T02:27:47Z",
+    "authors": [
+      "Cheikh Ahmed",
+      "Zhiyu Zhang",
+      "Kun Mao",
+      "Yong Zhang",
+      "Zirui Zhou"
+    ],
+    "source": "https://arxiv.org/abs/2610.33046v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.23791v1",
@@ -307,7 +650,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23791v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.23599v1",
@@ -328,7 +671,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23599v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.23574v1",
@@ -347,7 +690,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23574v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.23470v1",
@@ -377,7 +720,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23470v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.23098v1",
@@ -399,7 +742,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.23098v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.22984v1",
@@ -419,7 +762,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.22984v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.22466v1",
@@ -439,7 +782,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.22466v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.21887v1",
@@ -455,7 +798,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.21887v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.21458v1",
@@ -472,7 +815,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.21458v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.20845v1",
@@ -492,7 +835,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.20845v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.20809v1",
@@ -513,7 +856,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.20809v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.20312v1",
@@ -534,7 +877,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.20312v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.19830v1",
@@ -552,7 +895,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.19830v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.19725v2",
@@ -571,7 +914,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.19725v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.19591v1",
@@ -588,7 +931,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.19591v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.19396v1",
@@ -606,7 +949,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.19396v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.18813v1",
@@ -626,7 +969,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.18813v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.18792v1",
@@ -646,7 +989,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.18792v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.17609v1",
@@ -667,7 +1010,20 @@
     ],
     "source": "https://arxiv.org/abs/2610.17609v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
+  },
+  {
+    "id": "2610.33029v1",
+    "title": "Lessons from Luck: Do LLM-Written Lessons Carry Chance into an Agent's Next Decision?",
+    "summary": "Self-improving agents write lessons from the outcomes of their runs; when outcomes are noisy, a lesson can carry chance into later decisions. We measure one link of this chain in a registered study. In 256 synthetic worlds, each a recurring task with two interchangeable tools of recorded reliability, a scripted previous run used the more reliable tool (a good decision) or the less reliable one (a bad decision), with an assigned outcome: success or a transient failure. A model wrote a lesson from the run with ReasoningBank's memory-writing instruction; a fresh session of the same model, holding the authoritative log and the previous result, chose the next run's first tool with one memory item: that lesson, the lesson from the other outcome, an irrelevant item, or an unreasoned directive. The protocol was frozen, deposited and timestamped before any confirmatory call; 11 LLM endpoints gave 90,084 answers. After a chance failure of the better tool, the panel's lessons carried the chance (registered reading luck-carrying; interaction +0.112, 95% interval [+0.097, +0.126]): readers named the worse tool in 11.6% of next runs with the lesson written from that failure, against 0.4% with an irrelevant item and 0.4% with the lesson written from a success. The effect was +0.042 where the log stated that failures are independent and +0.181 where it did not (descriptive). After a lucky success of the worse tool, the interaction was bounded below 0.10 (+0.002), a bound, not evidence of no harm. In exploratory readings, 6 endpoints carried the chance (up to +0.352); 5 were bounded below 0.10. In secondary comparisons, a three-sentence decision-quality note in the writing instruction lowered the worse-tool rate after a chance failure to 7.5%, and one instruction for both outcomes with a no-change option to 3.1%; neither met the registered harm-reduction rule at every such endpoint.",
+    "published": "2026-10-12T03:17:10Z",
+    "updated": "2026-10-12T03:17:10Z",
+    "authors": [
+      "Kazuki Nakayashiki"
+    ],
+    "source": "https://arxiv.org/abs/2610.33029v1",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.15964v1",
@@ -684,7 +1040,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15964v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.15772v1",
@@ -706,7 +1062,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15772v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.15389v1",
@@ -726,7 +1082,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15389v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.15244v1",
@@ -743,7 +1099,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15244v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.15150v1",
@@ -763,7 +1119,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15150v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.15055v1",
@@ -780,7 +1136,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.15055v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.14828v1",
@@ -801,7 +1157,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14828v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.14730v2",
@@ -821,6 +1177,23 @@
     "discovered_on": "2026-10-26"
   },
   {
+    "id": "2610.14730v3",
+    "title": "Self-improving data synthesis can scale embedding-model adaptation across domains and tasks",
+    "summary": "AI agents require specialised retrieval across domains and tasks, but adapting embedding models is constrained by costly manual training-data design. Here we introduce SYNTRA, a self-improving agentic data synthesis framework that turns a few retrieval examples into reusable synthesis instructions. Given an unlabelled corpus and a few relevant query-document pairs, SYNTRA infers implicit information needs and relevance criteria, then uses feedback on trial outputs to refine instructions for query generation and relevance assessment. Experiments across 24 datasets spanning 15 domains demonstrate that the same synthesis workflow produces effective training data, benefiting even strong embedding models with and without existing labelled training sets. Self-improvement strengthens this supervision on all six evaluated tasks, yielding better retrieval than human calibration on four. The training value persists at larger scales: on MS MARCO, retrieval gains continue across a 32-fold range of synthetic training-data sizes. SYNTRA thus enables scalable embedding-model adaptation with minimal human intervention.",
+    "published": "2026-10-10T08:50:48Z",
+    "updated": "2026-10-30T16:26:03Z",
+    "authors": [
+      "Zucan Lyu",
+      "Rui Tang",
+      "Jianlyu Chen",
+      "Peisheng Jin",
+      "Defu Lian"
+    ],
+    "source": "https://arxiv.org/abs/2610.14730v3",
+    "review_status": "unreviewed",
+    "discovered_on": "2026-11-02"
+  },
+  {
     "id": "2610.14662v1",
     "title": "Does Failure Feedback Direct Agent Self-Modification?",
     "summary": "Self-improving agents use failure feedback to revise their code or instructions, but gains after selection do not establish target-specific repair or generalization. We measure directedness by comparing repair of a randomly selected target failure with repair of the parent's other failures. Across 145 eligible modifications in public Darwin Gödel Machine logs, we find no detectable target-specific advantage. Controlled instruction-revision experiments with small open models show that relevant feedback can improve target repair. In a second study with a pre-specified analysis plan, target feedback raised repair by 20 percentage points for Qwen3-4B relative to matched same-category feedback; the 7-point increase for Phi-4-mini was not significant. Target repair did not reliably imply held-out improvement. Held-out gains were concentrated in settings with identifiable, repairable failure mechanisms, including planted errors and natural tool-interface failures. Benefits of edit localization and regression screening varied across settings, while eight-step revision loops and GEPA ended at similar mean held-out accuracy. Evaluations should report target repair, transfer to related failures, and held-out net change separately.",
@@ -831,7 +1204,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14662v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.14495v1",
@@ -844,7 +1217,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14495v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.14216v1",
@@ -857,7 +1230,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14216v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.14118v1",
@@ -876,7 +1249,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.14118v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.13098v1",
@@ -932,7 +1305,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.13025v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.13021v1",
@@ -953,7 +1326,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.13021v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.12086v1",
@@ -970,7 +1343,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.12086v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.11552v1",
@@ -987,7 +1360,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.11552v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.11464v1",
@@ -1024,7 +1397,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.10498v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.10088v1",
@@ -1041,7 +1414,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.10088v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.09426v1",
@@ -1144,7 +1517,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.08761v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.08327v1",
@@ -1231,7 +1604,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.07250v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.06563v1",
@@ -1249,7 +1622,7 @@
     ],
     "source": "https://arxiv.org/abs/2610.06563v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2610.05300v1",
@@ -2174,7 +2547,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.21423v5",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2609.19759v2",
@@ -2291,7 +2664,7 @@
     ],
     "source": "https://arxiv.org/abs/2609.11911v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2609.11682v1",
@@ -3170,7 +3543,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.11654v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2608.11079v1",
@@ -3483,7 +3856,7 @@
     ],
     "source": "https://arxiv.org/abs/2608.07622v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2608.06144v1",
@@ -4681,7 +5054,7 @@
     ],
     "source": "https://arxiv.org/abs/2607.05155v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2607.11913v1",
@@ -5462,7 +5835,7 @@
     ],
     "source": "https://arxiv.org/abs/2606.07603v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2605.29341v2",
@@ -5847,7 +6220,7 @@
     ],
     "source": "https://arxiv.org/abs/2604.07645v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2604.04247v1",
@@ -5973,7 +6346,7 @@
     ],
     "source": "https://arxiv.org/abs/2602.04248v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2511.06449v2",
@@ -5995,7 +6368,7 @@
     ],
     "source": "https://arxiv.org/abs/2511.06449v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "2410.13266v1",
@@ -6010,7 +6383,7 @@
     ],
     "source": "https://arxiv.org/abs/2410.13266v1",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   },
   {
     "id": "1806.03112v2",
@@ -6026,6 +6399,6 @@
     ],
     "source": "https://arxiv.org/abs/1806.03112v2",
     "review_status": "unreviewed",
-    "discovered_on": "2026-10-26"
+    "discovered_on": "2026-11-02"
   }
 ]
